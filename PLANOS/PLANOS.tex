@@ -16,6 +16,7 @@
 \usepackage{tikz}
 \usepackage{float}
 \usepackage[table, xcdraw]{xcolor}
+\usepackage{pdfpages} % PAQUETE NECESARIO PARA INSERTAR EL PDF DE LOS PLANOS
 
 % --- Definición de Colores Corporativos ArthroDesign ---
 \definecolor{ArthroNavy}{HTML}{0F172A}
@@ -54,7 +55,7 @@
 % --- Configuración de Enlaces ---
 \hypersetup{colorlinks=true, linkcolor=ArthroNavy, urlcolor=ArthroTeal}
 
-% --- CONFIGURACIÓN DE ENCABEZADO Y PIE CORPORATIVO (Anexo VIII) ---
+% --- CONFIGURACIÓN DE ENCABEZADO Y PIE CORPORATIVO ---
 \pagestyle{fancy}
 \fancyhf{}
 
@@ -63,12 +64,12 @@
 
 % Información de Encabezado
 \fancyhead[L]{\small \textbf{\color{ArthroNavy}Adaptador ergonómico - PR-PIB-GIS26-09}}
-\fancyhead[R]{\small \textbf{\color{ArthroNavy}Anexo VII: Evaluación Marcado CE}}
+\fancyhead[R]{\small \textbf{\color{ArthroNavy}Documento Nº 4: Planos}}
 
-% Información de Pie de Página
+% Información de Pie de Página (Formato Pág. X de Y incorporado)
 \fancyfoot[L]{\small \color{ArthroGray}ArthroDesign Solutions S.L.}
 \fancyfoot[C]{\small \color{ArthroGray}\today}
-\fancyfoot[R]{\small \textbf{\color{ArthroNavy}Pág. \thepage \ de \pageref{LastPage}}}
+\fancyfoot[R]{\small \textbf{\color{ArthroNavy}Pág. \thepage \ de \pageref{LastPage}}} 
 
 \setlength{\headheight}{15pt}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -98,12 +99,10 @@
     \vspace{2cm}
 
     % --- BLOQUE DE TÍTULO PRINCIPAL ---
-    {\color{ArthroGray}\Huge \textbf{ANEXO VII}} \\
+    {\color{ArthroGray}\Huge \textbf{DOCUMENTO Nº 4}} \\
     \vspace{0.5cm}
-    {\color{ArthroNavy}\Huge \textbf{EVALUACIÓN}} \\
+    {\color{ArthroNavy}\Huge \textbf{PLANOS}} \\
     \vspace{0.3cm}
-    {\color{ArthroNavy}\Huge \textbf{MARCADO CE}} \\
-    \vspace{0.6cm}
     {\color{ArthroTeal}\rule{12cm}{2pt}} \\
     \vspace{1cm}
     {\Large \textbf{TÍTULO DEL PROYECTO:}} \\
@@ -129,45 +128,21 @@
     \small
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{l l}
-        \textbf{D. Sergio Carmona Muñoz} & Graduando en Ingeniería Biomédica (DNI: 26291930D) \\
-        \textbf{D. Juan Gabriel Navarro Valdivielso} & Graduando en Ingeniería Biomédica (DNI: 77666662D) \\
-        \textbf{D. Antonio Sánchez Doña} & Graduando en Ingeniería Biomédica (DNI: 79380534J) \\
-        \textbf{D. Iván de la Torre Segato} & Graduando en Ingeniería Biomédica (DNI: 79383630G) \\
+        \textbf{D. Sergio Carmona Muñoz} & Colegiado Nº 06424 (DNI: 26291930D) \\
+        \textbf{D. Juan Gabriel Navarro Valdivielso} & Colegiado Nº 06425 (DNI: 77666662D) \\
+        \textbf{D. Antonio Sánchez Doña} & Colegiado Nº 06423 (DNI: 79380534J) \\
+        \textbf{D. Iván de la Torre Segato} & Colegiado Nº 06421 (DNI: 79383630G) \\
     \end{tabular}
-
+    
     \vfill
 
     % --- PIE DE PORTADA ---
-    \vfill
     {\color{white} ArthroDesign Solutions S.L. \quad | \quad \today}
-    \vspace{-1.75cm} % Para que el texto quede dentro de la franja azul inferior
+    \vspace{-1.75cm} 
 \end{titlepage}
 
-% ======================================================
-% HOJA EN BLANCO CON MARCA DE AGUA
-% ======================================================
-\newpage
-\pagestyle{fancy}
-
-\begin{tikzpicture}[remember picture, overlay]
-    \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
-\end{tikzpicture}
-
-% Empujamos el texto hacia la parte inferior del folio
-\vspace*{8.5cm} 
-\begin{center}
-    \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
-\end{center}
-\vfill
-\newpage
-
-% ======================================================
-% PÁGINA: ÍNDICE AUTOMÁTICO (CON ENCABEZADO)
-% ======================================================
-\markboth{Índice}{Índice}
-\tableofcontents
-\thispagestyle{fancy} % Fuerza el estilo fancy en esta página
-\newpage
+% AÑADE ESTA LÍNEA AQUÍ PARA QUE LA SIGUIENTE PÁGINA SEA LA 2:
+\setcounter{page}{2}
 
 % ======================================================
 % HOJA EN BLANCO CON MARCA DE AGUA
@@ -188,82 +163,25 @@
 \newpage
 
 % ======================================================
-% SECCIÓN 1: EVALUACIÓN DE DIRECTIVAS (DEKRA)
+% PÁGINA: ÍNDICE GENERAL DE PLANOS Y FIRMAS
 % ======================================================
-\addcontentsline{toc}{section}{1. EVALUACIÓN DE DIRECTIVAS}
-
-\vspace{0.5cm}
-
-% --- CABECERA ESTILO CERTIFICADO TÉCNICO ---
-\noindent
-{\renewcommand{\tabularxcolumn}[1]{m{#1}}
-\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}X|>{\centering\arraybackslash}m{4cm}|}
-\hline
-\rowcolor{ArthroNavy}
-\cellcolor{white} \includegraphics[width=2cm]{logo_ce.png} &
-\color{white} \Large \textbf{EVALUACIÓN DE DIRECTIVAS} &
-\cellcolor{ArthroTeal} \color{white} \textbf{PR-PIB-GIS26-09} \\
-\hline
-\end{tabularx}}
-
+\section*{Índice General de Planos}
+\addcontentsline{toc}{section}{Índice General de Planos}
 \vspace{0.6cm}
 
-\noindent \textit{El presente documento recoge el análisis sistemático de las Directivas de Nuevo Enfoque aplicables al producto diseñado, utilizando como base el modelo de evaluación estandarizado DEKRA, con el fin de determinar los requisitos legales para la fijación del Marcado CE.}
+% Índice normalizado con puntos de tabulación y número de página
+\begin{itemize}[label={}, leftmargin=0.5cm, itemsep=0.8em]
+    \item \textbf{Plano Nº 1.} Plano General \dotfill Pág. 4
+    \item \textbf{Plano Nº 2.} Plano Explosionado\dotfill Pág. 5
+    \item \textbf{Plano Nº 3.} Plano de la Base \dotfill Pág. 6
+    \item \textbf{Plano Nº 4.} Plano del Pivote \dotfill Pág. 7
+    \item \textbf{Plano Nº 5.} Plano de la Palanca\dotfill Pág. 8
+\end{itemize}
 
-\vspace{0.6cm}
-
-% --- TABLA DE EVALUACIÓN DEKRA ---
-\begin{table}[H]
-    
-\noindent
-{\renewcommand{\tabularxcolumn}[1]{m{#1}} % Fuerza el centrado vertical en la columna X
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\textwidth}{|>{\columncolor{gray!15}\centering\arraybackslash\small}X|>{\centering\arraybackslash\bfseries}m{2.5cm}|}
-\hline
-\rowcolor{ArthroNavy}
-\color{white}\textbf{Criterio de evaluación (Directivas de Nuevo Enfoque)} & \color{white}\textbf{Aplica} \\
-\hline
-¿Es tu producto un material eléctrico para utilizarse con una tensión comprendida entre 50 y 1 000 V en VCA y entre 75 y 1 500 V en VCC? & No \\ \hline
-¿Es tu producto un equipo o componente, eléctrico o electrónico, destinado al usuario final? & No \\ \hline
-¿Es tu producto un juguete? & No \\ \hline
-¿Es tu producto una máquina? & No \\ \hline
-¿Es tu producto un componente de seguridad para máquinas? & No \\ \hline
-¿Es tu producto un ascensor? & No \\ \hline
-¿Es un componente de seguridad para ascensores? & No \\ \hline
-¿Es tu producto un sistema ferroviario? & No \\ \hline
-¿Es un Sistema de aeronave no tripulada (UAS)? & No \\ \hline
-¿Es tu producto un subsistema o componente de seguridad para instalaciones de transporte por cable? & No \\ \hline
-\rowcolor{ArthroTeal!10} % Fondo ligeramente turquesa para destacar
-¿Es tu producto un producto sanitario, o uno de sus accesorios? & \textcolor{ArthroTeal}{Sí} \\ \hline
-¿Es tu producto una sustancia o preparado químico? & No \\ \hline
-Tu producto, ¿es un plaguicida? & No \\ \hline
-¿Es tu producto un fertilizante? & No \\ \hline
-¿Es tu producto un producto cosmético? & No \\ \hline
-¿Es un envase o residuo de envase? & No \\ \hline
-¿Es una tapa o tapón y tapón de plástico? & No \\ \hline
-Tu producto, ¿es un sitio web o una aplicación para dispositivos móviles de un organismo público? & No \\ \hline
-¿Es tu producto un servicio postal comunitario? & No \\ \hline
-\end{tabularx}}
-\centering
-    \caption{Evaluación de directivas DEKRA.}
-    \label{tab:evaluacion_dekra}
-    \vspace{0.3cm} % Pequeño espacio entre el título y la tabla
-\end{table}
-\vspace{0.8cm}
-
-% --- CUADRO DE CONCLUSIÓN ---
-\noindent
-\begin{minipage}{\textwidth}
-    \textbf{\color{ArthroNavy}\large CONCLUSIÓN} \\
-    
-    \noindent Tras someter el diseño conceptual del dispositivo \textit{ArthroPush} a la batería de evaluación, se determina que el único marco normativo de aplicación obligatoria para el marcado CE es el referente a \textbf{Productos Sanitarios} (Reglamento UE 2017/745). Las demás directivas (Baja Tensión, Compatibilidad Electromagnética, Máquinas, etc.) quedan descartadas debido a la naturaleza puramente mecánica y plástica del adaptador. 
-    
-    \vspace{0.2cm}
-    \noindent Por consiguiente, procede la elaboración de la Declaración UE de Conformidad bajo dicho reglamento (Clase I, Autocertificación).
-\end{minipage}
+\vspace{2.5cm}
 
 % ======================================================
-% BLOQUE DE FIRMAS
+% BLOQUE DE FIRMAS (Precede a los planos formales)
 % ======================================================
 \noindent\begin{minipage}{\textwidth}
     \begin{flushright}
@@ -276,6 +194,7 @@ Tu producto, ¿es un sitio web o una aplicación para dispositivos móviles de u
         \centering
         \rule{6cm}{0.6pt} \\
         \textbf{Fdo. D. Sergio Carmona Muñoz} \\
+        Colegiado Nº 06424 \\
         DNI: 26291930D
     \end{minipage}
     \hfill
@@ -283,6 +202,7 @@ Tu producto, ¿es un sitio web o una aplicación para dispositivos móviles de u
         \centering
         \rule{6cm}{0.6pt} \\
         \textbf{Fdo. D. Juan Gabriel Navarro Valdivielso} \\
+        Colegiado Nº 06425 \\
         DNI: 77666662D
     \end{minipage}
 
@@ -293,6 +213,7 @@ Tu producto, ¿es un sitio web o una aplicación para dispositivos móviles de u
         \centering
         \rule{6cm}{0.6pt} \\
         \textbf{Fdo. D. Antonio Sánchez Doña} \\
+        Colegiado Nº 06423 \\
         DNI: 79380534J
     \end{minipage}
     \hfill
@@ -300,9 +221,34 @@ Tu producto, ¿es un sitio web o una aplicación para dispositivos móviles de u
         \centering
         \rule{6cm}{0.6pt} \\
         \textbf{Fdo. D. Iván de la Torre Segato} \\
+        Colegiado Nº 06421 \\
         DNI: 79383630G
     \end{minipage}
 \end{minipage}
-\vspace{1cm}
+\newpage
+
+% ======================================================
+% INSERCIÓN DEL PDF CON LOS PLANOS
+% ======================================================
+% El comando \includepdf inserta las páginas del archivo directamente.
+% El parámetro "pages=-" le indica que incluya todas las páginas desde la primera a la última.
+\includepdf[pages=-, fitpaper=true]{PLANOS.pdf}
+
+% ======================================================
+% HOJA EN BLANCO CON MARCA DE AGUA
+% ======================================================
+\newpage
+\pagestyle{fancy}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
+\end{tikzpicture}
+
+% Empujamos el texto hacia la parte inferior del folio
+\vspace*{8.5cm} 
+\begin{center}
+    \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
+\end{center}
+\vfill
 
 \end{document}

@@ -126,19 +126,21 @@
     \small
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{l l}
-        \textbf{D. Sergio Carmona Muñoz} & Graduando en Ingeniería Biomédica (DNI: 26291930D) \\
-        \textbf{D. Juan Gabriel Navarro Valdivielso} & Graduando en Ingeniería Biomédica (DNI: 77666662D) \\
-        \textbf{D. Antonio Sánchez Doña} & Graduando en Ingeniería Biomédica (DNI: 79380534J) \\
-        \textbf{D. Iván de la Torre Segato} & Graduando en Ingeniería Biomédica (DNI: 79383630G) \\
+        \textbf{D. Sergio Carmona Muñoz} & Colegiado Nº 06424 (DNI: 26291930D) \\
+        \textbf{D. Juan Gabriel Navarro Valdivielso} & Colegiado Nº 06425 (DNI: 77666662D) \\
+        \textbf{D. Antonio Sánchez Doña} & Colegiado Nº 06423 (DNI: 79380534J) \\
+        \textbf{D. Iván de la Torre Segato} & Colegiado Nº 06421 (DNI: 79383630G) \\
     \end{tabular}
 
     \vfill
 
-    % --- PIE DE PORTADA ---
-    \vfill
+   % --- PIE DE PORTADA ---
     {\color{white} ArthroDesign Solutions S.L. \quad | \quad \today}
-    \vspace{-1.75cm} % Para que el texto quede dentro de la franja azul inferior
+    \vspace{-1.75cm} 
 \end{titlepage}
+
+% AÑADE ESTA LÍNEA AQUÍ PARA QUE LA SIGUIENTE PÁGINA SEA LA 2:
+\setcounter{page}{2}
 
 % ======================================================
 % HOJA EN BLANCO CON MARCA DE AGUA
@@ -291,47 +293,64 @@ Norma UNE-EN ISO 14971:2020. Dispositivos médicos/productos sanitarios (MD). Ap
 
  \vspace{0.5cm}
     \noindent\begin{minipage}{\textwidth}
-        \begin{flushright}
-            En Málaga, a \today
-        \end{flushright}
-        \vspace{0.8cm}
+    \begin{flushright}
+        En Málaga, a \today
+    \end{flushright}
+    \vspace{2cm}
 
-        \noindent
-        \begin{minipage}[t]{0.45\textwidth}
-            \centering
-            \vspace{1.5cm} % Hueco para la firma digital
-            \rule{6cm}{0.6pt} \\
-            \textbf{Fdo. D. Sergio Carmona Muñoz} \\
-            DNI: 26291930D
-        \end{minipage}
-        \hfill
-        \begin{minipage}[t]{0.45\textwidth}
-            \centering
-            \vspace{1.5cm} % Hueco para la firma digital
-            \rule{6cm}{0.6pt} \\
-            \textbf{Fdo. D. Juan Gabriel Navarro Valdivielso} \\
-            DNI: 77666662D
-        \end{minipage}
-
-        \vspace{2cm} % Separación vertical entre las filas de firmas
-
-        \noindent
-        \begin{minipage}[t]{0.45\textwidth}
-            \centering
-            \vspace{1.5cm} % Hueco para la firma digital
-            \rule{6cm}{0.6pt} \\
-            \textbf{Fdo. D. Antonio Sánchez Doña} \\
-            DNI: 79380534J
-        \end{minipage}
-        \hfill
-        \begin{minipage}[t]{0.45\textwidth}
-            \centering
-            \vspace{1.5cm} % Hueco para la firma digital
-            \rule{6cm}{0.6pt} \\
-            \textbf{Fdo. D. Iván de la Torre Segato} \\
-            DNI: 79383630G
-        \end{minipage}
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Sergio Carmona Muñoz} \\
+        Colegiado Nº 06424 \\
+        DNI: 26291930D
     \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Juan Gabriel Navarro Valdivielso} \\
+        Colegiado Nº 06425 \\
+        DNI: 77666662D
+    \end{minipage}
+
+    \vspace{2cm}
+
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Antonio Sánchez Doña} \\
+        Colegiado Nº 06423 \\
+        DNI: 79380534J
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Iván de la Torre Segato} \\
+        Colegiado Nº 06421 \\
+        DNI: 79383630G
+    \end{minipage}
+\end{minipage}
     \vspace{1cm}
+
+    % ======================================================
+% HOJA EN BLANCO CON MARCA DE AGUA
+% ======================================================
+\newpage
+\pagestyle{fancy}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
+\end{tikzpicture}
+
+% Empujamos el texto hacia la parte inferior del folio
+\vspace*{8.5cm} 
+\begin{center}
+    \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
+\end{center}
+\vfill
 
 \end{document}

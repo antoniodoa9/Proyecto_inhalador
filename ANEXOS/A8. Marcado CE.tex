@@ -54,7 +54,7 @@
 % --- Configuración de Enlaces ---
 \hypersetup{colorlinks=true, linkcolor=ArthroNavy, urlcolor=ArthroTeal}
 
-% --- CONFIGURACIÓN DE ENCABEZADO Y PIE CORPORATIVO (Anexo I) ---
+% --- CONFIGURACIÓN DE ENCABEZADO Y PIE CORPORATIVO (Anexo VIII) ---
 \pagestyle{fancy}
 \fancyhf{}
 
@@ -63,7 +63,7 @@
 
 % Información de Encabezado
 \fancyhead[L]{\small \textbf{\color{ArthroNavy}Adaptador ergonómico - PR-PIB-GIS26-09}}
-\fancyhead[R]{\small \textbf{\color{ArthroNavy}Anexo I: Desarrollo del producto}}
+\fancyhead[R]{\small \textbf{\color{ArthroNavy}Anexo VIII: Evaluación Marcado CE}}
 
 % Información de Pie de Página
 \fancyfoot[L]{\small \color{ArthroGray}ArthroDesign Solutions S.L.}
@@ -75,6 +75,9 @@
 
 \begin{document}
 
+% ======================================================
+% PÁGINA 1: PORTADA
+% ======================================================
 \begin{titlepage}
     % --- Elementos Geométricos de Identidad (Cabecera y Pie) ---
     \begin{tikzpicture}[remember picture,overlay]
@@ -95,15 +98,15 @@
     \vspace{2cm}
 
     % --- BLOQUE DE TÍTULO PRINCIPAL ---
-    {\color{ArthroGray}\Huge \textbf{ANEXO I}} \\
+    {\color{ArthroGray}\Huge \textbf{ANEXO VIII}} \\
     \vspace{0.5cm}
-    {\color{ArthroNavy}\Huge \textbf{DESARROLLO DEL PRODUCTO}} \\
-    \vspace{0.6cm}
+    {\color{ArthroNavy}\Huge \textbf{EVALUACIÓN MARCADO CE}} \\
+    \vspace{0.3cm}
     {\color{ArthroTeal}\rule{12cm}{2pt}} \\
     \vspace{1cm}
     {\Large \textbf{TÍTULO DEL PROYECTO:}} \\
     \vspace{0.3cm}
-    {\Huge \bfseries Diseño de un adaptador ergonómico universal para la optimización de la pulsación manual en inhaladores de dosis medida (MDI)}
+    {\Huge \bfseries Diseño de un adaptador ergonómico universal para la optimización de la pulsación manual en inhaladores de dosis medida (MDI)} \\
     \vspace{1.5cm}
 
     % --- BLOQUE DE IDENTIFICACIÓN TÉCNICA ---
@@ -132,7 +135,7 @@
 
     \vfill
 
-   % --- PIE DE PORTADA ---
+    % --- PIE DE PORTADA ---
     {\color{white} ArthroDesign Solutions S.L. \quad | \quad \today}
     \vspace{-1.75cm} 
 \end{titlepage}
@@ -158,13 +161,12 @@
 \vfill
 \newpage
 
-
 % ======================================================
 % PÁGINA: ÍNDICE AUTOMÁTICO (CON ENCABEZADO)
 % ======================================================
 \markboth{Índice}{Índice}
 \tableofcontents
-\thispagestyle{fancy}
+\thispagestyle{fancy} % Fuerza el estilo fancy en esta página
 \newpage
 
 % ======================================================
@@ -186,57 +188,83 @@
 \newpage
 
 % ======================================================
-% CUERPO DEL DOCUMENTO
+% SECCIÓN 1: EVALUACIÓN DE DIRECTIVAS (DEKRA)
 % ======================================================
+\addcontentsline{toc}{section}{1. EVALUACIÓN DE DIRECTIVAS}
 
-\section{DESARROLLO DEL PROYECTO}
-El propósito del presente proyecto es el diseño de un producto de apoyo que optimice la autonomía de pacientes con movilidad reducida en las manos durante el uso de inhaladores de dosis medida (MDI). La solución propuesta consiste en un adaptador ergonómico basado en un mecanismo de palanca que, integrado sobre el actuador estándar del fármaco, permita reducir significativamente la fuerza de accionamiento requerida.
+\vspace{0.5cm}
 
-El diseño se centra en la mejora de la adherencia terapéutica para usuarios que padecen Artritis Reumatoide o debilidad muscular geriátrica, con el objeto de garantizar un entorno de uso indoloro y funcional. El proyecto se aborda bajo la premisa de la simplicidad técnica, de manera que se limita el dispositivo a un conjunto de tres piezas que aseguren la viabilidad económica y de fabricación.
+% --- CABECERA ESTILO CERTIFICADO TÉCNICO ---
+\noindent
+{\renewcommand{\tabularxcolumn}[1]{m{#1}}
+\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}X|>{\centering\arraybackslash}m{4cm}|}
+\hline
+\rowcolor{ArthroNavy}
+\cellcolor{white} \includegraphics[width=2cm]{logo_ce.png} &
+\color{white} \Large \textbf{EVALUACIÓN DE DIRECTIVAS} &
+\cellcolor{ArthroTeal} \color{white} \textbf{PR-PIB-GIS26-09} \\
+\hline
+\end{tabularx}}
 
-Para que el desarrollo del proyecto se lleve a cabo de forma lineal y ordenada, se ha dividido el proceso en fases jerárquicas que permitan la retroalimentación y la minimización de errores en el diseño industrial, de forme que consigamos ahorrar costes y plazos temporales. A continuación, se definen las fases que componen la metodología de trabajo del Equipo 09.
+\vspace{0.6cm}
 
-\subsection{DIAGRAMA DE FASES}
-El proceso de diseño y desarrollo se resume en la Figura 1, donde se muestra la estructura jerárquica desde la planificación inicial hasta la valoración económica final.
+\noindent \textit{El presente documento recoge el análisis sistemático de las Directivas de Nuevo Enfoque aplicables al producto diseñado, utilizando como base el modelo de evaluación estandarizado DEKRA, con el fin de determinar los requisitos legales para la fijación del Marcado CE.}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.55\textwidth]{ANEXOS/diagrama_fases.png} 
-    \caption{Diagrama de fases del desarrollo del producto.}
-    \label{fig:diagrama_fases}
-\end{figure}
+\vspace{0.6cm}
 
+% --- TABLA DE EVALUACIÓN DEKRA ---
+\begin{table}[H]
+    
+\noindent
+{\renewcommand{\tabularxcolumn}[1]{m{#1}} % Fuerza el centrado vertical en la columna X
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\columncolor{gray!15}\centering\arraybackslash\small}X|>{\centering\arraybackslash\bfseries}m{2.5cm}|}
+\hline
+\rowcolor{ArthroNavy}
+\color{white}\textbf{Criterio de evaluación (Directivas de Nuevo Enfoque)} & \color{white}\textbf{Aplica} \\
+\hline
+¿Es tu producto un material eléctrico para utilizarse con una tensión comprendida entre 50 y 1 000 V en VCA y entre 75 y 1 500 V en VCC? & No \\ \hline
+¿Es tu producto un equipo o componente, eléctrico o electrónico, destinado al usuario final? & No \\ \hline
+¿Es tu producto un juguete? & No \\ \hline
+¿Es tu producto una máquina? & No \\ \hline
+¿Es tu producto un componente de seguridad para máquinas? & No \\ \hline
+¿Es tu producto un ascensor? & No \\ \hline
+¿Es un componente de seguridad para ascensores? & No \\ \hline
+¿Es tu producto un sistema ferroviario? & No \\ \hline
+¿Es un Sistema de aeronave no tripulada (UAS)? & No \\ \hline
+¿Es tu producto un subsistema o componente de seguridad para instalaciones de transporte por cable? & No \\ \hline
+\rowcolor{ArthroTeal!10} % Fondo ligeramente turquesa para destacar
+¿Es tu producto un producto sanitario, o uno de sus accesorios? & \textcolor{ArthroTeal}{Sí} \\ \hline
+¿Es tu producto una sustancia o preparado químico? & No \\ \hline
+Tu producto, ¿es un plaguicida? & No \\ \hline
+¿Es tu producto un fertilizante? & No \\ \hline
+¿Es tu producto un producto cosmético? & No \\ \hline
+¿Es un envase o residuo de envase? & No \\ \hline
+¿Es una tapa o tapón y tapón de plástico? & No \\ \hline
+Tu producto, ¿es un sitio web o una aplicación para dispositivos móviles de un organismo público? & No \\ \hline
+¿Es tu producto un servicio postal comunitario? & No \\ \hline
+\end{tabularx}}
+\centering
+    \caption{Evaluación de directivas DEKRA.}
+    \label{tab:evaluacion_dekra}
+    \vspace{0.3cm} % Pequeño espacio entre el título y la tabla
+\end{table}
+\vspace{0.8cm}
 
-\subsection{DEFINICIÓN DE FASES}
+% --- CUADRO DE CONCLUSIÓN ---
+\noindent
+\begin{minipage}{\textwidth}
+    \textbf{\color{ArthroNavy}\large CONCLUSIÓN} \\
+    
+    \noindent Tras someter el diseño conceptual del dispositivo \textit{ArthroPush} a la batería de evaluación, se determina que el único marco normativo de aplicación obligatoria para el marcado CE es el referente a \textbf{Productos Sanitarios} (Reglamento UE 2017/745). Las demás directivas (Baja Tensión, Compatibilidad Electromagnética, Máquinas, etc.) quedan descartadas debido a la naturaleza puramente mecánica y plástica del adaptador. 
+    
+    \vspace{0.2cm}
+    \noindent Por consiguiente, procede la elaboración de la Declaración UE de Conformidad bajo dicho reglamento (Clase I, Autocertificación).
+\end{minipage}
 
-\subsubsection{Plan estratégico y estudio de necesidades del usuario}
-Se realiza una investigación cualitativa y cuantitativa mediante entrevistas personales y encuestas técnicas a pacientes con patologías respiratorias y articulares. El objetivo es recopilar datos sobre ergonomía de agarre y dificultades de presión para que el diseño se adhiera a los requisitos reales del usuario final.
-
-\subsubsection{Definición de las especificaciones}
-A partir de las necesidades detectadas, se establecen las Especificaciones de Diseño de Producto (EDP). Se desarrollan los 16 bloques de fuentes de especificaciones que actuarán como directrices fundamentales durante todo el proceso técnico y legal.
-
-\subsubsection{Proceso de creación}
-Esta fase constituye el núcleo creativo del desarrollo y se subdivide en tres etapas:
-\begin{itemize}
-    \item \textbf{Diseño conceptual:} Generación de bocetos individuales por cada miembro del equipo para representar visualmente las soluciones de palanca y sujeción.
-    \item \textbf{Diseño básico:} Evaluación de propuestas mediante matrices de decisión y selección del modelo base óptimo en términos de ergonomía y simplicidad.
-    \item \textbf{Diseño en detalle:} Desarrollo del modelo final mediante herramientas de diseño asistido por ordenador (CAD). Se definen formalmente los tres componentes (cuerpo, palanca y base) y se generan los planos técnicos bajo norma.
-\end{itemize}
-
-\subsubsection{Validación}
-Una vez finalizado el diseño detallado, se evalúa si el mecanismo de palanca cumple con el ratio de ventaja mecánica proyectado y si el ajuste sobre el inhalador es estable. En caso de discrepancia con las especificaciones iniciales, se procede a una revisión iterativa del diseño.
-
-\subsubsection{Identidad de marca}
-Se define la identidad visual de la empresa ArthroDesign Solutions S.L., de forma que se proyecte una imagen de dispositivos médicos accesibles, funcionales y de alta fiabilidad.
-
-\subsubsection{Estudio de fabricación}
-Se analizan los materiales adecuados (polímeros de grado médico) y los procesos de transformación (impresión 3D para prototipado e inyección para producción en serie), considerando la sostenibilidad y el ecodiseño.
-
-\subsubsection{Estudio de presupuesto}
-Se realiza un cálculo exhaustivo de costes, incluyendo materiales, mano de obra, gastos generales y beneficio industrial, de manera que podamos asegurar que el precio final por unidad sea competitivo en el sector de las ayudas técnicas.
-
-\vspace{1.5cm}
-
+% ======================================================
+% BLOQUE DE FIRMAS
+% ======================================================
 \noindent\begin{minipage}{\textwidth}
     \begin{flushright}
         En Málaga, a \today

@@ -54,7 +54,7 @@
 % --- Configuración de Enlaces ---
 \hypersetup{colorlinks=true, linkcolor=ArthroNavy, urlcolor=ArthroTeal}
 
-% --- CONFIGURACIÓN DE ENCABEZADO Y PIE CORPORATIVO (Anexo I) ---
+% --- CONFIGURACIÓN DE ENCABEZADO Y PIE CORPORATIVO (Anexo VIII) ---
 \pagestyle{fancy}
 \fancyhf{}
 
@@ -63,7 +63,7 @@
 
 % Información de Encabezado
 \fancyhead[L]{\small \textbf{\color{ArthroNavy}Adaptador ergonómico - PR-PIB-GIS26-09}}
-\fancyhead[R]{\small \textbf{\color{ArthroNavy}Anexo I: Desarrollo del producto}}
+\fancyhead[R]{\small \textbf{\color{ArthroNavy}Anexo VII: Ilustraciones}}
 
 % Información de Pie de Página
 \fancyfoot[L]{\small \color{ArthroGray}ArthroDesign Solutions S.L.}
@@ -75,6 +75,9 @@
 
 \begin{document}
 
+% ======================================================
+% PÁGINA 1: PORTADA
+% ======================================================
 \begin{titlepage}
     % --- Elementos Geométricos de Identidad (Cabecera y Pie) ---
     \begin{tikzpicture}[remember picture,overlay]
@@ -95,15 +98,15 @@
     \vspace{2cm}
 
     % --- BLOQUE DE TÍTULO PRINCIPAL ---
-    {\color{ArthroGray}\Huge \textbf{ANEXO I}} \\
+    {\color{ArthroGray}\Huge \textbf{ANEXO VII}} \\
     \vspace{0.5cm}
-    {\color{ArthroNavy}\Huge \textbf{DESARROLLO DEL PRODUCTO}} \\
-    \vspace{0.6cm}
+    {\color{ArthroNavy}\Huge \textbf{ILUSTRACIONES}} \\
+    \vspace{0.3cm}
     {\color{ArthroTeal}\rule{12cm}{2pt}} \\
     \vspace{1cm}
     {\Large \textbf{TÍTULO DEL PROYECTO:}} \\
     \vspace{0.3cm}
-    {\Huge \bfseries Diseño de un adaptador ergonómico universal para la optimización de la pulsación manual en inhaladores de dosis medida (MDI)}
+    {\Huge \bfseries Diseño de un adaptador ergonómico universal para la optimización de la pulsación manual en inhaladores de dosis medida (MDI)} \\
     \vspace{1.5cm}
 
     % --- BLOQUE DE IDENTIFICACIÓN TÉCNICA ---
@@ -118,7 +121,7 @@
 
     \vspace{1.5cm}
 
-    % --- BLOQUE DE PROYECTISTAS ---
+   % --- BLOQUE DE PROYECTISTAS ---
     \textbf{PROYECTISTAS (Equipo de ArthroDesign Solutions S.L.):} \\
     \vspace{0.3cm}
     \small
@@ -132,7 +135,7 @@
 
     \vfill
 
-   % --- PIE DE PORTADA ---
+    % --- PIE DE PORTADA ---
     {\color{white} ArthroDesign Solutions S.L. \quad | \quad \today}
     \vspace{-1.75cm} 
 \end{titlepage}
@@ -158,13 +161,12 @@
 \vfill
 \newpage
 
-
 % ======================================================
 % PÁGINA: ÍNDICE AUTOMÁTICO (CON ENCABEZADO)
 % ======================================================
 \markboth{Índice}{Índice}
 \tableofcontents
-\thispagestyle{fancy}
+\thispagestyle{fancy} % Fuerza el estilo fancy en esta página
 \newpage
 
 % ======================================================
@@ -185,58 +187,76 @@
 \vfill
 \newpage
 
+
 % ======================================================
-% CUERPO DEL DOCUMENTO
+% DESARROLLO DEL PRODUCTO EN CAD (NUEVO CONTENIDO)
 % ======================================================
+\newpage
+\section{Desarrollo del producto en CAD}
 
-\section{DESARROLLO DEL PROYECTO}
-El propósito del presente proyecto es el diseño de un producto de apoyo que optimice la autonomía de pacientes con movilidad reducida en las manos durante el uso de inhaladores de dosis medida (MDI). La solución propuesta consiste en un adaptador ergonómico basado en un mecanismo de palanca que, integrado sobre el actuador estándar del fármaco, permita reducir significativamente la fuerza de accionamiento requerida.
 
-El diseño se centra en la mejora de la adherencia terapéutica para usuarios que padecen Artritis Reumatoide o debilidad muscular geriátrica, con el objeto de garantizar un entorno de uso indoloro y funcional. El proyecto se aborda bajo la premisa de la simplicidad técnica, de manera que se limita el dispositivo a un conjunto de tres piezas que aseguren la viabilidad económica y de fabricación.
+\subsection{Fase 1: Modelado del inhalador (MDI)}
 
-Para que el desarrollo del proyecto se lleve a cabo de forma lineal y ordenada, se ha dividido el proceso en fases jerárquicas que permitan la retroalimentación y la minimización de errores en el diseño industrial, de forme que consigamos ahorrar costes y plazos temporales. A continuación, se definen las fases que componen la metodología de trabajo del Equipo 09.
-
-\subsection{DIAGRAMA DE FASES}
-El proceso de diseño y desarrollo se resume en la Figura 1, donde se muestra la estructura jerárquica desde la planificación inicial hasta la valoración económica final.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.55\textwidth]{ANEXOS/diagrama_fases.png} 
-    \caption{Diagrama de fases del desarrollo del producto.}
-    \label{fig:diagrama_fases}
+   
+   
+     \includegraphics[width=0.8\textwidth]{ANEXOS/CAD_Inhalador.png}
+    \caption{Modelo CAD del Inhalador de Dosis Medida (MDI) usado como referencia.}
+    \label{fig:cad_inhalador}
 \end{figure}
 
 
-\subsection{DEFINICIÓN DE FASES}
+\subsection{Fase 2: Diseño de la base}
 
-\subsubsection{Plan estratégico y estudio de necesidades del usuario}
-Se realiza una investigación cualitativa y cuantitativa mediante entrevistas personales y encuestas técnicas a pacientes con patologías respiratorias y articulares. El objetivo es recopilar datos sobre ergonomía de agarre y dificultades de presión para que el diseño se adhiera a los requisitos reales del usuario final.
 
-\subsubsection{Definición de las especificaciones}
-A partir de las necesidades detectadas, se establecen las Especificaciones de Diseño de Producto (EDP). Se desarrollan los 16 bloques de fuentes de especificaciones que actuarán como directrices fundamentales durante todo el proceso técnico y legal.
+\begin{figure}[H]
+    \centering
+   
+    \includegraphics[width=0.8\textwidth]{CAD_Base.png}
+    \caption{Diseño CAD de la Base del adaptador.}
+    \label{fig:cad_base}
+\end{figure}
 
-\subsubsection{Proceso de creación}
-Esta fase constituye el núcleo creativo del desarrollo y se subdivide en tres etapas:
-\begin{itemize}
-    \item \textbf{Diseño conceptual:} Generación de bocetos individuales por cada miembro del equipo para representar visualmente las soluciones de palanca y sujeción.
-    \item \textbf{Diseño básico:} Evaluación de propuestas mediante matrices de decisión y selección del modelo base óptimo en términos de ergonomía y simplicidad.
-    \item \textbf{Diseño en detalle:} Desarrollo del modelo final mediante herramientas de diseño asistido por ordenador (CAD). Se definen formalmente los tres componentes (cuerpo, palanca y base) y se generan los planos técnicos bajo norma.
-\end{itemize}
+\newpage
+\subsection{Fase 3: Desarrollo del pivote}
 
-\subsubsection{Validación}
-Una vez finalizado el diseño detallado, se evalúa si el mecanismo de palanca cumple con el ratio de ventaja mecánica proyectado y si el ajuste sobre el inhalador es estable. En caso de discrepancia con las especificaciones iniciales, se procede a una revisión iterativa del diseño.
+\begin{figure}[H]
+    \centering
+   
+    \includegraphics[width=0.8\textwidth]{CAD_Pivote.png}
+    \caption{Modelo CAD del Pivote articulado.}
+    \label{fig:cad_pivote}
+\end{figure}
 
-\subsubsection{Identidad de marca}
-Se define la identidad visual de la empresa ArthroDesign Solutions S.L., de forma que se proyecte una imagen de dispositivos médicos accesibles, funcionales y de alta fiabilidad.
+\subsection{Fase 4: Diseño de la palanca}
 
-\subsubsection{Estudio de fabricación}
-Se analizan los materiales adecuados (polímeros de grado médico) y los procesos de transformación (impresión 3D para prototipado e inyección para producción en serie), considerando la sostenibilidad y el ecodiseño.
 
-\subsubsection{Estudio de presupuesto}
-Se realiza un cálculo exhaustivo de costes, incluyendo materiales, mano de obra, gastos generales y beneficio industrial, de manera que podamos asegurar que el precio final por unidad sea competitivo en el sector de las ayudas técnicas.
+\begin{figure}[H]
+    \centering
+   
+     \includegraphics[width=0.8\textwidth]{CAD_Palanca.png}
+    \caption{Diseño CAD de la Palanca de actuación.}
+    \label{fig:cad_palanca}
+\end{figure}
+\newpage
+\subsection{Fase 5: Ensamblaje completo}
 
-\vspace{1.5cm}
 
+\begin{figure}[H]
+    \centering
+   
+     \includegraphics[width=0.8\textwidth]{ANEXOS/CAD_Ensamblaje.png}
+    \caption{Ensamblaje completo de todos los componentes}
+    \label{fig:cad_palanca}
+\end{figure}
+
+
+% ======================================================
+% BLOQUE DE FIRMAS
+% ======================================================
+\newpage
 \noindent\begin{minipage}{\textwidth}
     \begin{flushright}
         En Málaga, a \today
