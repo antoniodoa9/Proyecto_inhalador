@@ -194,41 +194,6 @@
 
 \section{ETIQUETADO DEL PRODUCTO}
 
-\subsection{Información mínima de la etiqueta}
-
-La etiqueta del producto debe incluir la información necesaria para identificar el adaptador, reconocer su finalidad de uso y advertir al usuario sobre sus principales condiciones de seguridad. La información mínima propuesta se recoge en la Tabla 1.
-
-\begin{table}[H]
-\centering
-\renewcommand{\arraystretch}{1.35}
-\begin{tabularx}{\textwidth}{|p{4.2cm}|X|}
-\hline
-\rowcolor{ArthroNavy}
-\textcolor{white}{\textbf{Campo}} & \textcolor{white}{\textbf{Información incluida}} \\
-\hline
-Nombre comercial & ArthroPush \\
-\hline
-Empresa responsable & ArthroDesign Solutions S.L. \\
-\hline
-Código del proyecto & PR-PIB-GIS26-09. \\
-\hline
-Modelo / referencia & ARD-MDI-01. \\
-\hline
-Finalidad de uso & Producto de apoyo destinado a facilitar la pulsación manual de inhaladores de dosis medida. \\
-\hline
-Compatibilidad & Compatible con inhaladores MDI estándar, siempre que el ajuste sea estable y no se obstruya la salida del medicamento. \\
-\hline
-Material previsto & Polímero de grado médico, reciclable y apto para uso cotidiano. \\
-\hline
-Advertencia principal & No utilizar si el adaptador presenta roturas, deformaciones visibles o ajuste inestable. \\
-\hline
-Limpieza & Limpiar con paño húmedo, agua tibia y jabón neutro. No emplear disolventes ni productos abrasivos. \\
-\hline
-Trazabilidad & Número de lote, fecha de fabricación y versión del producto. \\
-\hline
-\end{tabularx}
-\caption{Información mínima propuesta para la etiqueta del producto.}
-\end{table}
 
 \subsection{Diseño propuesto de la etiqueta exterior}
 
@@ -304,7 +269,7 @@ La etiqueta exterior se plantea como una etiqueta rectangular, situada en la car
     font=\bfseries\scriptsize,
     align=center,
     text width=4.55cm
-] at (7.52,6.52)
+] at (7.52,6.62)
 {INFORMACIÓN TÉCNICA};
 
 \node[
@@ -338,7 +303,7 @@ La etiqueta exterior se plantea como una etiqueta rectangular, situada en la car
 \draw[line width=\w mm] (\x,2.85) -- (\x,3.49);
 }
 
-\node[font=\fontsize{5.5}{6}\selectfont, text=black] at (9.8,2.53) {8 435672 091245};
+\node[font=\fontsize{5.5}{6}\selectfont, text=black] at (9.8,2.63) {8 435672 091245};
 
 % ======================================================
 % BLOQUE ADVERTENCIAS
@@ -346,18 +311,18 @@ La etiqueta exterior se plantea como una etiqueta rectangular, situada en la car
 \fill[white, rounded corners=7pt] (12.65,3.45) rectangle (16.7,6.75);
 
 % Iconos advertencia más pequeños y separados del título
-\draw[black!70, line width=0.35pt] (12.88,6.45) -- (13.03,6.68) -- (13.18,6.45) -- cycle;
-\node[font=\tiny, text=black] at (13.03,6.51) {!};
+\draw[black!70, line width=0.35pt] (12.88,6.35) -- (13.03,6.58) -- (13.18,6.35) -- cycle;
+\node[font=\tiny, text=black] at (13.03,6.41) {!};
 
-\draw[black!70, line width=0.35pt] (16.17,6.45) -- (16.32,6.68) -- (16.47,6.45) -- cycle;
-\node[font=\tiny, text=black] at (16.32,6.51) {!};
+\draw[black!70, line width=0.35pt] (16.17,6.35) -- (16.32,6.58) -- (16.47,6.35) -- cycle;
+\node[font=\tiny, text=black] at (16.32,6.41) {!};
 
 \node[
     text=ArthroNavy,
     font=\bfseries\scriptsize,
     align=center,
     text width=2.55cm
-] at (14.56,6.0)
+] at (14.56,5.9)
 {ADVERTENCIAS\\DE USO};
 
 \node[
@@ -366,7 +331,7 @@ La etiqueta exterior se plantea como una etiqueta rectangular, situada en la car
     font=\fontsize{5.15}{5.85}\selectfont,
     align=left,
     text width=3.45cm
-] at (12.92,5.55)
+] at (12.92,5.50)
 {$\bullet$ Leer antes del uso.\\
 $\bullet$ No usar si está dañado.\\
 $\bullet$ Verificar ajuste estable.\\
@@ -382,7 +347,7 @@ $\bullet$ Mantener fuera del alcance de niños.};
     anchor=north west,
     text=ArthroNavy,
     font=\bfseries\scriptsize
-] at (7.55,2.28)
+] at (7.55,2.43)
 {LIMPIEZA};
 
 \node[
@@ -391,7 +356,7 @@ $\bullet$ Mantener fuera del alcance de niños.};
     font=\fontsize{5.25}{5.9}\selectfont,
     align=left,
     text width=4.55cm
-] at (7.55,2.00)
+] at (7.55,2.08)
 {Limpiar con paño húmedo y jabón neutro.\\
 No usar disolventes ni abrasivos.\\
 Conservar limpio, seco y protegido.};
@@ -406,7 +371,7 @@ Conservar limpio, seco y protegido.};
     font=\bfseries\scriptsize,
     align=center,
     text width=3.5cm
-] at (14.68,2.82)
+] at (14.68,2.72)
 {INFORMACIÓN\\AMBIENTAL};
 
 \node[
@@ -426,197 +391,269 @@ $\bullet$ Reciclar según normativa local.};
 % ======================================================
 % BLOQUE INFERIOR: TRAZABILIDAD + EMPRESA
 % ======================================================
-\fill[ArthroNavy!10, rounded corners=6pt] (7.25,0.50) rectangle (16.7,1.12);
+\fill[ArthroNavy!10, rounded corners=6pt] (7.25,0.42) rectangle (16.7,1.18);
 
 \node[
     anchor=west,
     text=ArthroNavy,
-    font=\fontsize{4.65}{5.2}\selectfont,
+    font=\fontsize{4.2}{4.9}\selectfont,
     align=left,
-    text width=4.7cm
-] at (7.45,0.83)
-{\textbf{Fabricado por:} ArthroDesign Solutions S.L.\\
-\textbf{Dirección:} Málaga, España};
+    text width=5.2cm
+] at (7.35,0.82)
+{
+\textbf{Fabricado por:} ArthroDesign Solutions S.L.\\
+Málaga, España
+};
 
 \node[
     anchor=west,
     text=ArthroNavy,
-    font=\fontsize{4.65}{5.2}\selectfont,
+    font=\fontsize{4.2}{4.9}\selectfont,
     align=left,
-    text width=4.15cm
-] at (11.75,0.83)
-{\textbf{Email:} contacto@arthrodesign.com\\
-\textbf{Lote:} LOT-XXXX};
-
-\node[
-    anchor=west,
-    text=ArthroNavy,
-    font=\fontsize{4.65}{5.2}\selectfont,
-    align=left,
-    text width=2.45cm
-] at (15.05,0.83)
-{\textbf{Fecha:} MM/AAAA\\
-\textbf{Versión:} v1.0};
+    text width=4.3cm
+] at (12.20,0.82)
+{
+\textbf{Contacto:} contacto@arthrodesign.com\\
+\textbf{LOT-XXXX} · \textbf{MM/AAAA} · \textbf{v1.0}
+};
 
 \end{tikzpicture}%
 }
 \caption{Diseño propuesto de la etiqueta exterior del embalaje.}
 \end{figure}
 
-\subsection{Simbología recomendada}
 
-El etiquetado podrá incorporar símbolos gráficos sencillos para facilitar la comprensión por parte de usuarios mayores o con baja familiaridad técnica. La simbología propuesta se recoge en la Tabla 2.
 
-\begin{table}[H]
-\centering
-\renewcommand{\arraystretch}{1.35}
-\begin{tabularx}{\textwidth}{|p{4cm}|X|}
-\hline
-\rowcolor{ArthroNavy}
-\textcolor{white}{\textbf{Símbolo / indicación}} & \textcolor{white}{\textbf{Significado}} \\
-\hline
-Leer instrucciones & El usuario debe consultar el manual antes del primer uso. \\
-\hline
-No usar si está dañado & El producto debe descartarse si presenta roturas, deformaciones o pérdida de ajuste. \\
-\hline
-No contiene medicamento & El adaptador es únicamente un accesorio mecánico y no incluye principio activo. \\
-\hline
-Producto reciclable & El material y el embalaje deben gestionarse conforme a las indicaciones locales de reciclaje. \\
-\hline
-Mantener limpio y seco & El producto debe conservarse en condiciones higiénicas y alejado de humedad excesiva. \\
-\hline
-\end{tabularx}
-\caption{Simbología recomendada para el etiquetado del adaptador.}
-\end{table}
 
+% ======================================================
+% MANUAL DE INSTRUCCIONES DEL PRODUCTO
+% ======================================================
+
+
+\clearpage
 \section{MANUAL DE INSTRUCCIONES}
+\begin{center}
 
-\subsection{Contenido del embalaje}
+% ------------------------------------------------------
+% CABECERA DEL MANUAL
+% ------------------------------------------------------
+\vspace*{0.2cm}
 
-Cada unidad comercial del adaptador ergonómico debe incluir los siguientes elementos:
+{\Huge\bfseries\color{ArthroNavy} MANUAL DE USUARIO}
 
-\begin{itemize}
-    \item Un cuerpo principal de sujeción para el inhalador MDI.
-    \item Una palanca ergonómica de accionamiento.
-    \item Un eje o elemento de articulación para el mecanismo de palanca.
-    \item Una etiqueta exterior de identificación del producto.
-    \item Un manual de instrucciones breve para el usuario.
-\end{itemize}
+\vspace{0.15cm}
 
-Antes del primer uso, el usuario debe comprobar que todos los elementos están presentes, limpios y sin daños visibles.
+{\Large\bfseries\color{ArthroTeal} ArthroPush}
 
-\subsection{Uso previsto}
+\vspace{0.15cm}
 
-El adaptador está diseñado para reducir el esfuerzo necesario al presionar el cartucho de un inhalador MDI estándar. Su finalidad es facilitar la administración de la medicación en usuarios con dificultad para realizar el movimiento de pinza dactilar o para aplicar fuerza suficiente con los dedos.
+{\normalsize Adaptador ergonómico para inhaladores de dosis medida (MDI)}
 
-El adaptador no debe utilizarse con inhaladores que no encajen de forma estable, que presenten una geometría incompatible o en los que el dispositivo bloquee la boquilla, la salida del aerosol o el correcto accionamiento del cartucho.
+\vspace{0.35cm}
 
-\subsection{Instrucciones de colocación}
+\noindent
+\color{ArthroTeal}\rule{0.9\textwidth}{1.2pt}
 
-\begin{enumerate}
-    \item Compruebe que el inhalador MDI se encuentra limpio, seco y en buen estado.
-    \item Introduzca el inhalador en el cuerpo principal del adaptador, manteniendo la boquilla libre y orientada hacia el exterior.
-    \item Verifique que el cuerpo del adaptador queda ajustado alrededor del inhalador sin holguras excesivas.
-    \item Sitúe la palanca sobre la parte superior del cartucho, de forma que el apoyo quede alineado con la zona de pulsación.
-    \item Compruebe manualmente que la palanca se mueve de forma suave y que vuelve a su posición inicial sin atascarse.
-\end{enumerate}
 
-\subsection{Instrucciones de uso}
+% ------------------------------------------------------
+% ILUSTRACIÓN PRINCIPAL DEL MANUAL
+% ------------------------------------------------------
+\includegraphics[width=0.88\textwidth]{manual_instrucciones_arthrodesign_logo_centrado.pdf}
 
-\begin{enumerate}
-    \item Agite el inhalador si así lo indican las instrucciones del medicamento.
-    \item Sujete el conjunto formado por inhalador y adaptador con una mano, asegurando un agarre estable.
-    \item Coloque la boquilla del inhalador según las indicaciones del medicamento prescrito.
-    \item Presione la palanca del adaptador con la palma o con el dedo que resulte más cómodo para el usuario.
-    \item Coordine la pulsación con la inhalación siguiendo siempre las instrucciones del inhalador y la pauta indicada por el profesional sanitario.
-    \item Tras la administración, retire el inhalador de la boca y compruebe que la palanca ha vuelto a su posición inicial.
-\end{enumerate}
+\vspace{0.3cm}
 
-\subsection{Retirada del adaptador}
+{\small \textcolor{black} {Figura 2: Ilustración de montaje y uso del adaptador ArthroPush.}}
 
-\begin{enumerate}
-    \item Asegúrese de que el inhalador no está siendo accionado.
-    \item Sujete el cuerpo principal del adaptador con una mano.
-    \item Extraiga el inhalador suavemente, evitando forzar la palanca o deformar el cuerpo de sujeción.
-    \item Guarde el adaptador en un lugar limpio, seco y protegido de golpes.
-\end{enumerate}
+\vspace{0.5cm}
 
-\section{ADVERTENCIAS Y PRECAUCIONES}
+\end{center}
 
-Para garantizar un uso seguro del producto, deben respetarse las siguientes advertencias:
+% ------------------------------------------------------
+% BLOQUE GENERAL DEL MANUAL
+% ------------------------------------------------------
+\noindent
+\begin{minipage}{\textwidth}
+\setlength{\fboxsep}{10pt}
+\colorbox{ArthroTeal!8}{
+\begin{minipage}{0.96\textwidth}
+
+{\large\bfseries\color{ArthroNavy} 1. Contenido del producto}
+
+\vspace{0.2cm}
+
+El conjunto ArthroPush está formado por tres componentes principales:
 
 \begin{itemize}
-    \item El adaptador no sustituye al inhalador ni modifica la medicación prescrita.
-    \item El usuario debe seguir siempre las instrucciones del medicamento y las indicaciones del médico, farmacéutico o profesional sanitario.
-    \item No utilizar el adaptador si presenta grietas, roturas, deformaciones, bordes cortantes o pérdida de estabilidad.
-    \item No utilizar el producto si el inhalador queda suelto, inclinado o mal alineado.
-    \item No forzar la palanca si el mecanismo ofrece resistencia anormal.
-    \item No emplear el adaptador con inhaladores no compatibles o con formatos distintos a los MDI estándar.
-    \item Mantener fuera del alcance de niños cuando no esté bajo supervisión de un adulto.
-    \item No exponer el producto a temperaturas elevadas, fuentes directas de calor o productos químicos agresivos.
+    \item \textbf{Base:} pieza inferior que sujeta el inhalador y deja libre la boquilla de salida.
+    \item \textbf{Pivote:} pieza de unión que abraza el inhalador y permite fijar el mecanismo.
+    \item \textbf{Palanca:} pieza superior ergonómica que transmite la presión al cartucho del inhalador.
 \end{itemize}
 
-\section{LIMPIEZA Y MANTENIMIENTO}
+\end{minipage}
+}
+\end{minipage}
 
-\subsection{Limpieza ordinaria}
+\vspace{0.4cm}
 
-La limpieza debe realizarse de forma periódica, especialmente si el adaptador se utiliza diariamente. Para ello, se recomienda:
+% ------------------------------------------------------
+% MONTAJE
+% ------------------------------------------------------
+\noindent
+\begin{minipage}{\textwidth}
+\setlength{\fboxsep}{10pt}
+\colorbox{white}{
+\begin{minipage}{0.96\textwidth}
+
+{\large\bfseries\color{ArthroNavy} 2. Montaje}
+
+\vspace{0.2cm}
+
+\begin{enumerate}
+    \item \textbf{Colocar la base.} Introduzca el inhalador en la base, asegurando que la boquilla sobresale por el orificio frontal y queda libre.
+    \item \textbf{Acoplar el pivote.} Sitúe el pivote alrededor del inhalador y encájelo sobre la base ya instalada.
+    \item \textbf{Montar la palanca.} Coloque la palanca superior alineando sus apoyos con el pivote.
+    \item \textbf{Comprobar el conjunto.} Verifique que el inhalador queda estable y que la palanca se mueve sin atascarse.
+\end{enumerate}
+
+\end{minipage}
+}
+\end{minipage}
+
+\vspace{0.4cm}
+
+% ------------------------------------------------------
+% USO
+% ------------------------------------------------------
+\noindent
+\begin{minipage}{0.48\textwidth}
+\setlength{\fboxsep}{9pt}
+\colorbox{ArthroTeal!8}{
+\begin{minipage}{0.92\textwidth}
+
+{\large\bfseries\color{ArthroNavy} 3. Uso}
+
+\vspace{0.2cm}
+
+\begin{enumerate}
+    \item Agite el inhalador si lo indican sus instrucciones.
+    \item Sujete el conjunto de forma estable.
+    \item Coloque la boquilla según la pauta del medicamento.
+    \item Presione suavemente la palanca hacia abajo para accionar el inhalador.
+\end{enumerate}
+
+\end{minipage}
+}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\setlength{\fboxsep}{9pt}
+\colorbox{ArthroTeal!8}{
+\begin{minipage}{0.92\textwidth}
+
+{\large\bfseries\color{ArthroNavy} 4. Retirada}
+
+\vspace{0.2cm}
+
+\begin{enumerate}
+    \item Asegúrese de que el inhalador no está siendo presionado.
+    \item Retire primero la palanca si es necesario.
+    \item Extraiga el pivote y saque el inhalador de la base sin forzar las piezas.
+\end{enumerate}
+
+\end{minipage}
+}
+\end{minipage}
+
+\vspace{0.45cm}
+
+% ------------------------------------------------------
+% ADVERTENCIAS
+% ------------------------------------------------------
+\noindent
+\begin{minipage}{\textwidth}
+\setlength{\fboxsep}{10pt}
+\colorbox{ArthroNavy!8}{
+\begin{minipage}{0.96\textwidth}
+
+{\large\bfseries\color{ArthroNavy} 5. Advertencias}
+
+\vspace{0.2cm}
 
 \begin{itemize}
-    \item Limpiar la superficie exterior con un paño húmedo.
-    \item Utilizar agua tibia y jabón neutro en caso de suciedad visible.
-    \item Secar completamente el producto antes de volver a utilizarlo.
-    \item Evitar la acumulación de polvo o restos en la zona de articulación de la palanca.
+    \item ArthroPush no contiene medicamento y no modifica la dosis administrada.
+    \item Siga siempre las instrucciones del inhalador y la pauta indicada por el profesional sanitario.
+    \item No utilice el adaptador si presenta roturas, deformaciones, bordes dañados o ajuste inestable.
+    \item No use el producto si el inhalador queda suelto, inclinado o mal alineado.
+    \item No fuerce la palanca si ofrece resistencia anormal.
+    \item Mantener fuera del alcance de niños sin supervisión.
 \end{itemize}
 
-\subsection{Productos no recomendados}
+\end{minipage}
+}
+\end{minipage}
 
-No deben emplearse disolventes, lejía, alcohol concentrado, productos abrasivos ni herramientas punzantes para limpiar el adaptador, ya que podrían deteriorar el material, alterar el ajuste con el inhalador o generar bordes dañados.
+\vspace{0.45cm}
 
-\subsection{Revisión periódica}
+% ------------------------------------------------------
+% LIMPIEZA Y CONSERVACIÓN
+% ------------------------------------------------------
+\noindent
+\begin{minipage}{0.48\textwidth}
+\setlength{\fboxsep}{9pt}
+\colorbox{white}{
+\begin{minipage}{0.92\textwidth}
 
-Antes de cada uso, el usuario debe comprobar visualmente que el adaptador conserva su forma original, que la palanca se mueve correctamente y que no existen roturas o deformaciones. Si se detecta cualquier anomalía, el producto debe dejar de utilizarse y sustituirse por una nueva unidad.
+{\large\bfseries\color{ArthroNavy} 6. Limpieza}
 
-\section{ALMACENAMIENTO Y CONSERVACIÓN}
+\vspace{0.2cm}
 
-El adaptador debe almacenarse en un lugar seco, limpio y protegido de impactos. Se recomienda conservarlo junto al inhalador o en su embalaje original para evitar pérdidas, suciedad o daños accidentales.
+Limpiar con un paño húmedo, agua tibia y jabón neutro. Secar completamente antes de volver a usar.
 
-No debe guardarse bajo presión, doblado o en contacto con objetos pesados que puedan deformar la palanca o el cuerpo de sujeción. Tampoco debe exponerse de forma prolongada a radiación solar directa o temperaturas extremas.
+\vspace{0.15cm}
 
-\section{GESTIÓN AL FINAL DE LA VIDA ÚTIL}
+No utilizar disolventes, lejía, alcohol concentrado ni productos abrasivos.
 
-Al final de su vida útil, el adaptador debe separarse del inhalador y gestionarse como residuo plástico reciclable siempre que las condiciones locales de reciclaje lo permitan. El embalaje exterior, si está fabricado en cartón, deberá depositarse en el contenedor correspondiente.
+\end{minipage}
+}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\setlength{\fboxsep}{9pt}
+\colorbox{white}{
+\begin{minipage}{0.92\textwidth}
 
-Si el adaptador ha estado en contacto con suciedad biológica o se encuentra deteriorado, deberá desecharse siguiendo las recomendaciones del centro sanitario, farmacia o normativa municipal aplicable.
+{\large\bfseries\color{ArthroNavy} 7. Conservación}
 
-\section{RESUMEN DE INFORMACIÓN PARA EL USUARIO}
+\vspace{0.2cm}
 
-\begin{table}[H]
-\centering
-\renewcommand{\arraystretch}{1.35}
-\begin{tabularx}{\textwidth}{|p{4.2cm}|X|}
-\hline
-\rowcolor{ArthroNavy}
-\textcolor{white}{\textbf{Aspecto}} & \textcolor{white}{\textbf{Indicación básica}} \\
-\hline
-Qué es & Accesorio mecánico para facilitar la pulsación de inhaladores MDI. \\
-\hline
-Para quién es & Usuarios con dificultad para presionar el cartucho del inhalador. \\
-\hline
-Cómo se usa & Se coloca sobre el inhalador y se presiona la palanca para accionar el cartucho. \\
-\hline
-Qué no hace & No contiene medicamento, no cambia la dosis y no sustituye instrucciones médicas. \\
-\hline
-Cuándo no usarlo & Si está roto, deformado, suelto o no encaja correctamente. \\
-\hline
-Cómo limpiarlo & Con paño húmedo, agua tibia y jabón neutro. \\
-\hline
-Cómo conservarlo & En lugar limpio, seco y protegido de golpes. \\
-\hline
-\end{tabularx}
-\caption{Resumen de instrucciones esenciales para el usuario.}
-\end{table}
+Guardar en un lugar limpio, seco y protegido de golpes.
 
+\vspace{0.15cm}
+
+No exponer a calor extremo, humedad excesiva ni productos químicos agresivos.
+
+\end{minipage}
+}
+\end{minipage}
+
+\vspace{0.5cm}
+
+% ------------------------------------------------------
+% PIE DEL MANUAL
+% ------------------------------------------------------
+\begin{center}
+\color{ArthroTeal}\rule{0.9\textwidth}{1pt}
+
+\vspace{0.15cm}
+
+{\small\textbf{Fabricado por:} ArthroDesign Solutions S.L. \quad | \quad \textbf{Producto:} ArthroPush \quad | \quad \textbf{Modelo:} ARD-MDI-01}
+
+\vspace{0.1cm}
+
+{\small Málaga, España \quad | \quad contacto@arthrodesign.com}
+\end{center}
+
+\newpage
 
 % ======================================================
 % BLOQUE DE FIRMAS

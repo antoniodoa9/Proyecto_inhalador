@@ -5,27 +5,28 @@
 \usepackage[spanish,es-tabla]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{geometry}
-\geometry{top=3cm, bottom=3cm, left=3cm, right=2.5cm}
-\usepackage{tabularx}
+\geometry{top=3.5cm, bottom=3.5cm, left=3cm, right=2.5cm}
 \usepackage{titlesec}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 \usepackage{hyperref}
-\usepackage{enumitem}
 \usepackage{graphicx}
 \usepackage{tikz}
-\usepackage{float}
+\usepackage{enumitem}
 \usepackage[table, xcdraw]{xcolor}
-\usepackage{pdfpages} % PAQUETE NECESARIO PARA INSERTAR EL PDF DE LOS PLANOS
+\usepackage{amsmath}
+\usepackage{tocloft}
+
+% --- Ajuste del espacio en el índice para números de dos cifras ---
+\setlength{\cftsecnumwidth}{2.5em} % <--- AMPLÍA EL ESPACIO ENTRE NÚMERO Y TEXTO
 
 % --- Definición de Colores Corporativos ArthroDesign ---
 \definecolor{ArthroNavy}{HTML}{0F172A}
 \definecolor{ArthroTeal}{HTML}{0D9488}
 \definecolor{ArthroGray}{HTML}{64748B}
 
-% --- Configuración de Párrafo ---
-\setlength{\parskip}{0.5em}
-\setlength{\parindent}{1.5em}
+% --- Configuración de Enlaces ---
+\hypersetup{colorlinks=true, linkcolor=ArthroNavy, urlcolor=ArthroTeal}
 
 % --- Estilo de Títulos con Identidad Corporativa ---
 \titleformat{\section}
@@ -35,27 +36,7 @@
   {}
   [{\color{ArthroTeal}\titlerule[1.5pt]}]
 
-\titleformat{\subsection}
-  {\color{ArthroNavy}\large\bfseries}
-  {\thesubsection.}
-  {0.5em}
-  {}
-  [{\color{ArthroTeal}\titlerule[1pt]}]
-
-\titleformat{\subsubsection}
-  {\color{ArthroNavy}\large\bfseries}
-  {\thesubsubsection.}
-  {0.5em}
-  {}
-
-% --- Viñetas en color Turquesa ---
-\renewcommand{\labelitemi}{\color{ArthroTeal}\textbullet}
-\renewcommand{\labelitemii}{\color{ArthroTeal}\circ}
-
-% --- Configuración de Enlaces ---
-\hypersetup{colorlinks=true, linkcolor=ArthroNavy, urlcolor=ArthroTeal}
-
-% --- CONFIGURACIÓN DE ENCABEZADO Y PIE CORPORATIVO ---
+% --- CONFIGURACIÓN DE ENCABEZADO Y PIE CORPORATIVO (Anexo I) ---
 \pagestyle{fancy}
 \fancyhf{}
 
@@ -64,7 +45,7 @@
 
 % Información de Encabezado
 \fancyhead[L]{\small \textbf{\color{ArthroNavy}Adaptador ergonómico - PR-PIB-GIS26-09}}
-\fancyhead[R]{\small \textbf{\color{ArthroNavy}Documento Nº 4: Planos}}
+\fancyhead[R]{\small \textbf{\color{ArthroNavy}Documento Nº 5: Pliego de condiciones}}
 
 % Información de Pie de Página (Formato Pág. X de Y incorporado)
 \fancyfoot[L]{\small \color{ArthroGray}ArthroDesign Solutions S.L.}
@@ -77,7 +58,7 @@
 \begin{document}
 
 % ======================================================
-% PÁGINA 1: PORTADA
+% PÁGINA 1: PORTADA GENERAL DE ANEXOS
 % ======================================================
 \begin{titlepage}
     % --- Elementos Geométricos de Identidad (Cabecera y Pie) ---
@@ -99,9 +80,9 @@
     \vspace{2cm}
 
     % --- BLOQUE DE TÍTULO PRINCIPAL ---
-    {\color{ArthroGray}\Huge \textbf{DOCUMENTO Nº 4}} \\
+    {\color{ArthroGray}\Huge \textbf{DOCUMENTO Nº 5}} \\
     \vspace{0.5cm}
-    {\color{ArthroNavy}\Huge \textbf{PLANOS}} \\
+    {\color{ArthroNavy}\Huge \textbf{PLIEGO DE CONDICIONES}} \\
     \vspace{0.3cm}
     {\color{ArthroTeal}\rule{12cm}{2pt}} \\
     \vspace{1cm}
@@ -133,7 +114,7 @@
         \textbf{D. Antonio Sánchez Doña} & Colegiado Nº 06423 (DNI: 79380534J) \\
         \textbf{D. Iván de la Torre Segato} & Colegiado Nº 06421 (DNI: 79383630G) \\
     \end{tabular}
-    
+
     \vfill
 
     % --- PIE DE PORTADA ---
@@ -144,95 +125,6 @@
 % AÑADE ESTA LÍNEA AQUÍ PARA QUE LA SIGUIENTE PÁGINA SEA LA 2:
 \setcounter{page}{2}
 
-% ======================================================
-% HOJA EN BLANCO CON MARCA DE AGUA
-% ======================================================
-\newpage
-\pagestyle{fancy}
-
-\begin{tikzpicture}[remember picture, overlay]
-    \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
-\end{tikzpicture}
-
-% Empujamos el texto hacia la parte inferior del folio
-\vspace*{8.5cm} 
-\begin{center}
-    \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
-\end{center}
-\vfill
-\newpage
-
-% ======================================================
-% PÁGINA: ÍNDICE GENERAL DE PLANOS Y FIRMAS
-% ======================================================
-\section*{Índice General de Planos}
-\addcontentsline{toc}{section}{Índice General de Planos}
-\vspace{0.6cm}
-
-% Índice normalizado con puntos de tabulación y número de página
-\begin{itemize}[label={}, leftmargin=0.5cm, itemsep=0.8em]
-    \item \textbf{Plano Nº 1.} Plano General \dotfill Pág. 4
-    \item \textbf{Plano Nº 2.} Plano Explosionado\dotfill Pág. 5
-    \item \textbf{Plano Nº 3.} Plano de la Base \dotfill Pág. 6
-    \item \textbf{Plano Nº 4.} Plano del Pivote \dotfill Pág. 7
-    \item \textbf{Plano Nº 5.} Plano de la Palanca\dotfill Pág. 8
-\end{itemize}
-
-\vspace{2.5cm}
-
-% ======================================================
-% BLOQUE DE FIRMAS (Precede a los planos formales)
-% ======================================================
-\noindent\begin{minipage}{\textwidth}
-    \begin{flushright}
-        En Málaga, a \today
-    \end{flushright}
-    \vspace{2cm}
-
-    \noindent
-    \begin{minipage}[t]{0.45\textwidth}
-        \centering
-        \rule{6cm}{0.6pt} \\
-        \textbf{Fdo. D. Sergio Carmona Muñoz} \\
-        Colegiado Nº 06424 \\
-        DNI: 26291930D
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.45\textwidth}
-        \centering
-        \rule{6cm}{0.6pt} \\
-        \textbf{Fdo. D. Juan Gabriel Navarro Valdivielso} \\
-        Colegiado Nº 06425 \\
-        DNI: 77666662D
-    \end{minipage}
-
-    \vspace{2cm}
-
-    \noindent
-    \begin{minipage}[t]{0.45\textwidth}
-        \centering
-        \rule{6cm}{0.6pt} \\
-        \textbf{Fdo. D. Antonio Sánchez Doña} \\
-        Colegiado Nº 06423 \\
-        DNI: 79380534J
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.45\textwidth}
-        \centering
-        \rule{6cm}{0.6pt} \\
-        \textbf{Fdo. D. Iván de la Torre Segato} \\
-        Colegiado Nº 06421 \\
-        DNI: 79383630G
-    \end{minipage}
-\end{minipage}
-\newpage
-
-% ======================================================
-% INSERCIÓN DEL PDF CON LOS PLANOS
-% ======================================================
-% El comando \includepdf inserta las páginas del archivo directamente.
-% El parámetro "pages=-" le indica que incluya todas las páginas desde la primera a la última.
-\includepdf[pages=-, fitpaper=true]{PLANOS.pdf}
 
 % ======================================================
 % HOJA EN BLANCO CON MARCA DE AGUA
@@ -250,5 +142,43 @@
     \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
 \end{center}
 \vfill
+\newpage
+
+% ======================================================
+% PÁGINA: ÍNDICE AUTOMÁTICO (CON ENCABEZADO)
+% ======================================================
+\markboth{Índice}{Índice}
+\tableofcontents
+\thispagestyle{fancy}
+\newpage
+
+
+
+ 
+
+ 
+ 
+
+
+
+
+% ======================================================
+% HOJA EN BLANCO CON MARCA DE AGUA
+% ======================================================
+\newpage
+\pagestyle{fancy}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
+\end{tikzpicture}
+
+% Empujamos el texto hacia la parte inferior del folio
+\vspace*{8.5cm} 
+\begin{center}
+    \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
+\end{center}
+\vfill
+
+
 
 \end{document}

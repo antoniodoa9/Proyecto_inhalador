@@ -1,0 +1,95 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Paquetes de Estilo y Formato ---
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+% Ajustamos los márgenes para dejar espacio libre a la banda lateral izquierda
+\geometry{top=3cm, bottom=3cm, left=6.5cm, right=2cm}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage[table, xcdraw]{xcolor}
+
+% --- Definición de Colores Corporativos ArthroDesign ---
+\definecolor{ArthroNavy}{HTML}{0F172A}
+\definecolor{ArthroTeal}{HTML}{0D9488}
+\definecolor{ArthroGray}{HTML}{64748B}
+
+\begin{document}
+
+% ======================================================
+% CUBIERTA PREMIUM ASIMÉTRICA (MASTER DE PROYECTO)
+% ======================================================
+\begin{titlepage}
+    
+    % --- Elementos Geométricos: Bloque Vertical de Identidad ---
+    \begin{tikzpicture}[remember picture,overlay]
+        % Banda ancha lateral izquierda en azul marino oscuro
+        \fill[ArthroNavy] (current page.north west) rectangle ([xshift=4.5cm]current page.south west);
+        % Fina línea de acento en color turquesa
+        \fill[ArthroTeal] ([xshift=4.5cm]current page.north west) rectangle ([xshift=4.65cm]current page.south west);
+        
+        % Texto corporativo rotado verticalmente dentro de la banda izquierda
+        \node[color=white, rotate=90, anchor=west, font=\fontfamily{phv}\selectfont\large\bfseries\alph] 
+            at ([xshift=2.25cm, yshift=4cm]current page.south west) 
+            {ARTHRODESIGN SOLUTIONS S.L. \quad | \quad PROYECTO TÉCNICO};
+    \end{tikzpicture}
+
+    % --- CONTENIDO DE LA CUBIERTA (Alineación a la izquierda del bloque de texto) ---
+    \begin{flushleft}
+        
+        % 1. Logo Corporativo en la esquina superior derecha del bloque blanco
+        \begin{flushright}
+            \vspace*{-1.5cm}
+            \includegraphics[width=7.5cm]{logo_definitivo.png}
+        \end{flushright}
+        
+        \vspace{2.5cm}
+        
+        % 2. Títulos Principales de Jerarquía Técnica
+        {\color{ArthroNavy}\fontsize{28pt}{34pt}\selectfont\textbf{PROYECTO}} \\[0.4cm]
+        {\color{ArthroTeal}\rule{8cm}{2.5pt}} \\
+        
+        \vspace{1.5cm}
+        
+        % 3. Título del Proyecto con tipografía destacada
+        {\color{ArthroNavy}\large \textbf{TÍTULO DEL PROYECTO:}} \\[0.4cm]
+        {\fontsize{18pt}{24pt}\selectfont\bfseries Diseño de un adaptador ergonómico universal para la optimización de la pulsación manual en inhaladores de dosis medida (MDI)} \\
+        
+        \vspace{2.5cm}
+        
+        % 4. Caja de Identificación Técnica Remarcada
+        \noindent
+        \begin{tikzpicture}
+            \node[draw=ArthroTeal, fill=white, lwd=1.5pt, inner sep=15pt, rounded corners=4pt, text width=11.5cm, align=left] {
+                {\color{ArthroNavy}\small\textbf{CÓDIGO DE IDENTIFICACIÓN:}} \\
+                {\large\texttt{PR-PIB-GIS26-09}} \\[0.4cm]
+                {\color{ArthroNavy}\small\textbf{ENTIDAD DESARROLLADORA:}} \\
+                {\large\textbf{ArthroDesign Solutions S.L.}}
+            };
+        \end{tikzpicture}
+        
+        \vfill
+        
+        % 5. Bloque de Proyectistas en formato compacto
+        {\color{ArthroNavy}\small\textbf{PROYECTISTAS (Equipo de ArthroDesign Solutions S.L.):}} \\[0.2cm]
+        \small
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{@{}ll}
+            \textbf{D. Sergio Carmona Muñoz} & Colegiado Nº 06424 (DNI: 26291930D) \\
+            \textbf{D. Juan Gabriel Navarro Valdivielso} & Colegiado Nº 06425 (DNI: 77666662D) \\
+            \textbf{D. Antonio Sánchez Doña} & Colegiado Nº 06423 (DNI: 79380534J) \\
+            \textbf{D. Iván de la Torre Segato} & Colegiado Nº 06421 (DNI: 79383630G) \\
+        \end{tabular}
+        
+        \vspace{1cm}
+        
+        % 6. Ubicación y Fecha de Cierre Técnica
+        \small\color{ArthroGray} Málaga, \today
+        
+    \end{flushleft}
+\end{titlepage}
+
+\end{document}
