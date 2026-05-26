@@ -1,0 +1,291 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Paquetes de Estilo y Formato ---
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{top=3.5cm, bottom=3.5cm, left=3cm, right=2.5cm}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[table, xcdraw]{xcolor}
+\usepackage{amsmath}
+\usepackage{tocloft}
+
+% --- Ajuste del espacio en el índice para números de dos cifras ---
+\setlength{\cftsecnumwidth}{2.5em} % <--- AMPLÍA EL ESPACIO ENTRE NÚMERO Y TEXTO
+
+% --- Definición de Colores Corporativos ArthroDesign ---
+\definecolor{ArthroNavy}{HTML}{0F172A}
+\definecolor{ArthroTeal}{HTML}{0D9488}
+\definecolor{ArthroGray}{HTML}{64748B}
+
+% --- Configuración de Enlaces ---
+\hypersetup{colorlinks=true, linkcolor=ArthroNavy, urlcolor=ArthroTeal}
+
+% --- Estilo de Títulos con Identidad Corporativa ---
+\titleformat{\section}
+  {\color{ArthroNavy}\Large\bfseries}
+  {\thesection.}
+  {0.5em}
+  {}
+  [{\color{ArthroTeal}\titlerule[1.5pt]}]
+
+% --- CONFIGURACIÓN DE ENCABEZADO Y PIE CORPORATIVO (Anexo I) ---
+\pagestyle{fancy}
+\fancyhf{}
+
+% Línea superior de color turquesa (Grosor 2pt)
+\renewcommand{\headrule}{\hbox to\headwidth{\color{ArthroTeal}\leaders\hrule height 2pt\hfill}}
+
+% Información de Encabezado
+\fancyhead[L]{\small \textbf{\color{ArthroNavy}Adaptador ergonómico - PR-PIB-GIS26-09}}
+\fancyhead[R]{\small \textbf{\color{ArthroNavy}Documento Nº 6: Mediciones}}
+
+% Información de Pie de Página (Formato Pág. X de Y incorporado)
+\fancyfoot[L]{\small \color{ArthroGray}ArthroDesign Solutions S.L.}
+\fancyfoot[C]{\small \color{ArthroGray}\today}
+\fancyfoot[R]{\small \textbf{\color{ArthroNavy}Pág. \thepage \ de \pageref{LastPage}}} 
+
+\setlength{\headheight}{15pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+
+% ======================================================
+% PÁGINA 1: PORTADA GENERAL DE ANEXOS
+% ======================================================
+\begin{titlepage}
+    % --- Elementos Geométricos de Identidad (Cabecera y Pie) ---
+    \begin{tikzpicture}[remember picture,overlay]
+        % Franja superior
+        \fill[ArthroNavy] (current page.north west) rectangle ([yshift=-4.5cm]current page.north east);
+        \fill[ArthroTeal] ([yshift=-4.5cm]current page.north west) rectangle ([yshift=-4.7cm]current page.north east);
+        
+        % Franja inferior
+        \fill[ArthroNavy] (current page.south west) rectangle ([yshift=2.5cm]current page.south east);
+        \fill[ArthroTeal] ([yshift=2.5cm]current page.south west) rectangle ([yshift=2.7cm]current page.south east);
+    \end{tikzpicture}
+
+    \centering % Todo centrado a partir de aquí
+
+    % --- LOGO (Sobre la franja azul) ---
+    \vspace*{-2cm}
+    \includegraphics[width=6.5cm]{logo_definitivo.png} \\
+    \vspace{2cm}
+
+    % --- BLOQUE DE TÍTULO PRINCIPAL ---
+    {\color{ArthroGray}\Huge \textbf{DOCUMENTO Nº 6}} \\
+    \vspace{0.5cm}
+    {\color{ArthroNavy}\Huge \textbf{MEDICIONES}} \\
+    \vspace{0.3cm}
+    {\color{ArthroTeal}\rule{12cm}{2pt}} \\
+    \vspace{1cm}
+    {\Large \textbf{TÍTULO DEL PROYECTO:}} \\
+    \vspace{0.3cm}
+    {\Huge \bfseries Diseño de un adaptador ergonómico universal para la optimización de la pulsación manual en inhaladores de dosis medida (MDI)} \\
+    \vspace{1.5cm}
+
+    % --- BLOQUE DE IDENTIFICACIÓN TÉCNICA ---
+    \begin{minipage}{0.8\textwidth}
+        \centering
+        \textbf{CÓDIGO DE IDENTIFICACIÓN:} \\
+        {\large \texttt{PR-PIB-GIS26-09}} \\[0.8cm]
+        
+        \textbf{PROMOTOR Y EMPRESA DESARROLLADORA:} \\
+        {ArthroDesign Solutions S.L.}
+    \end{minipage}
+
+    \vspace{1.5cm}
+
+    % --- BLOQUE DE PROYECTISTAS ---
+    \textbf{PROYECTISTAS (Equipo de ArthroDesign Solutions S.L.):} \\
+    \vspace{0.3cm}
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{l l}
+        \textbf{D. Sergio Carmona Muñoz} & Colegiado Nº 06424 (DNI: 26291930D) \\
+        \textbf{D. Juan Gabriel Navarro Valdivielso} & Colegiado Nº 06425 (DNI: 77666662D) \\
+        \textbf{D. Antonio Sánchez Doña} & Colegiado Nº 06423 (DNI: 79380534J) \\
+        \textbf{D. Iván de la Torre Segato} & Colegiado Nº 06421 (DNI: 79383630G) \\
+    \end{tabular}
+
+    \vfill
+
+    % --- PIE DE PORTADA ---
+    {\color{white} ArthroDesign Solutions S.L. \quad | \quad \today}
+    \vspace{-1.75cm} 
+\end{titlepage}
+
+% AÑADE ESTA LÍNEA AQUÍ PARA QUE LA SIGUIENTE PÁGINA SEA LA 2:
+\setcounter{page}{2}
+
+
+% ======================================================
+% HOJA EN BLANCO CON MARCA DE AGUA
+% ======================================================
+\newpage
+\pagestyle{fancy}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
+\end{tikzpicture}
+
+% Empujamos el texto hacia la parte inferior del folio
+\vspace*{8.5cm} 
+\begin{center}
+    \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
+\end{center}
+\vfill
+\newpage
+
+% ======================================================
+% PÁGINA: ÍNDICE AUTOMÁTICO (CON ENCABEZADO)
+% ======================================================
+\markboth{Índice}{Índice}
+\tableofcontents
+\thispagestyle{fancy}
+\newpage
+
+
+ 
+% ======================================================
+% DOCUMENTO Nº 6: MEDICIONES
+% ======================================================
+
+\section{MEDICIONES DEL CONJUNTO FUNCIONAL}
+
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.55}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{0.9cm}|p{1.4cm}|p{4.7cm}|p{0.9cm}|p{1.3cm}|p{1.2cm}|p{1.2cm}|p{1.9cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}Nº orden} &
+\textbf{\color{white}Unidades} &
+\textbf{\color{white}Descripción} &
+\textbf{\color{white}Nº uds} &
+\textbf{\color{white}Longitud} &
+\textbf{\color{white}Anchura} &
+\textbf{\color{white}Altura} &
+\textbf{\color{white}Referencia} \\
+\hline
+1.1 & ud & ud. Base del adaptador ergonómico ArthroPush. Pieza inferior de alojamiento del inhalador, referencia AD-MDI-101, fabricada en polipropileno copolímero (PP-C). & 1 & 33,54 mm & 32 mm & 34,71 mm & AD-MDI-101. Plano nº 3. \\
+\hline
+1.2 & ud & ud. Pivote del adaptador ergonómico ArthroPush. Pieza intermedia de unión y guiado del mecanismo, referencia AD-MDI-102, fabricada en polipropileno copolímero (PP-C). & 1 & 34,8 mm & 32 mm & 37,18 mm & AD-MDI-102. Plano nº 4.\\
+\hline
+1.3 & ud & ud. Palanca superior del adaptador ergonómico ArthroPush. Elemento de accionamiento manual, referencia AD-MDI-103, fabricado en polipropileno copolímero (PP-C). & 1 & 68,13 mm & 32 mm & 72,92 mm & AD-MDI-103. Plano nº 5. \\
+\hline
+\end{tabular}%
+}
+\end{table}
+
+\section{MEDICIONES DE DOCUMENTACIÓN, ETIQUETADO Y EMBALAJE}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.55}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{0.9cm}|p{1.4cm}|p{4.7cm}|p{0.9cm}|p{1.3cm}|p{1.2cm}|p{1.2cm}|p{1.9cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}Nº orden} &
+\textbf{\color{white}Unidades} &
+\textbf{\color{white}Descripción} &
+\textbf{\color{white}Nº uds} &
+\textbf{\color{white}Longitud} &
+\textbf{\color{white}Anchura} &
+\textbf{\color{white}Altura} &
+\textbf{\color{white}Referencia} \\
+\hline
+2.1 & ud & ud. Etiqueta exterior del embalaje individual ArthroPush, con identificación del modelo, código de proyecto, uso previsto, material, advertencias, limpieza, información ambiental, fabricante, lote, fecha y versión. & 1 & 100 mm & 70 mm & 0,20 mm & Anexo XII. Etiquetado del producto. \\
+\hline
+2.2 & ud & ud. Manual de instrucciones de usuario ArthroPush, con contenido de producto, montaje de base, pivote y palanca, uso, retirada, limpieza, almacenamiento, advertencias y eliminación. & 1 & 210 mm & 148 mm & 1 mm & Anexo XII. Manual de instrucciones. \\
+\hline
+2.3 & ud & ud. Embalaje individual del adaptador ArthroPush, destinado a contener una unidad completa del producto, su etiqueta exterior y el manual de instrucciones. & 1 & 120 mm & 80 mm & 45 mm & Unidad comercial individual del producto. \\
+\hline
+\end{tabular}%
+}
+\end{table}
+
+
+
+\newpage
+
+% ======================================================
+% BLOQUE DE FIRMAS
+% ======================================================
+\newpage
+\noindent\begin{minipage}{\textwidth}
+    \begin{flushright}
+        En Málaga, a \today
+    \end{flushright}
+    \vspace{2cm}
+
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Sergio Carmona Muñoz} \\
+        Colegiado Nº 06424 \\
+        DNI: 26291930D
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Juan Gabriel Navarro Valdivielso} \\
+        Colegiado Nº 06425 \\
+        DNI: 77666662D
+    \end{minipage}
+
+    \vspace{2cm}
+
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Antonio Sánchez Doña} \\
+        Colegiado Nº 06423 \\
+        DNI: 79380534J
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Iván de la Torre Segato} \\
+        Colegiado Nº 06421 \\
+        DNI: 79383630G
+    \end{minipage}
+\end{minipage}
+\vspace{1cm}
+
+% ======================================================
+% HOJA EN BLANCO CON MARCA DE AGUA
+% ======================================================
+\newpage
+\pagestyle{fancy}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
+\end{tikzpicture}
+
+% Empujamos el texto hacia la parte inferior del folio
+\vspace*{8.5cm} 
+\begin{center}
+    \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
+\end{center}
+\vfill
+
+
+
+\end{document}

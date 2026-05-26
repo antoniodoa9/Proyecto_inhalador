@@ -1,0 +1,983 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Paquetes de Estilo y Formato ---
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{top=3cm, bottom=3cm, left=3cm, right=2.5cm}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{hhline}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{multirow}
+\definecolor{tabblue}{HTML}{1f77b4}
+\usepackage[table, xcdraw]{xcolor}
+
+% --- Definición de Colores Corporativos ArthroDesign ---
+\definecolor{ArthroNavy}{HTML}{0F172A}
+\definecolor{ArthroTeal}{HTML}{0D9488}
+\definecolor{ArthroGray}{HTML}{64748B}
+
+% --- Configuración de Párrafo ---
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{1.5em}
+
+% --- Estilo de Títulos con Identidad Corporativa ---
+\titleformat{\section}
+  {\color{ArthroNavy}\Large\bfseries}
+  {\thesection.}
+  {0.5em}
+  {}
+  [{\color{ArthroTeal}\titlerule[1.5pt]}]
+
+\titleformat{\subsection}
+  {\color{ArthroNavy}\large\bfseries}
+  {\thesubsection.}
+  {0.5em}
+  {}
+  [{\color{ArthroTeal}\titlerule[1pt]}]
+
+\titleformat{\subsubsection}
+  {\color{ArthroNavy}\large\bfseries}
+  {\thesubsubsection.}
+  {0.5em}
+  {}
+
+% --- Viñetas en color Turquesa ---
+\renewcommand{\labelitemi}{\color{ArthroTeal}\textbullet}
+\renewcommand{\labelitemii}{\color{ArthroTeal}\circ}
+
+% --- Configuración de Enlaces ---
+\hypersetup{colorlinks=true, linkcolor=ArthroNavy, urlcolor=ArthroTeal}
+
+% --- CONFIGURACIÓN DE ENCABEZADO Y PIE CORPORATIVO (Anexo I) ---
+\pagestyle{fancy}
+\fancyhf{}
+
+% Línea superior de color turquesa (Grosor 2pt)
+\renewcommand{\headrule}{\hbox to\headwidth{\color{ArthroTeal}\leaders\hrule height 2pt\hfill}}
+
+% Información de Encabezado
+\fancyhead[L]{\small \textbf{\color{ArthroNavy}Adaptador ergonómico - PR-PIB-GIS26-09}}
+\fancyhead[R]{\small \textbf{\color{ArthroNavy}Anexo V: Especificaciones del producto}}
+
+% Información de Pie de Página
+\fancyfoot[L]{\small \color{ArthroGray}ArthroDesign Solutions S.L.}
+\fancyfoot[C]{\small \color{ArthroGray}\today}
+\fancyfoot[R]{\small \textbf{\color{ArthroNavy}Pág. \thepage \ de \pageref{LastPage}}}
+
+\setlength{\headheight}{15pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% --- Ajuste de espaciado en el índice ---
+\usepackage{tocloft}
+
+% Aumenta el ancho del espacio reservado para los números de sección
+\addtolength{\cftsecnumwidth}{0.5em} 
+
+% Si quieres que el índice también tenga el punto después del número (como en tus títulos)
+\renewcommand{\cftsecaftersnum}{.}
+
+% --- Estilo del título del Índice (Table of Contents) ---
+\renewcommand{\cfttoctitlefont}{\color{ArthroNavy}\Large\bfseries} % Fuente y color
+\renewcommand{\cftaftertoctitle}{%
+    \par\vskip 7pt           % Espacio mínimo entre texto y línea
+    {\color{ArthroTeal}\hrule height 1.5pt} % La línea del mismo color y grosor
+    \vskip 0.5em             % Espacio después de la línea antes de los ítems
+}
+
+\begin{document}
+
+% ======================================================
+% PÁGINA 1: PORTADA (REQUISITOS UNE 157001)
+% ======================================================
+\begin{titlepage}
+    % --- Elementos Geométricos de Identidad (Cabecera y Pie) ---
+    \begin{tikzpicture}[remember picture,overlay]
+        % Franja superior
+        \fill[ArthroNavy] (current page.north west) rectangle ([yshift=-4.5cm]current page.north east);
+        \fill[ArthroTeal] ([yshift=-4.5cm]current page.north west) rectangle ([yshift=-4.7cm]current page.north east);
+        
+        % Franja inferior
+        \fill[ArthroNavy] (current page.south west) rectangle ([yshift=2.5cm]current page.south east);
+        \fill[ArthroTeal] ([yshift=2.5cm]current page.south west) rectangle ([yshift=2.7cm]current page.south east);
+    \end{tikzpicture}
+
+    \centering % Todo centrado a partir de aquí
+
+    % --- LOGO (Sobre la franja azul) ---
+    \vspace*{-2cm}
+    \includegraphics[width=6.5cm]{logo_definitivo.png} \\
+    \vspace{2cm}
+
+    % --- BLOQUE DE TÍTULO PRINCIPAL ---
+    {\color{ArthroGray}\Huge \textbf{ANEXO V}} \\
+    \vspace{0.5cm}
+    {\color{ArthroNavy}\Huge \textbf{ESPECIFICACIONES DEL}} \\
+    \vspace{0.3cm}
+    {\color{ArthroNavy}\Huge \textbf{PRODUCTO}} \\
+    \vspace{0.6cm}
+    {\color{ArthroTeal}\rule{12cm}{2pt}} \\
+    \vspace{1cm}
+    {\Large \textbf{TÍTULO DEL PROYECTO:}} \\
+    \vspace{0.3cm}
+    {\Huge \bfseries Diseño de un adaptador ergonómico universal para la optimización de la pulsación manual en inhaladores de dosis medida (MDI)} \\
+    \vspace{1.5cm}
+
+    % --- BLOQUE DE IDENTIFICACIÓN TÉCNICA ---
+    \begin{minipage}{0.8\textwidth}
+        \centering
+        \textbf{CÓDIGO DE IDENTIFICACIÓN:} \\
+        {\large \texttt{PR-PIB-GIS26-09}} \\[0.8cm]
+        
+        \textbf{PROMOTOR Y EMPRESA DESARROLLADORA:} \\
+        {ArthroDesign Solutions S.L.}
+    \end{minipage}
+
+    \vspace{1.5cm}
+
+    % --- BLOQUE DE PROYECTISTAS ---
+    \textbf{PROYECTISTAS (Equipo de ArthroDesign Solutions S.L.):} \\
+    \vspace{0.3cm}
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{l l}
+        \textbf{D. Sergio Carmona Muñoz} & Colegiado Nº 06424 (DNI: 26291930D) \\
+        \textbf{D. Juan Gabriel Navarro Valdivielso} & Colegiado Nº 06425 (DNI: 77666662D) \\
+        \textbf{D. Antonio Sánchez Doña} & Colegiado Nº 06423 (DNI: 79380534J) \\
+        \textbf{D. Iván de la Torre Segato} & Colegiado Nº 06421 (DNI: 79383630G) \\
+    \end{tabular}
+
+    \vfill
+
+    % --- PIE DE PORTADA ---
+    {\color{white} ArthroDesign Solutions S.L. \quad | \quad \today}
+    \vspace{-1.75cm} 
+\end{titlepage}
+
+% AÑADE ESTA LÍNEA AQUÍ PARA QUE LA SIGUIENTE PÁGINA SEA LA 2:
+\setcounter{page}{2}
+
+% ======================================================
+% HOJA EN BLANCO CON MARCA DE AGUA
+% ======================================================
+\newpage
+\pagestyle{fancy}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
+\end{tikzpicture}
+
+% Empujamos el texto hacia la parte inferior del folio
+\vspace*{8.5cm} 
+\begin{center}
+    \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
+\end{center}
+\vfill
+\newpage
+
+% ======================================================
+% ÍNDICE
+% ======================================================
+\markboth{Índice}{Índice}
+\tableofcontents
+\thispagestyle{fancy}
+\newpage
+
+% ======================================================
+% HOJA EN BLANCO CON MARCA DE AGUA
+% ======================================================
+\newpage
+\pagestyle{fancy}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
+\end{tikzpicture}
+
+% Empujamos el texto hacia la parte inferior del folio
+\vspace*{8.5cm} 
+\begin{center}
+    \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
+\end{center}
+\vfill
+\newpage
+
+% -------------------------------------------------------
+% BLOQUE 1 — NECESIDADES DE FABRICACIÓN (SIN CAMBIOS)
+% -------------------------------------------------------
+\section{NECESIDADES DE FABRICACIÓN}
+
+\vspace{0.5cm}
+
+\begin{table}[H]
+\centering\footnotesize
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|p{2.8cm}|p{5.5cm}|p{2.5cm}|p{3.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\textbf{\color{white}CÓDIGO: ARD-EDP-01}} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Documento versión: 2.0} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Fecha: 20/05/2026} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\multirow{-4}{*}{\parbox{2.8cm}{\centering\textbf{\color{white}ArthroDesign\\Solutions S.L.}}} & 
+\multirow{-4}{*}{\parbox{5.5cm}{\centering\textbf{\color{white}ESPECIFICACIONES DE DISEÑO DE PRODUCTO}\vspace{0.2cm}\newline\textbf{\color{white}DOCUMENTO: \\ Necesidades de fabricación}}} & 
+\multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Página: \thepage \ de {\color{white}\pageref{LastPage}}} \\
+\hline
+Elaborado por: A. Sánchez Doña & Revisado por: I. de la Torre Segato & Aceptado por: I. de la Torre Segato & Autorizado por: I. de la Torre Segato \\
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}O/D} & \textbf{\color{white}Especificación} & \textbf{\color{white}Cambios} & \textbf{\color{white}Origen} \\
+\hline
+O & La cavidad de inserción del adaptador debe tener un diámetro interno compatible con cartuchos MDI estándar (aprox. 22\,mm $\pm$ 0.5\,mm). & Se ajusta la compatibilidad dimensional a la geometría definitiva del CAD y de los planos del adaptador. & Aspecto de diseño: Instalación \\
+\hline
+O & Las dimensiones globales estarán supeditadas a la volumetría de un inhalador MDI estándar, limitando la envolvente del adaptador a un máximo de 120\,x\,50\,x\,60\,mm ($\pm$2\,mm) para dar cabida al dispositivo y alojar la palanca. & Se verifica que la envolvente final del conjunto queda dentro del límite máximo establecido. & Aspecto de diseño: Tamaño \\
+\hline
+O & El peso máximo del conjunto ensamblado no superará los 40 gramos para no desequilibrar el centro de gravedad del inhalador durante su uso. & Se mantiene el límite de 40 g y se vincula su comprobación a las propiedades físicas del modelo CAD final. & Aspecto de diseño: Peso \\
+\hline
+O & Las tolerancias dimensionales del eje de articulación se establecen en $\pm$0.15\,mm para asegurar el giro sin disparar los costes de inyección. & Se mantiene la tolerancia funcional del eje/pivote para asegurar el giro correcto sin encarecer la fabricación. & Aspecto de diseño: Tolerancias / Coste \\
+\hline
+O & El material de fabricación será Polipropileno (PP), debiendo cumplir la norma UNE-EN ISO 10993-1 sobre biocompatibilidad de productos médicos. & Se sustituye PP por Polipropileno Copolímero (PP-C), de acuerdo con los planos. & Aspecto de diseño: Materiales \\
+\hline
+O & La geometría de las 3 piezas debe permitir el desmoldeo directo (sin contrasalidas complejas) para rentabilizar una tirada de 20.000 unidades. & Se confirma la arquitectura final de tres piezas: base, pivote y palanca. & Aspecto de diseño: Cantidad / Medios \\
+\hline
+\end{tabular}
+\caption{Necesidades de fabricación}
+\end{table}
+
+\newpage
+
+% -------------------------------------------------------
+% BLOQUE 2 — NECESIDADES DEL ENTORNO DEL PRODUCTO (SIN CAMBIOS)
+% -------------------------------------------------------
+\section{NECESIDADES DEL ENTORNO DEL PRODUCTO}
+
+\vspace{0.5cm}
+
+\begin{table}[H]
+\centering\footnotesize
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|p{2.8cm}|p{5.5cm}|p{2.5cm}|p{3.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\textbf{\color{white}CÓDIGO: ARD-EDP-02}} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Documento versión: 2.0} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Fecha: 20/05/2026} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\multirow{-4}{*}{\parbox{2.8cm}{\centering\textbf{\color{white}ArthroDesign\\Solutions S.L.}}} & 
+\multirow{-4}{*}{\parbox{5.5cm}{\centering\textbf{\color{white}ESPECIFICACIONES DE DISEÑO DE PRODUCTO}\vspace{0.2cm}\newline\textbf{\color{white}DOCUMENTO: Necesidades del entorno del producto}}} & 
+\multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Página: \thepage \ de {\color{white}\pageref{LastPage}}} \\
+\hline
+Elaborado por: A. Sánchez Doña & Revisado por: I. de la Torre Segato & Aceptado por: I. de la Torre Segato & Autorizado por: I. de la Torre Segato\\
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}O/D} & \textbf{\color{white}Especificación} & \textbf{\color{white}Cambios} & \textbf{\color{white}Origen} \\
+\hline
+O & Durante su transporte en el interior de bolsos o estuches (62\,\% de encuestados), el ensamblaje soportará vibraciones y pequeños impactos sin desmontarse. & Se concreta la exigencia de estabilidad del ensamblaje durante transporte cotidiano y pequeños impactos. & Encuesta \\
+\hline
+O & El diseño debe resistir cargas de compresión atípicas (aprox. 250 N), dado que la usuaria declara aplicar el peso de su cuerpo sobre la mesa para accionarlo. & Se mantiene la carga límite de 250 N como caso de uso atípico y se vincula a la resistencia del conjunto base-palanca-pivote. & Entrevista \\
+\hline
+O & El adaptador debe soportar un rango de temperaturas de 0ºC hasta 50ºC, garantizando su integridad física durante el transporte, almacenamiento y uso. & Se amplía el rango ambiental a -10 ºC / 50 ºC y HR máxima del 85\,\%, coherente con transporte y almacenamiento. & Rango de temperaturas \\
+\hline
+O & El material debe mantenerse inalterable frente a sustancias corrosivas, especialmente a los gases propelentes y restos de medicación del cartucho MDI. & Se reformula como compatibilidad química frente a residuos de medicación, propelente y limpieza ordinaria. & Sustancias corrosivas \\
+\hline
+D & El producto será fácil de limpiar y resistente a la degradación por desinfección frecuente con un paño húmedo o alcohol. & Se elimina el uso de alcohol concentrado y se especifica limpieza con paño húmedo, agua tibia y jabón neutro. & Nivel de higiene \\
+\hline
+\end{tabular}
+\caption{Necesidades del entorno del producto}
+\end{table}
+
+\newpage
+
+% -------------------------------------------------------
+% BLOQUE 3 — NECESIDADES DE LA VIDA DE SERVICIO (TABLA EDITADA)
+% -------------------------------------------------------
+\section{NECESIDADES DE LA VIDA DE SERVICIO}
+
+\vspace{0.5cm}
+
+\begin{table}[H]
+\centering\footnotesize
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|p{2.8cm}|p{5.5cm}|p{2.5cm}|p{3.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\textbf{\color{white}CÓDIGO: ARD-EDP-03}} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Documento versión: 2.0} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Fecha: 21/05/2026} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\multirow{-4}{*}{\parbox{2.8cm}{\centering\textbf{\color{white}ArthroDesign\\Solutions S.L.}}} & 
+\multirow{-4}{*}{\parbox{5.5cm}{\centering\textbf{\color{white}ESPECIFICACIONES DE DISEÑO DE PRODUCTO}\vspace{0.2cm}\newline\textbf{\color{white}DOCUMENTO: Necesidades de la vida de servicio}}} & 
+\multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Página: \thepage \ de {\color{white}\pageref{LastPage}}} \\
+\hline
+Elaborado por: S. Carmona & Revisado por: J. Gabriel Navarro & Aceptado por: J. Gabriel Navarro & Autorizado por: J. Gabriel Navarro \\
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}O/D} & \textbf{\color{white}Especificación} & \textbf{\color{white}Cambios} & \textbf{\color{white}Origen} \\
+\hline
+O & El adaptador debe soportar un mínimo de 3 usos diarios durante al menos 2 años sin degradación estructural. & Se valida la vida útil estimada basándose en las propiedades de fatiga del polipropileno seleccionado. & Estimación uso clínico \\
+\hline
+O & El polipropileno debe mantener sus propiedades mecánicas en el rango de uso doméstico (0--50\,°C). &  & ISO 14971:2020 \\
+\hline
+D & El mecanismo de palanca no debe presentar holguras ni deformación visible tras 2.000 ciclos de accionamiento. & Se establece el límite de 2.000 ciclos como objetivo de diseño para garantizar la durabilidad mecánica. & Criterio de diseño interno \\
+\hline
+D & Las superficies de agarre deben permitir un manejo estable durante toda la vida útil de servicio. & Se suaviza el requisito de fricción para adaptarse a los acabados propios del proceso productivo. & Entrevista \\
+\hline
+O & El producto debe superar un ensayo de caída desde 1\,m sin fractura de ninguna de las 3 piezas. &  & UNE-EN ISO 21856:2023 \\
+\hline
+\end{tabular}
+\caption{Necesidades de la vida de servicio}
+\end{table}
+
+\newpage
+
+% -------------------------------------------------------
+% BLOQUE 4 — NECESIDADES DE MANTENIMIENTO (SIN CAMBIOS)
+% -------------------------------------------------------
+\section{NECESIDADES DE MANTENIMIENTO}
+
+\vspace{0.5cm}
+
+\begin{table}[H]
+\centering\footnotesize
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|p{2.8cm}|p{5.5cm}|p{2.5cm}|p{3.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\textbf{\color{white}CÓDIGO: ARD-EDP-04}} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Documento versión: 2.0} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Fecha: 20/05/2026} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\multirow{-4}{*}{\parbox{2.8cm}{\centering\textbf{\color{white}ArthroDesign\\Solutions S.L.}}} & 
+\multirow{-4}{*}{\parbox{5.5cm}{\centering\textbf{\color{white}ESPECIFICACIONES DE DISEÑO DE PRODUCTO}\vspace{0.2cm}\newline\textbf{\color{white}DOCUMENTO: Necesidades de mantenimiento}}} & 
+\multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Página: \thepage \ de {\color{white}\pageref{LastPage}}} \\
+\hline
+Elaborado por: A. Sánchez Doña & Revisado por: I. de la Torre Segato & Aceptado por: I. de la Torre Segato & Autorizado por: I. de la Torre Segato\\
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}O/D} & \textbf{\color{white}Especificación} & \textbf{\color{white}Cambios} & \textbf{\color{white}Origen} \\
+\hline
+O & El producto debe estar diseñado para un mantenimiento mecánico nulo durante su vida útil, evitando sobrecostes técnicos que el cliente no estaría dispuesto a asumir. & Se confirma mantenimiento mecánico nulo al tratarse de un conjunto simple de tres piezas sin resortes ni componentes electrónicos. & Coste vs. mantenimiento \\
+\hline
+O & La responsabilidad de mantenimiento por parte del usuario se limitará exclusivamente a rutinas de limpieza, acorde a la política y filosofía del mercado de ayudas técnicas de uso doméstico. & Se mantiene la limpieza ordinaria como única operación de mantenimiento a cargo del usuario. & Filosofía del mercado \\
+\hline
+O & El diseño debe garantizar una total facilidad de acceso visual y físico a la cavidad interior del adaptador para permitir la retirada de polvo o restos del fármaco. & Se vincula la facilidad de acceso a la retirada de polvo, suciedad o restos de medicación tras el uso. & Facilidad de acceso \\
+\hline
+O & Cualquier proceso de limpieza profunda o separación de las piezas debe poder realizarse de forma manual, prohibiendo absolutamente la necesidad de herramientas especiales (destornilladores, llaves). & Se confirma el desmontaje manual sin herramientas especiales, coherente con usuarios con limitación biomecánica. & Limitación biomecánica \\
+\hline
+D & Las piezas deben admitir un lavado regular sumergiéndose en agua tibia con jabón neutro sin que las zonas de fricción o el eje sufran deterioro a corto plazo. & Se sustituye la inmersión regular por limpieza con paño húmedo, agua tibia y jabón neutro, evitando productos agresivos. & Costumbres del cliente \\
+\hline
+\end{tabular}
+\caption{Necesidades de mantenimiento}
+\end{table}
+
+\newpage
+
+% -------------------------------------------------------
+% BLOQUE 5 — NECESIDADES DE COSTE OBJETIVO (TABLA EDITADA)
+% -------------------------------------------------------
+\section{NECESIDADES DE COSTE OBJETIVO}
+
+\begin{table}[H]
+\centering\footnotesize
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|p{2.8cm}|p{5.5cm}|p{2.5cm}|p{3.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\textbf{\color{white}CÓDIGO: ARD-EDP-05}} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Documento versión: 2.0} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Fecha: 21/05/2026} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\multirow{-4}{*}{\parbox{2.8cm}{\centering\textbf{\color{white}ArthroDesign\\Solutions S.L.}}} & 
+\multirow{-4}{*}{\parbox{5.5cm}{\centering\textbf{\color{white}ESPECIFICACIONES DE DISEÑO DE PRODUCTO}\vspace{0.2cm}\newline\textbf{\color{white}DOCUMENTO: \\Necesidades de coste objetivo}}} & 
+\multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Página: \thepage \ de {\color{white}\pageref{LastPage}}} \\
+\hline
+Elaborado por: S. Carmona & Revisado por: J. Gabriel Navarro & Aceptado por: J. Gabriel Navarro & Autorizado por: J. Gabriel Navarro \\
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}O/D} & \textbf{\color{white}Especificación} & \textbf{\color{white}Cambios} & \textbf{\color{white}Origen} \\
+\hline
+O & El PVP del producto se establece definitivamente en 13,95 € para asegurar la competitividad. & Ajuste del rango inicial (10-20 €) al precio final calculado de 13,95 €. & Encuesta de mercado \\
+\hline
+O & El coste de fabricación unitario debe mantenerse por debajo de 5\,€ para garantizar margen comercial viable. &  & Criterio de viabilidad comercial \\
+\hline
+D & El producto debe poder fabricarse mediante impresión 3D con un coste máximo de 5\,€ por unidad completa (3 piezas). & Se ratifica la impresión 3D como medio productivo para las series iniciales de validación. & Limitación del proyecto \\
+\hline
+O & La simplificación a 3 piezas debe permitir alcanzar un precio final asequible para el usuario. &  & Encuesta de mercado \\
+\hline
+D & El diseño se realizará íntegramente en polipropileno para abaratar costes de gestión de materiales. & Se desestiman inserciones bimateriales para cumplir con el presupuesto de fabricación. & UNE-EN ISO 14006:2020 \\
+\hline
+\end{tabular}
+\caption{Necesidades de coste objetivo}
+\end{table}
+
+\newpage
+
+% -------------------------------------------------------
+% BLOQUE 6 — REQUERIMIENTOS DE COMPETENCIA (SIN CAMBIOS)
+% -------------------------------------------------------
+\section{REQUERIMIENTOS DE COMPETENCIA}
+
+\vspace{0.5cm}
+
+\begin{table}[H]
+\centering\footnotesize
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|p{2.8cm}|p{5.5cm}|p{2.5cm}|p{3.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\textbf{\color{white}CÓDIGO: ARD-EDP-06}} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Documento versión: 2.0} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Fecha: 20/05/2026} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\multirow{-4}{*}{\parbox{2.8cm}{\centering\textbf{\color{white}ArthroDesign\\Solutions S.L.}}} & 
+\multirow{-4}{*}{\parbox{5.5cm}{\centering\textbf{\color{white}ESPECIFICACIONES DE DISEÑO DE PRODUCTO}\vspace{0.2cm}\newline\textbf{\color{white}DOCUMENTO: \\Requerimientos de competencia}}} & 
+\multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Página: \thepage \ de {\color{white}\pageref{LastPage}}} \\
+\hline
+Elaborado por: A. Sánchez Doña & Revisado por: I. de la Torre Segato & Aceptado por: I. de la Torre Segato & Autorizado por: I. de la Torre Segato \\
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}O/D} & \textbf{\color{white}Especificación} & \textbf{\color{white}Cambios} & \textbf{\color{white}Origen} \\
+\hline
+O & El diseño de la articulación debe eludir las reivindicaciones mecánicas de HalerEase (en estado de patente en trámite en Reino Unido) para evitar futuras infracciones de propiedad industrial. & Se confirma la diferenciación del sistema de articulación respecto a soluciones competidoras para reducir riesgos de propiedad industrial. & Estudio de patentes \\
+\hline
+O & El precio de venta al público (PVP) se fija en 13,95 €, situándose alrededor de un 40\% por debajo del competidor HalerEase para asegurar la entrada a mercado. & Se ajusta el objetivo comercial, manteniéndose por debajo del competidor principal. & Estudio de la competencia \\
+\hline
+D & El adaptador debe ofrecer un rango de compatibilidad con inhaladores genéricos mayor que los productos de la competencia, a menudo limitados a marcas específicas. & Se mantiene como ventaja competitiva deseable, vinculada a la compatibilidad con MDI estándar y genéricos. & Productos de áreas similares \\
+\hline
+O & La estética y la apariencia visual deben diferenciarse totalmente del diseño registrado de HalerEase para evitar conflictos legales y construir una identidad de marca propia. & Se confirma la diferenciación visual mediante geometría, identidad de marca y acabado propios. & Estrategia de la empresa \\
+\hline
+\end{tabular}
+\caption{Requerimientos de competencia}
+\end{table}
+
+\newpage
+
+% -------------------------------------------------------
+% BLOQUE 7 — NECESIDADES DE TRANSPORTE (SIN CAMBIOS)
+% -------------------------------------------------------
+\section{NECESIDADES DE TRANSPORTE}
+
+\vspace{0.5cm}
+
+\begin{table}[H]
+\centering\footnotesize
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|p{2.8cm}|p{5.5cm}|p{2.5cm}|p{3.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\textbf{\color{white}CÓDIGO: ARD-EDP-07}} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Documento versión: 2.0} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Fecha: 20/05/2026} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\multirow{-4}{*}{\parbox{2.8cm}{\centering\textbf{\color{white}ArthroDesign\\Solutions S.L.}}} & 
+\multirow{-4}{*}{\parbox{5.5cm}{\centering\textbf{\color{white}ESPECIFICACIONES DE DISEÑO DE PRODUCTO}\vspace{0.2cm}\newline\textbf{\color{white}DOCUMENTO: \\ Necesidades de transporte}}} & 
+\multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Página: \thepage \ de {\color{white}\pageref{LastPage}}} \\
+\hline
+Elaborado por: I. de la Torre Segato & Revisado por: A. Sánchez Doña& Aceptado por: A. Sánchez Doña & Autorizado por: A. Sánchez Doña\\
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}O/D} & \textbf{\color{white}Especificación} & \textbf{\color{white}Cambios} & \textbf{\color{white}Origen} \\
+\hline
+O & El producto debe poder transportarse por vía terrestre en lotes comerciales destinados a farmacias, ortopedias, hospitales y venta online, soportando un rango de temperatura de -10 °C a 50 °C y una humedad relativa máxima del 85\%. & Se especifican tolerancias ambientales. & Canales de distribución \\
+\hline
+O & El conjunto embalado debe presentar un volumen reducido, permitiendo agrupar al menos 50 unidades en una caja secundaria de distribución con dimensiones máximas de 400x300x200 mm sin comprometer su integridad. & Se definen cotas máximas para caja de 50 uds. & Optimización logística \\
+\hline
+O & El adaptador debe superar un test de caída libre desde 1 metro (Norma ISTA 1A) sin que se produzca separación de sus 3 piezas ni deformaciones visibles en la palanca o el cuerpo principal. & Se añade estándar medible de impactos (ISTA 1A). & Entorno de transporte \\
+\hline
+D & El peso unitario del producto embalado debería mantenerse por debajo de 80 gramos (producto máx. 45 g; embalaje máx. 35 g) para minimizar el coste de envío individual. & Se desglosa el límite de masa (producto vs embalaje). & Venta online / Coste logístico \\
+\hline
+O & El producto debe poder enviarse en envases unitarios con dimensiones máximas de 150x100x80 mm cuando se trate de pedidos individuales, evitando embalajes sobredimensionados. & Se limitan las cotas del envase unitario. & Estrategia comercial \\
+\hline
+D & La geometría del adaptador debería permitir una disposición apilable o encajable en el embalaje colectivo, asegurando una eficiencia volumétrica de empaquetado mínima del 60\%. & Se estipula porcentaje de eficiencia volumétrica. & Diseño para transporte \\
+\hline
+\end{tabular}
+\caption{Necesidades de transporte}
+\end{table}
+\newpage
+
+% -------------------------------------------------------
+% BLOQUE 8 — NECESIDADES DE EMBALAJE (SIN CAMBIOS)
+% -------------------------------------------------------
+\section{NECESIDADES DE EMBALAJE}
+
+\vspace{0.5cm}
+
+\begin{table}[H]
+\centering\footnotesize
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|p{2.8cm}|p{5.5cm}|p{2.5cm}|p{3.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\textbf{\color{white}CÓDIGO: ARD-EDP-08}} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Documento versión: 2.0} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Fecha: 20/05/2026} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\multirow{-4}{*}{\parbox{2.8cm}{\centering\textbf{\color{white}ArthroDesign\\Solutions S.L.}}} & 
+\multirow{-4}{*}{\parbox{5.5cm}{\centering\textbf{\color{white}ESPECIFICACIONES DE DISEÑO DE PRODUCTO}\vspace{0.2cm}\newline\textbf{\color{white}DOCUMENTO: \\ Necesidades de embalaje}}} & 
+\multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Página: \thepage \ de {\color{white}\pageref{LastPage}}} \\
+\hline
+Elaborado por: I. de la Torre Segato & Revisado por: A. Sánchez Doña& Aceptado por: A. Sánchez Doña& Autorizado por: A. Sánchez Doña\\
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}O/D} & \textbf{\color{white}Especificación} & \textbf{\color{white}Cambios} & \textbf{\color{white}Origen} \\
+\hline
+O & El producto debe suministrarse en un embalaje primario individual (cartoncillo de gramaje mínimo 250 g/m\textsuperscript{2}) que proteja el adaptador frente a polvo, suciedad y pequeños golpes durante el almacenamiento y la distribución. & Se parametriza el gramaje mínimo del material protector. & Protección del producto \\
+\hline
+O & El embalaje debe incluir una identificación visible (tamaño de fuente mínimo 8 pt), nombre de la empresa, referencia del modelo y compatibilidad general con inhaladores MDI estándar (diámetro 22 mm). & Se acota el tamaño de fuente y la cota del MDI. & Identificación comercial \\
+\hline
+O & El embalaje debe permitir comprobar visualmente el contenido (mediante ventana transparente mínima de 30x30 mm) o incluir una imagen impresa a escala mínima 1:2 del adaptador para facilitar su reconocimiento. & Se establece el tamaño de ventana y/o escala de imagen. & Canal farmacéutico \\
+\hline
+D & El embalaje debería fabricarse con al menos un 80\% de cartón reciclable o material monomaterial fácilmente separable, manteniendo la coherencia con la estrategia de sostenibilidad del producto. & Se añade porcentaje mínimo de material reciclable. & UNE-EN ISO 14006:2020 \\
+\hline
+O & El tamaño del embalaje individual debe ser proporcional al producto (con un volumen de aire libre interno no superior al 40\%), evitando un aumento innecesario de volumen que perjudique el transporte y almacenamiento. & Se limita el porcentaje máximo de volumen vacío (40\%). & Coste / Logística \\
+\hline
+D & El embalaje debería incorporar un breve esquema gráfico de colocación de máximo 3 o 4 pasos (con pictogramas de al menos 15x15 mm), reduciendo la necesidad de consultar documentación extensa. & Se restringe el número de pasos y el tamaño de pictogramas. & Facilidad de uso \\
+\hline
+\end{tabular}
+\caption{Necesidades de embalaje}
+\end{table}
+
+\newpage
+
+% -------------------------------------------------------
+% BLOQUE 9 — NECESIDADES DE DOCUMENTACIÓN (SIN CAMBIOS)
+% -------------------------------------------------------
+\section{NECESIDADES DE DOCUMENTACIÓN}
+
+\vspace{0.5cm}
+
+\begin{table}[H]
+\centering\footnotesize
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|p{2.8cm}|p{5.5cm}|p{2.5cm}|p{3.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\textbf{\color{white}CÓDIGO: ARD-EDP-09}} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Documento versión: 1.0} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Fecha: 01/05/2026} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\multirow{-4}{*}{\parbox{2.8cm}{\centering\textbf{\color{white}ArthroDesign\\Solutions S.L.}}} & 
+\multirow{-4}{*}{\parbox{5.5cm}{\centering\textbf{\color{white}ESPECIFICACIONES DE DISEÑO DE PRODUCTO}\vspace{0.2cm}\newline\textbf{\color{white}DOCUMENTO: \\ Necesidades de documentación}}} & 
+\multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Página: \thepage \ de {\color{white}\pageref{LastPage}}} \\
+\hline
+Elaborado por: I. de la Torre Segato & Revisado por: A. Sánchez Doña& Aceptado por: A. Sánchez Doña& Autorizado por: A. Sánchez Doña\\
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}O/D} & \textbf{\color{white}Especificación} & \textbf{\color{white}Cambios} & \textbf{\color{white}Origen} \\
+\hline
+O & El producto debe ir acompañado de un manual de instrucciones breve, claro y redactado en lenguaje no técnico, orientado a pacientes con movilidad reducida, personas mayores y cuidadores. & --- & Usuario final \\
+\hline
+O & La documentación debe explicar de forma secuencial la colocación del adaptador sobre el inhalador MDI, el accionamiento correcto de la palanca y la retirada del dispositivo tras su uso. & --- & Modo de empleo \\
+\hline
+O & El manual debe incluir advertencias básicas de seguridad, indicando que el adaptador no sustituye al inhalador, no modifica el medicamento y no debe emplearse si presenta roturas, deformaciones visibles o un ajuste inestable. & --- & Seguridad de uso \\
+\hline
+O & La documentación debe incluir instrucciones de limpieza y conservación, indicando el uso de agua tibia, jabón neutro o paño húmedo, y evitando productos agresivos que puedan deteriorar el polipropileno. & --- & Mantenimiento \\
+\hline
+D & Las instrucciones deberían apoyarse en pictogramas o esquemas sencillos para facilitar su comprensión por usuarios de edad avanzada o con baja familiaridad técnica. & --- & Accesibilidad documental \\
+\hline
+D & El embalaje o el manual deberían incorporar un código QR que permita acceder a una guía digital ampliada o vídeo explicativo de colocación y uso del adaptador. & --- & Soporte digital \\
+\hline
+\end{tabular}
+\caption{Necesidades de documentación}
+\end{table}
+
+\newpage
+
+% -------------------------------------------------------
+% BLOQUE 10 — NECESIDADES DE ESTÉTICA Y ACABADO (TABLA EDITADA)
+% -------------------------------------------------------
+\section{NECESIDADES DE ESTÉTICA Y ACABADO}
+
+\begin{table}[H]
+\centering\footnotesize
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|p{2.8cm}|p{5.5cm}|p{2.5cm}|p{3.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\textbf{\color{white}CÓDIGO: ARD-EDP-10}} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Documento versión: 2.0} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Fecha: 21/05/2026} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\multirow{-4}{*}{\parbox{2.8cm}{\centering\textbf{\color{white}ArthroDesign\\Solutions S.L.}}} & 
+\multirow{-4}{*}{\parbox{5.5cm}{\centering\textbf{\color{white}ESPECIFICACIONES DE DISEÑO DE PRODUCTO}\vspace{0.2cm}\newline\textbf{\color{white}DOCUMENTO: Necesidades de estética y acabado}}} & 
+\multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Página: \thepage \ de {\color{white}\pageref{LastPage}}} \\
+\hline
+Elaborado por: S. Carmona & Revisado por: J. Gabriel Navarro & Aceptado por: J. Gabriel Navarro & Autorizado por: J. Gabriel Navarro \\
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}O/D} & \textbf{\color{white}Especificación} & \textbf{\color{white}Cambios} & \textbf{\color{white}Origen} \\
+\hline
+O & El acabado superficial de la zona palmar favorecerá la estabilidad del agarre manual. & Se flexibiliza el requisito de rugosidad para adaptarse a la calidad superficial de la impresión 3D. & Encuesta de mercado \\
+\hline
+D & Como alternativa, la zona de empuje puede incorporar recubrimiento blando tipo TPE. & Se desestima la obligatoriedad del TPE para priorizar el reciclaje monomaterial. & Encuesta de mercado \\
+\hline
+O & El producto debe tener estética discreta y médica, priorizando comodidad sobre apariencia. &  & Entrevista  \\
+\hline
+D & El dispositivo será gris neutro evitando contrastes cromáticos & Se define el color gris final para el prototipo en sustitución de la paleta blanca inicial. & Criterio de diseño interno \\
+\hline
+O & Todas las superficies deben aplicar redondeos suaves, eliminando aristas agresivas al tacto. & Se sustituye la ausencia total de aristas vivas por un criterio de redondeado perimetral en CAD. & ISO 14971:2020 \\
+\hline
+\end{tabular}
+\caption{Necesidades de estética y acabado}
+\end{table}
+
+\newpage
+
+% -------------------------------------------------------
+% BLOQUE 11 — NECESIDADES NORMATIVAS Y LEGALES (SIN CAMBIOS)
+% -------------------------------------------------------
+\section{NECESIDADES NORMATIVAS Y LEGALES}
+
+
+\vspace{0.5cm}
+
+\begin{table}[H]
+\centering\footnotesize
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|p{2.8cm}|p{5.5cm}|p{2.5cm}|p{3.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\textbf{\color{white}CÓDIGO: ARD-EDP-11}} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Documento versión: 2.0} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Fecha: 20/05/2026} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\multirow{-4}{*}{\parbox{2.8cm}{\centering\textbf{\color{white}ArthroDesign\\Solutions S.L.}}} & 
+\multirow{-4}{*}{\parbox{5.5cm}{\centering\textbf{\color{white}ESPECIFICACIONES DE DISEÑO DE PRODUCTO}\vspace{0.2cm}\newline\textbf{\color{white}DOCUMENTO: Necesidades normativas y legales}}} & 
+\multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Página: \thepage \ de {\color{white}\pageref{LastPage}}} \\
+\hline
+Elaborado por: J.Gabriel Navarro & Revisado por: S. Carmona Muñoz & Aceptado por: S. Carmona Muñoz & Autorizado por: S. Carmona Muñoz \\
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}O/D} & \textbf{\color{white}Especificación} & \textbf{\color{white}Cambios} & \textbf{\color{white}Origen} \\
+\hline
+O & El dispositivo debe cumplir con el Reglamento (UE) 2023/988 relativo a la seguridad general de los productos (RSGP). & Sustitución de la derogada Directiva 2001/95/CE por el Reglamento (UE) 2023/988 (aplicable desde dic. 2024). & Reglamento (UE) 2023/988 \\
+\hline
+O & El diseño no debe interferir mecánicamente con la válvula dosificadora del cartucho original para asegurar la correcta administración del fármaco. & Separación de la validación mecánica/funcional respecto a los aspectos de propiedad intelectual. & Especificación funcional / Gestión de riesgos\\
+\hline
+O & El diseño debe garantizar la libertad de operación (FTO), evitando la infracción de patentes vigentes asociadas a los mecanismos de inhaladores comerciales. & Nueva inclusión: Independización del requisito legal de propiedad intelectual.& Análisis legal interno\\
+\hline
+O & El polímero único seleccionado para la fabricación del dispositivo debe estar libre de bisfenol A (BPA) y cumplir estrictamente con las restricciones del reglamento REACH (CE 1907/2006). & Se modifica la redacción de plural a singular, eliminando la enumeración de diferentes plásticos para reflejar la decisión de utilizar un solo material en todo el conjunto. & Reglamento REACH \\
+\hline
+O & El dispositivo debe cumplir con los requisitos aplicables a los productos sanitarios, clasificándose como Clase I según las reglas estipuladas en el Anexo VIII. & Cambio de categoría "D" a "O". Eliminación de justificaciones comerciales, ajustando la redacción al rigor regulatorio. & MDR 2017/745 \\
+\hline
+\end{tabular}
+\caption{Necesidades normativas y legales}
+\end{table}
+\newpage
+
+
+% -------------------------------------------------------
+% BLOQUE 12 — NECESIDADES MEDIOAMBIENTALES (SIN CAMBIOS)
+% -------------------------------------------------------
+\section{NECESIDADES MEDIOAMBIENTALES}
+
+
+\vspace{0.5cm}
+
+\begin{table}[H]
+\centering\footnotesize
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|p{2.8cm}|p{5.5cm}|p{2.5cm}|p{3.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\textbf{\color{white}CÓDIGO: ARD-EDP-12}} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Documento versión: 2.0} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Fecha: 20/05/2026} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\multirow{-4}{*}{\parbox{2.8cm}{\centering\textbf{\color{white}ArthroDesign\\Solutions S.L.}}} & 
+\multirow{-4}{*}{\parbox{5.5cm}{\centering\textbf{\color{white}ESPECIFICACIONES DE DISEÑO DE PRODUCTO}\vspace{0.2cm}\newline\textbf{\color{white}DOCUMENTO: Necesidades medioambientales}}} & 
+\multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Página: \thepage \ de {\color{white}\pageref{LastPage}}} \\
+\hline
+Elaborado por: J.Gabriel Navarro & Revisado por: S. Carmona Muñoz & Aceptado por: S. Carmona Muñoz & Autorizado por: S. Carmona Muñoz \\
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}O/D} & \textbf{\color{white}Especificación} & \textbf{\color{white}Cambios} & \textbf{\color{white}Origen} \\
+\hline
+O & El dispositivo debe desarrollarse bajo una estrategia de diseño monomaterial, utilizando un único polímero 100 \,\% reciclable mecánicamente para todas sus piezas, eliminando la necesidad de segregación al final de su vida útil. & Se agrupan los requisitos de reciclabilidad bajo el enfoque de "Diseño Monomaterial", eliminando la lista de diferentes plásticos.&Ecodiseño (Estrategia Monomaterial)\\
+\hline
+O & Todas las piezas con un peso superior a 10 g deben llevar grabado en el molde el código de identificación de material (ej. >ABS<). & Cambio de "símbolo de reciclaje" por "código de identificación de material", ajustándose a lo que realmente estipula la ISO 11469. & ISO 11469 \\
+\hline
+D & El diseño debe mantener un espesor de pared uniforme (aprox. 2.5\,mm) para minimizar el volumen inyectado y la huella de carbono. & --- & Ingeniería de Inyección \\
+\hline
+O & El diseño debe prescindir por completo de insertos metálicos (como tornillos o muelles de acero), utilizando en su lugar uniones plásticas (ej. encajes a presión) para garantizar la pureza del reciclaje monomaterial.& Al apostar por un diseño monomaterial, es imperativo prohibir componentes de otros materiales que contaminen la línea de reciclaje. & Economía Circular (Design for Recycling) \\
+\hline
+\end{tabular}
+\caption{Necesidades medioambientales}
+\end{table}
+
+\newpage
+% -------------------------------------------------------
+% BLOQUE 13 — NECESIDADES DE ERGONOMÍA (SIN CAMBIOS)
+% -------------------------------------------------------
+\section{NECESIDADES DE ERGONOMÍA}
+
+\vspace{0.5cm}
+
+\begin{table}[H]
+\centering\footnotesize
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|p{2.8cm}|p{5.5cm}|p{2.5cm}|p{3.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\textbf{\color{white}CÓDIGO: ARD-EDP-13}} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Documento versión: 1.0} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Fecha: 01/05/2026} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\multirow{-4}{*}{\parbox{2.8cm}{\centering\textbf{\color{white}ArthroDesign\\Solutions S.L.}}} & 
+\multirow{-4}{*}{\parbox{5.5cm}{\centering\textbf{\color{white}ESPECIFICACIONES DE DISEÑO DE PRODUCTO}\vspace{0.2cm}\newline\textbf{\color{white}DOCUMENTO: \\ Necesidades de ergonomía}}} & 
+\multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Página: \thepage \ de {\color{white}\pageref{LastPage}}} \\
+\hline
+Elaborado por: I. de la Torre Segato & Revisado por: A. Sánchez Doña& Aceptado por: A. Sánchez Doña& Autorizado por: A. Sánchez Doña\\
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}O/D} & \textbf{\color{white}Especificación} & \textbf{\color{white}Cambios} & \textbf{\color{white}Origen} \\
+\hline
+O & El adaptador debe permitir accionar el inhalador mediante empuje palmar o presión con la mano completa, reduciendo la dependencia del movimiento de pinza entre pulgar e índice. & --- & Entrevista / Necesidad del usuario \\
+\hline
+O & La zona de apoyo de la palanca debe presentar una superficie suficientemente amplia para repartir la presión sobre la palma o los dedos, evitando puntos de contacto dolorosos en usuarios con artritis o debilidad muscular. & --- & Ergonomía de agarre \\
+\hline
+O & El producto debe poder utilizarse con una sola mano siempre que el usuario conserve un nivel mínimo de fuerza prensil, favoreciendo la autonomía en la administración del medicamento. & --- & Autonomía del paciente \\
+\hline
+O & Todas las superficies en contacto con la mano deben estar redondeadas y libres de aristas vivas, rebabas o irregularidades que puedan generar molestias, cortes o presión localizada. & --- & Seguridad / Confort \\
+\hline
+D & La textura de la zona de contacto debería ser ligeramente rugosa o antideslizante para mejorar la estabilidad durante el accionamiento, especialmente en usuarios con menor control manual. & --- & Encuesta / Estética y acabado \\
+\hline
+D & El montaje y retirada del adaptador deberían poder realizarse sin herramientas y sin exigir movimientos finos complejos, giros forzados o esfuerzos elevados de los dedos. & --- & Limitación biomecánica \\
+\hline
+\end{tabular}
+\caption{Necesidades de ergonomía}
+\end{table}
+
+\newpage
+
+% -------------------------------------------------------
+% BLOQUE 14 — NECESIDADES DE CALIDAD (SIN CAMBIOS)
+% -------------------------------------------------------
+\section{NECESIDADES DE CALIDAD}
+
+\vspace{0.5cm}
+
+\begin{table}[H]
+\centering\footnotesize
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|p{2.8cm}|p{5.5cm}|p{2.5cm}|p{3.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\textbf{\color{white}CÓDIGO: ARD-EDP-14}} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Documento versión: 2.0} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Fecha: 20/05/2026} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\multirow{-4}{*}{\parbox{2.8cm}{\centering\textbf{\color{white}ArthroDesign\\Solutions S.L.}}} & 
+\multirow{-4}{*}{\parbox{5.5cm}{\centering\textbf{\color{white}ESPECIFICACIONES DE DISEÑO DE PRODUCTO}\vspace{0.2cm}\newline\textbf{\color{white}DOCUMENTO: Necesidades de calidad}}} & 
+\multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Página: \thepage \ de {\color{white}\pageref{LastPage}}} \\
+\hline
+Elaborado por: J.Gabriel Navarro & Revisado por: S. Carmona Muñoz & Aceptado por: S. Carmona Muñoz & Autorizado por: S. Carmona Muñoz \\
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}O/D} & \textbf{\color{white}Especificación} & \textbf{\color{white}Cambios} & \textbf{\color{white}Origen} \\
+\hline
+O & El hueco interior del cuerpo debe alojar el cartucho comercial con una tolerancia de ajuste de $\pm$0.15\,mm para evitar holguras. & Se especifica la normativa de inyección plástica como origen técnico del ajuste. & Ingeniería de Inyección (ISO 20457) \\
+\hline
+O & El mecanismo de la palanca (eje y brazo) debe soportar un mínimo de 10.000 pulsaciones continuas sin presentar fractura ni deformación plástica permanente.& Se permite la deformación elástica (necesaria en la palanca) y se corrige el origen, pasando del método de ensayo al motivo de diseño.& Ciclo de vida esperado / Análisis de riesgos \\
+\hline
+O & Las piezas deben presentar ausencia de rebabas y cantos vivos. Las líneas de partición del molde deben estar enrasadas, evitando cualquier resalte que pueda dañar la piel. & Es mecánicamente imposible eliminar las líneas de partición en inyección; se especifica que no deben ser cortantes. & Gestión de Riesgos (ISO 14971) / Usabilidad \\
+\hline
+O & El dispositivo ensamblado debe resistir caídas libres desde 1.20 m sobre suelo rígido sin que se fracturen sus componentes ni se comprometa su ensamblaje y funcionalidad. & Se amplía el requisito para evitar que, aunque no haya rotura, el golpe desmonte las uniones a presión de las piezas. & UNE-EN ISO 21856:2023 \\
+\hline
+\end{tabular}
+\caption{Necesidades de calidad}
+\end{table}
+
+\newpage
+
+
+% -------------------------------------------------------
+% BLOQUE 15 — ESPECIFICACIONES DE TIEMPOS / PLAZOS (SIN CAMBIOS)
+% -------------------------------------------------------
+\section{ESPECIFICACIONES DE TIEMPOS / PLAZOS}
+
+
+\vspace{0.5cm}
+
+\begin{table}[H]
+\centering\footnotesize
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|p{2.8cm}|p{5.5cm}|p{2.5cm}|p{3.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\textbf{\color{white}CÓDIGO: ARD-EDP-15}} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Documento versión: 1.1} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Fecha: 01/05/2026} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\multirow{-4}{*}{\parbox{2.8cm}{\centering\textbf{\color{white}ArthroDesign\\Solutions S.L.}}} & 
+\multirow{-4}{*}{\parbox{5.5cm}{\centering\textbf{\color{white}ESPECIFICACIONES DE DISEÑO DE PRODUCTO}\vspace{0.2cm}\newline\textbf{\color{white}DOCUMENTO: Especificaciones de tiempos / plazos}}} & 
+\multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Página: \thepage \ de {\color{white}\pageref{LastPage}}} \\
+\hline
+Elaborado por: J.Gabriel Navarro & Revisado por: S. Carmona Muñoz & Aceptado por: S. Carmona Muñoz & Autorizado por: S. Carmona Muñoz \\
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}O/D} & \textbf{\color{white}Especificación} & \textbf{\color{white}Cambios} & \textbf{\color{white}Origen} \\
+\hline
+O & La fase de definición de especificaciones, incluyendo encuestas y desarrollo de los 16 bloques, debe finalizar el 30/04/2026. & --- & Planificación interna (Fase 2) \\
+\hline
+O & El diseño conceptual, culminando con la selección del diseño definitivo mediante matriz de evaluación, se completará el 15/05/2026. & --- & Planificación interna (Fase 3) \\
+\hline
+O & El diseño de detalle, que abarca el modelado CAD de las 3 piezas y la generación de planos, debe finalizar el 26/05/2026. & --- & Planificación interna (Fase 4) \\
+\hline
+O & La consolidación de la documentación técnica y la entrega final del proyecto se realizará de forma improrrogable el 04/06/2026. & --- & Planificación interna (Fase 5) \\
+\hline
+\end{tabular}
+\caption{Especificaciones de tiempos y plazos}
+\end{table}
+
+\newpage
+
+% -------------------------------------------------------
+% BLOQUE 16 — NECESIDADES DEL CLIENTE (TABLA EDITADA)
+% -------------------------------------------------------
+\section{NECESIDADES DEL CLIENTE}
+
+\begin{table}[H]
+\centering\footnotesize
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|p{2.8cm}|p{5.5cm}|p{2.5cm}|p{3.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\textbf{\color{white}CÓDIGO: ARD-EDP-16}} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Documento versión: 2.0} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\cellcolor{ArthroTeal} & \cellcolor{ArthroTeal} & \multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Fecha: 21/05/2026} \\ \cline{3-4}
+\rowcolor{ArthroTeal}
+\multirow{-4}{*}{\parbox{2.8cm}{\centering\textbf{\color{white}ArthroDesign\\Solutions S.L.}}} & 
+\multirow{-4}{*}{\parbox{5.5cm}{\centering\textbf{\color{white}ESPECIFICACIONES DE DISEÑO DE PRODUCTO}\vspace{0.2cm}\newline\textbf{\color{white}DOCUMENTO: \\Necesidades del cliente}}} & 
+\multicolumn{2}{l|}{\cellcolor{ArthroTeal}\color{white} Página: \thepage \ de {\color{white}\pageref{LastPage}}} \\
+\hline
+Elaborado por: S. Carmona & Revisado por: J. Gabriel Navarro & Aceptado por: J. Gabriel Navarro & Autorizado por: J. Gabriel Navarro \\
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}O/D} & \textbf{\color{white}Especificación} & \textbf{\color{white}Cambios} & \textbf{\color{white}Origen} \\
+\hline
+O & El PVP unitario recomendado para el mercado se fija en 13,95 €. & Se concreta el precio objetivo tras la definición final de los costes logísticos y de embalaje. & Encuesta de mercado \\
+\hline
+O & El producto debe reducir el esfuerzo de accionamiento mediante palanca; el 65\,\% lo considera prioritario. &  & Encuesta de mercado \\
+\hline
+O & El producto debe poder colocarse y retirarse del inhalador fácilmente para facilitar el uso diario. & Se simplifica el concepto de fijación para agilizar el proceso de montaje y desmontaje. & Encuesta de mercado \\
+\hline
+O & Sustitución del movimiento de pinza dactilar por un empuje palmar adaptado. &  & Entrevista \\
+\hline
+D & Uso autónomo y accesible para administrar la dosis sin asistencia externa. &  & Entrevista  \\
+\hline
+O & Compatibilidad con inhaladores MDI estándar sin interferencias mecánicas. &  & Entrevista  \\
+\hline
+\end{tabular}
+\caption{Necesidades del cliente}
+\end{table}
+
+\newpage
+% ======================================================
+% BLOQUE DE FIRMAS
+% ======================================================
+
+
+
+\noindent\begin{minipage}{\textwidth}
+    \begin{flushright}
+        En Málaga, a \today
+    \end{flushright}
+    \vspace{2cm}
+
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Sergio Carmona Muñoz} \\
+        Colegiado Nº 06424 \\
+        DNI: 26291930D
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Juan Gabriel Navarro Valdivielso} \\
+        Colegiado Nº 06425 \\
+        DNI: 77666662D
+    \end{minipage}
+
+    \vspace{2cm}
+
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Antonio Sánchez Doña} \\
+        Colegiado Nº 06423 \\
+        DNI: 79380534J
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Iván de la Torre Segato} \\
+        Colegiado Nº 06421 \\
+        DNI: 79383630G
+    \end{minipage}
+\end{minipage}
+
+% ======================================================
+% HOJA EN BLANCO CON MARCA DE AGUA
+% ======================================================
+\newpage
+\pagestyle{fancy}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
+\end{tikzpicture}
+
+% Empujamos el texto hacia la parte inferior del folio
+\vspace*{8.5cm} 
+\begin{center}
+    \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
+\end{center}
+\vfill
+
+\end{document}
+

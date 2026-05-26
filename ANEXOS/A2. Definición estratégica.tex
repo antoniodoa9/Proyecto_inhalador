@@ -1,0 +1,356 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Paquetes de Estilo y Formato ---
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{top=3cm, bottom=3cm, left=3cm, right=2.5cm}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage[table, xcdraw]{xcolor}
+
+% --- Definición de Colores Corporativos ArthroDesign ---
+\definecolor{ArthroNavy}{HTML}{0F172A}
+\definecolor{ArthroTeal}{HTML}{0D9488}
+\definecolor{ArthroGray}{HTML}{64748B}
+
+% --- Configuración de Párrafo ---
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{1.5em}
+
+% --- Estilo de Títulos con Identidad Corporativa ---
+\titleformat{\section}
+  {\color{ArthroNavy}\Large\bfseries}
+  {\thesection.}
+  {0.5em}
+  {}
+  [{\color{ArthroTeal}\titlerule[1.5pt]}]
+
+\titleformat{\subsection}
+  {\color{ArthroNavy}\large\bfseries}
+  {\thesubsection.}
+  {0.5em}
+  {}
+  [{\color{ArthroTeal}\titlerule[1pt]}]
+
+\titleformat{\subsubsection}
+  {\color{ArthroNavy}\large\bfseries}
+  {\thesubsubsection.}
+  {0.5em}
+  {}
+
+% --- Viñetas en color Turquesa ---
+\renewcommand{\labelitemi}{\color{ArthroTeal}\textbullet}
+\renewcommand{\labelitemii}{\color{ArthroTeal}\circ}
+
+% --- Configuración de Enlaces ---
+\hypersetup{colorlinks=true, linkcolor=ArthroNavy, urlcolor=ArthroTeal}
+
+% --- CONFIGURACIÓN DE ENCABEZADO Y PIE CORPORATIVO (Anexo I) ---
+\pagestyle{fancy}
+\fancyhf{}
+
+% Línea superior de color turquesa (Grosor 2pt)
+\renewcommand{\headrule}{\hbox to\headwidth{\color{ArthroTeal}\leaders\hrule height 2pt\hfill}}
+
+% Información de Encabezado
+\fancyhead[L]{\small \textbf{\color{ArthroNavy}Adaptador ergonómico - PR-PIB-GIS26-09}}
+\fancyhead[R]{\small \textbf{\color{ArthroNavy}Anexo II: Definición estratégica}}
+
+% Información de Pie de Página
+\fancyfoot[L]{\small \color{ArthroGray}ArthroDesign Solutions S.L.}
+\fancyfoot[C]{\small \color{ArthroGray}\today}
+\fancyfoot[R]{\small \textbf{\color{ArthroNavy}Pág. \thepage \ de \pageref{LastPage}}}
+
+\setlength{\headheight}{15pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+% ======================================================
+% PÁGINA 1: PORTADA (REQUISITOS UNE 157001)
+% ======================================================
+\begin{titlepage}
+    % --- Elementos Geométricos de Identidad (Cabecera y Pie) ---
+    \begin{tikzpicture}[remember picture,overlay]
+        % Franja superior
+        \fill[ArthroNavy] (current page.north west) rectangle ([yshift=-4.5cm]current page.north east);
+        \fill[ArthroTeal] ([yshift=-4.5cm]current page.north west) rectangle ([yshift=-4.7cm]current page.north east);
+        
+        % Franja inferior
+        \fill[ArthroNavy] (current page.south west) rectangle ([yshift=2.5cm]current page.south east);
+        \fill[ArthroTeal] ([yshift=2.5cm]current page.south west) rectangle ([yshift=2.7cm]current page.south east);
+    \end{tikzpicture}
+
+    \centering % Todo centrado a partir de aquí
+
+    % --- LOGO (Sobre la franja azul) ---
+    \vspace*{-2cm}
+    \includegraphics[width=6.5cm]{logo_definitivo.png} \\
+    \vspace{2cm}
+
+    % --- BLOQUE DE TÍTULO PRINCIPAL ---
+    {\color{ArthroGray}\Huge \textbf{ANEXO II}} \\
+    \vspace{0.5cm}
+    {\color{ArthroNavy}\Huge \textbf{DEFINICIÓN ESTRATÉGICA}} \\
+    \vspace{0.6cm}
+    {\color{ArthroTeal}\rule{12cm}{2pt}} \\
+    \vspace{1cm}
+    {\Large \textbf{TÍTULO DEL PROYECTO:}} \\
+    \vspace{0.3cm}
+    {\Huge \bfseries Diseño de un adaptador ergonómico universal para la optimización de la pulsación manual en inhaladores de dosis medida (MDI)} \\
+    \vspace{1.5cm}
+
+    % --- BLOQUE DE IDENTIFICACIÓN TÉCNICA ---
+    \begin{minipage}{0.8\textwidth}
+        \centering
+        \textbf{CÓDIGO DE IDENTIFICACIÓN:} \\
+        {\large \texttt{PR-PIB-GIS26-09}} \\[0.8cm]
+        
+        \textbf{PROMOTOR Y EMPRESA DESARROLLADORA:} \\
+        {ArthroDesign Solutions S.L.}
+    \end{minipage}
+
+    \vspace{1.5cm}
+
+    % --- BLOQUE DE PROYECTISTAS ---
+    \textbf{PROYECTISTAS (Equipo de ArthroDesign Solutions S.L.):} \\
+    \vspace{0.3cm}
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{l l}
+        \textbf{D. Sergio Carmona Muñoz} & Colegiado Nº 06424 (DNI: 26291930D) \\
+        \textbf{D. Juan Gabriel Navarro Valdivielso} & Colegiado Nº 06425 (DNI: 77666662D) \\
+        \textbf{D. Antonio Sánchez Doña} & Colegiado Nº 06423 (DNI: 79380534J) \\
+        \textbf{D. Iván de la Torre Segato} & Colegiado Nº 06421 (DNI: 79383630G) \\
+    \end{tabular}
+
+    \vfill
+
+   % --- PIE DE PORTADA ---
+    {\color{white} ArthroDesign Solutions S.L. \quad | \quad \today}
+    \vspace{-1.75cm} 
+\end{titlepage}
+
+% AÑADE ESTA LÍNEA AQUÍ PARA QUE LA SIGUIENTE PÁGINA SEA LA 2:
+\setcounter{page}{2}
+
+% ======================================================
+% HOJA EN BLANCO CON MARCA DE AGUA
+% ======================================================
+\newpage
+\pagestyle{fancy}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
+\end{tikzpicture}
+
+% Empujamos el texto hacia la parte inferior del folio
+\vspace*{8.5cm} 
+\begin{center}
+    \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
+\end{center}
+\vfill
+\newpage
+
+% ======================================================
+% PÁGINA: ÍNDICE AUTOMÁTICO (CON ENCABEZADO)
+% ======================================================
+\markboth{Índice}{Índice}
+\tableofcontents
+\thispagestyle{fancy} % Fuerza el estilo fancy en esta página
+\newpage
+
+% ======================================================
+% HOJA EN BLANCO CON MARCA DE AGUA
+% ======================================================
+\newpage
+\pagestyle{fancy}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
+\end{tikzpicture}
+
+% Empujamos el texto hacia la parte inferior del folio
+\vspace*{8.5cm} 
+\begin{center}
+    \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
+\end{center}
+\vfill
+\newpage
+
+\section{PROBLEMA O CUESTIÓN}
+El asma y otras enfermedades respiratorias exigen el uso frecuente de inhaladores de dosis medida (MDI) como el Ventolín. Sin embargo, su uso no es en absoluto sencillo. Según fuentes como el Centro de Información de Medicamentos de Cataluña (Cedimcat), "se calcula que menos del 50\% de los pacientes los usa bien" \cite{cedimcat}. Esto provoca que una gran parte del fármaco se quede en la boca y no llegue al sistema respiratorio.
+
+Este problema se convierte en una barrera insalvable para las personas que, además de asma, padecen enfermedades articulares o cualquier problema o discapacidad física de naturaleza similar que afecte a la fuerza o coordinación de las manos. Investigaciones recientes han puesto el foco en la relación entre el asma y la Artritis Reumatoide (AR). Apretar el cartucho de un inhalador requiere aplicar una fuerza considerable con los dedos. Para un paciente con las articulaciones de la mano inflamadas o deformadas por la AR, este movimiento básico resulta doloroso o imposible. El problema a resolver es, por tanto, la falta de adherencia al tratamiento provocada por el mal diseño ergonómico de los inhaladores estándar frente a pacientes con movilidad reducida en las manos.
+
+
+\section{LÍNEA DE LA EMPRESA}
+Somos el equipo 09, y nos constituimos como una pequeña oficina técnica de diseño formada por estudiantes de ingeniería. Nos constituimos como un equipo de ingeniería puro de diseño, centrando nuestra actividad en la innovación y el desarrollo técnico, mientras que la producción industrial sería externalizada a fabricantes especializados. Nuestra filosofía de trabajo es que la mejor ingeniería es la que resuelve problemas complejos con soluciones simples. Nos especializamos en el diseño de "productos de apoyo" (ayudas técnicas cotidianas) que mejoren la calidad de vida de los usuarios mediante soluciones puramente mecánicas, evitando depender de la electrónica o de procesos de fabricación costosos.
+
+
+\section{AFINIDAD DEL PROYECTO CON LA EMPRESA}
+El diseño de este adaptador ergonómico encaja a la perfección con la línea de nuestro equipo. Se trata de un problema físico muy específico y cotidiano que puede solucionarse aplicando un principio básico de la física: la ventaja mecánica de una palanca. Es un proyecto de ingeniería de diseño de producto puro, donde estudiando la geometría y la resistencia de los componentes mecánicos podemos aportar un beneficio enorme a la salud del paciente.
+
+\section{MISIÓN Y LIMITACIONES}
+\subsection{MISIÓN}
+Nuestra misión es diseñar un accesorio mecánico y ergonómico que se acople fácilmente a un inhalador MDI estándar. Este adaptador incorporará un mecanismo de palanca o sistema de asistencia similar diseñado para reducir drásticamente la fuerza que el paciente debe ejercer con sus dedos para liberar la dosis de medicamento.
+
+
+\subsection{LIMITACIONES}
+\begin{itemize}
+    \item Para mantener la viabilidad del proyecto, se buscará la máxima simplicidad mecánica mediante un diseño de componentes optimizados que faciliten el ensamblaje sin herramientas. No habrá resortes adicionales ni mecanismos complejos.
+    \item El coste de fabricación debe mantenerse en mínimos (adaptable a inyección o impresión 3D) para que sea un producto asequible.
+    \item  Todo el trabajo debe estar finalizado, empaquetado en los formatos requeridos y subido a la plataforma del campus virtual antes de la fecha límite del jueves 4 de junio de 2026 a las 20:00.
+\end{itemize}
+
+
+\section{CLIENTES, USUARIOS Y CANALES DE DISTRIBUCIÓN}
+
+En el diseño de ingeniería de productos de apoyo, es fundamental establecer la diferencia entre el usuario final (quien interactúa físicamente con el dispositivo) y el cliente (quien toma la decisión de compra y asume el coste). Para este adaptador ergonómico, hemos definido los siguientes perfiles:
+
+
+\subsection{USUARIOS FINALES}
+El producto está diseñado pensando exclusivamente en resolver las limitaciones físicas de este grupo. Se dividen en dos perfiles principales:
+\begin{itemize}
+    \item Pacientes y enfermos con patologías articulares crónicas, principalmente personas diagnosticadas con Artritis Reumatoide o artrosis severa en las manos, a quienes accionar un inhalador les resulta doloroso o imposible.
+    \item Pacientes de edad avanzada (población geriátrica) con sarcopenia, es decir, personas de la tercera edad que, debido a la pérdida natural de masa y fuerza muscular, no pueden alcanzar la fuerza necesaria para liberar la dosis de su medicación respiratoria. Para ellos, el dispositivo representa una recuperación de su autonomía personal.
+\end{itemize}
+
+
+\subsection{CLIENTES}
+Al tratarse de un producto de bajo coste de fabricación, el abanico de clientes potenciales es amplio y abarca tanto el mercado minorista como el institucional:
+\begin{itemize}
+    \item El propio paciente o sus familiares directos (hijos o cuidadores), quienes adquieren el producto buscando mejorar la calidad de vida del usuario en su domicilio.
+    \item Residencias de ancianos y centros de día, que adquieren lotes del producto para facilitar la labor de sus enfermeros, auxiliares y cuidadores y fomentar la independencia de los residentes.
+    \item Hospitales y clínicas de rehabilitación, concretamente los departamentos de neumología y reumatología, que pueden proporcionar el adaptador junto con la primera prescripción del inhalador.
+        
+\end{itemize}
+
+
+\subsection{CANALES DE DISTRIBUCIÓN}
+Para que el producto llegue de manera eficiente desde su fabricación hasta el cliente, se ha planteado una cadena de suministro basada en los puntos naturales de acceso a la medicación:
+\begin{itemize}
+    \item El canal farmacéutico es el canal principal. El objetivo es que las farmacias comunitarias ofrezcan el adaptador en el mismo momento en que dispensan el inhalador al paciente.
+    \item Tiendas físicas de ortopedia donde los pacientes con movilidad reducida ya acuden habitualmente a comprar otros productos de apoyo.
+    \item Venta directa a través de la página web de \textit{ArthroDesign Solutions S.L.} y plataformas de comercio electrónico especializadas en parafarmacia, de manera que se pueda alcanzar un volumen de clientes nacional sin necesidad de grandes inversiones en infraestructura de distribución física.
+\end{itemize}
+
+
+\section{LEGISLACIÓN APLICABLE}
+Para asegurar la validez técnica y legal del producto, el desarrollo de este proyecto se ajusta al marco legislativo vigente, estructurado en tres niveles: 
+
+
+
+\subsection{PRODUCTOS SANITARIOS}
+\begin{itemize}
+    \item \textbf{Reglamento (UE) 2017/745.} Es el marco legal europeo sobre productos sanitarios. Debido a su funcionamiento mecánico y no invasivo, este adaptador se clasifica como \textbf{producto sanitario de clase I}. El diseño debe respetar los requisitos de seguridad y funcionamiento establecidos en el Anexo I de este reglamento.
+    \item \textbf{Real Decreto 192/2023, de 21 de marzo, por el que se regulan los productos sanitarios.} Normativa española actual que regula los productos sanitarios y sustituye al anterior RD de 2009. Establece las garantías necesarias para la fabricación y distribución de dispositivos médicos en España.
+\end{itemize}
+
+
+
+    
+
+
+
+\section{SOSTENIBILIDAD}
+El diseño será inherentemente sostenible debido a su simplicidad estructural. Al priorizar el uso de materiales reciclables para la fabricación de sus componentes, el usuario no necesitará herramientas para desmontarlo al final de su vida útil, de manera que se facilite su correcta gestión y pueda ser depositado directamente en el contenedor de reciclaje correspondiente.
+\newline
+
+
+
+% ======================================================
+% BIBLIOGRAFÍA Y NORMATIVA TÉCNICA (Al final del documento)
+% ======================================================
+\renewcommand{\refname}{8. BIBLIOGRAFÍA Y NORMATIVA TÉCNICA}
+\addcontentsline{toc}{section}{8. BIBLIOGRAFÍA Y NORMATIVA TÉCNICA}
+
+\begin{thebibliography}{9}
+\bibitem{cedimcat} 
+    El Mundo - Sección Salud (16 de abril de 2016). \textit{¿Por qué son tan difíciles de usar los inhaladores?} [Datos del Cedimcat]. Recuperado de: \url{https://www.elmundo.es/salud/2016/04/16/5711115c22601d83448b45a3.html}
+    \bibitem{une157001} 
+    Norma UNE 157001:2014. Criterios generales para la elaboración formal de los documentos que constituyen un proyecto técnico.
+
+    \bibitem{iso21856} 
+    Norma UNE-EN ISO 21856:2023. Productos de apoyo. Requisitos generales y métodos de ensayo.
+
+    \bibitem{iso14971} 
+Norma UNE-EN ISO 14971:2020. Dispositivos médicos/productos sanitarios (MD). Aplicación de la gestión de riesgos a los MD.
+
+    \bibitem{iso14006} 
+    Norma UNE-EN ISO 14006:2020. Sistemas de gestión ambiental. Directrices para el ecodiseño.
+\end{thebibliography}
+
+
+
+ \vspace{0.5cm}
+    \noindent\begin{minipage}{\textwidth}
+    \begin{flushright}
+        En Málaga, a \today
+    \end{flushright}
+    \vspace{2cm}
+
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Sergio Carmona Muñoz} \\
+        Colegiado Nº 06424 \\
+        DNI: 26291930D
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Juan Gabriel Navarro Valdivielso} \\
+        Colegiado Nº 06425 \\
+        DNI: 77666662D
+    \end{minipage}
+
+    \vspace{2cm}
+
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Antonio Sánchez Doña} \\
+        Colegiado Nº 06423 \\
+        DNI: 79380534J
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Iván de la Torre Segato} \\
+        Colegiado Nº 06421 \\
+        DNI: 79383630G
+    \end{minipage}
+\end{minipage}
+    \vspace{1cm}
+
+    % ======================================================
+% HOJA EN BLANCO CON MARCA DE AGUA
+% ======================================================
+\newpage
+\pagestyle{fancy}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
+\end{tikzpicture}
+
+% Empujamos el texto hacia la parte inferior del folio
+\vspace*{8.5cm} 
+\begin{center}
+    \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
+\end{center}
+\vfill
+
+\end{document}
