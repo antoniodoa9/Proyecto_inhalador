@@ -63,7 +63,7 @@
 
 % Información de Encabezado
 \fancyhead[L]{\small \textbf{\color{ArthroNavy}Adaptador ergonómico - PR-PIB-GIS26-09}}
-\fancyhead[R]{\small \textbf{\color{ArthroNavy}Anexo I: Desarrollo del producto}}
+\fancyhead[R]{\small \textbf{\color{ArthroNavy}Anexo IX: Declaración de conformidad}}
 
 % Información de Pie de Página
 \fancyfoot[L]{\small \color{ArthroGray}ArthroDesign Solutions S.L.}
@@ -75,6 +75,9 @@
 
 \begin{document}
 
+% ======================================================
+% PÁGINA 1: PORTADA (REQUISITOS UNE 157001)
+% ======================================================
 \begin{titlepage}
     % --- Elementos Geométricos de Identidad (Cabecera y Pie) ---
     \begin{tikzpicture}[remember picture,overlay]
@@ -95,15 +98,17 @@
     \vspace{2cm}
 
     % --- BLOQUE DE TÍTULO PRINCIPAL ---
-    {\color{ArthroGray}\Huge \textbf{ANEXO I}} \\
+    {\color{ArthroGray}\Huge \textbf{ANEXO IX}} \\
     \vspace{0.5cm}
-    {\color{ArthroNavy}\Huge \textbf{DESARROLLO DEL PRODUCTO}} \\
+    {\color{ArthroNavy}\Huge \textbf{DECLARACIÓN DE}} \\
+    \vspace{0.3cm}
+    {\color{ArthroNavy}\Huge \textbf{CONFORMIDAD}} \\
     \vspace{0.6cm}
     {\color{ArthroTeal}\rule{12cm}{2pt}} \\
     \vspace{1cm}
     {\Large \textbf{TÍTULO DEL PROYECTO:}} \\
     \vspace{0.3cm}
-    {\Huge \bfseries Diseño de un adaptador ergonómico universal para la optimización de la pulsación manual en inhaladores de dosis medida (MDI)}
+    {\Huge \bfseries Diseño de un adaptador ergonómico universal para la optimización de la pulsación manual en inhaladores de dosis medida (MDI)} \\
     \vspace{1.5cm}
 
     % --- BLOQUE DE IDENTIFICACIÓN TÉCNICA ---
@@ -112,7 +117,7 @@
         \textbf{CÓDIGO DE IDENTIFICACIÓN:} \\
         {\large \texttt{PR-PIB-GIS26-09}} \\[0.8cm]
         
-        \textbf{EMPRESA DESARROLLADORA:} \\
+        \textbf{PROMOTOR Y EMPRESA DESARROLLADORA:} \\
         {ArthroDesign Solutions S.L.}
     \end{minipage}
 
@@ -158,13 +163,12 @@
 \vfill
 \newpage
 
-
 % ======================================================
 % PÁGINA: ÍNDICE AUTOMÁTICO (CON ENCABEZADO)
 % ======================================================
 \markboth{Índice}{Índice}
 \tableofcontents
-\thispagestyle{fancy}
+\thispagestyle{fancy} % Fuerza el estilo fancy en esta página
 \newpage
 
 % ======================================================
@@ -186,100 +190,80 @@
 \newpage
 
 % ======================================================
-% CUERPO DEL DOCUMENTO
+% DECLARACIÓN UE DE CONFORMIDAD (DISEÑO TIPO CERTIFICADO)
 % ======================================================
+% Añade esta línea para que aparezca en el índice:
+\addcontentsline{toc}{section}{1. DECLARACIÓN DE CONFORMIDAD}
 
-\section{DESARROLLO DEL PROYECTO}
-El propósito del presente proyecto es el diseño de un producto de apoyo que optimice la autonomía de pacientes con movilidad reducida en las manos durante el uso de inhaladores de dosis medida (MDI). La solución propuesta consiste en un adaptador ergonómico basado en un mecanismo de palanca que, integrado sobre el actuador estándar del fármaco, permita reducir significativamente la fuerza de accionamiento requerida.
+\vspace{0.5cm}
 
-El diseño se centra en la mejora de la adherencia terapéutica para usuarios que padecen Artritis Reumatoide o debilidad muscular geriátrica, con el objeto de garantizar un entorno de uso indoloro y funcional. El proyecto se aborda bajo la premisa de la simplicidad técnica, de manera que se limita el dispositivo a un conjunto de tres piezas que aseguren la viabilidad económica y de fabricación.
+% --- CABECERA ESTILO CERTIFICADO ---
+\noindent
+{\renewcommand{\tabularxcolumn}[1]{m{#1}} % Fuerza a la columna X a centrarse verticalmente
+\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}X|>{\centering\arraybackslash}m{4cm}|}
+\hline
+\rowcolor{ArthroNavy}
+\cellcolor{white} \includegraphics[width=2cm]{logo_ce.png} &
+\color{white} \Large \textbf{DECLARACIÓN DE CONFORMIDAD} &
+\cellcolor{ArthroTeal} \color{white} \textbf{PR-PIB-GIS26-09} \\
+\hline
+\end{tabularx}}
 
-Para que el desarrollo del proyecto se lleve a cabo de forma lineal y ordenada, se ha dividido el proceso en fases jerárquicas que permitan la retroalimentación y la minimización de errores en el diseño industrial, de forme que consigamos ahorrar costes y plazos temporales. A continuación, se definen las fases que componen la metodología de trabajo del Equipo 09.
+\vspace{0.4cm}
 
-\subsection{DIAGRAMA DE FASES}
-El proceso de diseño y desarrollo se resume en la Figura 1, donde se muestra la estructura jerárquica desde la planificación inicial hasta la valoración económica final.
+\noindent \textit{La presente declaración de conformidad se expide bajo la exclusiva responsabilidad del fabricante indicado a continuación:}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.55\textwidth]{ANEXOS/diagrama_fases.png} 
-    \caption{Diagrama de fases del desarrollo del producto.}
-    \label{fig:diagrama_fases}
-\end{figure}
+\vspace{0.4cm}
 
+% --- TABLA DE DATOS (CUERPO DEL CERTIFICADO) ---
+\noindent
+{\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\textwidth}{|>{\columncolor{gray!15}\bfseries\small}p{4.5cm}|X|}
+\hline
+FABRICANTE \newline \textit{MANUFACTURER} & \textbf{ArthroDesign Solutions S.L.} \newline Escuela de Ingenierías Industriales, Universidad de Málaga. \newline C/ Arquitecto Francisco Peñalosa, 6, 29071 Málaga (España). \\
+\hline
+IDENTIFICACIÓN DEL PRODUCTO \newline \textit{PRODUCT IDENTIFICATION} & \textbf{Nombre:} Adaptador ergonómico ArthroPush \newline \textbf{Modelo/Ref:} PR-PIB-GIS26-09 \newline \textbf{Descripción:} Dispositivo de asistencia mecánica no invasivo, fabricado mediante 3 piezas de polímero grado médico ensamblables por clipado. Sin componentes electrónicos. \\
+\hline
+USO PREVISTO \newline \textit{INTENDED USE} & Reducir el esfuerzo necesario en la pulsación de inhaladores de dosis medida (MDI) por parte de usuarios con limitaciones de fuerza o deformidad articular. Apto para el entorno doméstico y clínico. \\
+\hline
+LEGISLACIÓN DE APLICACIÓN \newline \textit{APPLICABLE REGULATION} & \textbf{Reglamento (UE) 2017/745} sobre los productos sanitarios. El producto se clasifica como Producto Sanitario de \textbf{Clase I} (Procedimiento de Autocertificación del fabricante). \newline \textbf{Real Decreto 192/2023}, por el que se regulan los productos sanitarios. \\
+\hline
+NORMAS ARMONIZADAS \newline \textit{HARMONISED STANDARDS} & \textbf{UNE-EN ISO 21856:2023:} Productos de apoyo. Requisitos generales y métodos de ensayo. \newline \textbf{UNE-EN ISO 14971:2020:} Dispositivos médicos. Aplicación de la gestión de riesgos a los productos sanitarios. \\
+\hline
+LUGAR Y FECHA DE EMISIÓN \newline \textit{PLACE AND DATE OF ISSUE} & Málaga, \today \\
+\hline
+\end{tabularx}}
 
-\subsection{DEFINICIÓN DE FASES}
+\vspace{0.1cm}
 
-\subsubsection{Plan estratégico y estudio de necesidades del usuario}
-Se realiza una investigación cualitativa y cuantitativa mediante entrevistas personales y encuestas técnicas a pacientes con patologías respiratorias y articulares. El objetivo es recopilar datos sobre ergonomía de agarre y dificultades de presión para que el diseño se adhiera a los requisitos reales del usuario final.
+% --- FIRMA DEL APODERADO ---
+\noindent
+\begin{minipage}[t]{0.55\textwidth}
+    \textbf{Firma del signatario apoderado:} \\
+    \vspace{1.5cm}
 
-\subsubsection{Definición de las especificaciones}
-A partir de las necesidades detectadas, se establecen las Especificaciones de Diseño de Producto (EDP). Se desarrollan los 16 bloques de fuentes de especificaciones que actuarán como directrices fundamentales durante todo el proceso técnico y legal.
-
-\subsubsection{Proceso de creación}
-Esta fase constituye el núcleo creativo del desarrollo y se subdivide en tres etapas:
-\begin{itemize}
-    \item \textbf{Diseño conceptual:} Generación de bocetos individuales por cada miembro del equipo para representar visualmente las soluciones de palanca y sujeción.
-    \item \textbf{Diseño básico:} Evaluación de propuestas mediante matrices de decisión y selección del modelo base óptimo en términos de ergonomía y simplicidad.
-    \item \textbf{Diseño en detalle:} Desarrollo del modelo final mediante herramientas de diseño asistido por ordenador (CAD). Se definen formalmente los tres componentes (cuerpo, palanca y base) y se generan los planos técnicos bajo norma.
-\end{itemize}
-
-\subsubsection{Validación}
-Una vez finalizado el diseño detallado, se evalúa si el mecanismo de palanca cumple con el ratio de ventaja mecánica proyectado y si el ajuste sobre el inhalador es estable. En caso de discrepancia con las especificaciones iniciales, se procede a una revisión iterativa del diseño.
-
-\subsubsection{Identidad de marca}
-Se define la identidad visual de la empresa ArthroDesign Solutions S.L., de forma que se proyecte una imagen de dispositivos médicos accesibles, funcionales y de alta fiabilidad.
-
-\subsubsection{Estudio de fabricación}
-Se analizan los materiales adecuados (polímeros de grado médico) y los procesos de transformación (impresión 3D para prototipado e inyección para producción en serie), considerando la sostenibilidad y el ecodiseño.
-
-\subsubsection{Estudio de presupuesto}
-Se realiza un cálculo exhaustivo de costes, incluyendo materiales, mano de obra, gastos generales y beneficio industrial, de manera que podamos asegurar que el precio final por unidad sea competitivo en el sector de las ayudas técnicas.
-
-\vspace{1.5cm}
-
-\noindent\begin{minipage}{\textwidth}
-    \begin{flushright}
-        En Málaga, a \today
-    \end{flushright}
-    \vspace{2cm}
-
-    \noindent
-    \begin{minipage}[t]{0.45\textwidth}
-        \centering
-        \rule{6cm}{0.6pt} \\
-        \textbf{Fdo. D. Sergio Carmona Muñoz} \\
-        Colegiado Nº 06424 \\
-        DNI: 26291930D
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.45\textwidth}
-        \centering
-        \rule{6cm}{0.6pt} \\
-        \textbf{Fdo. D. Juan Gabriel Navarro Valdivielso} \\
-        Colegiado Nº 06425 \\
-        DNI: 77666662D
-    \end{minipage}
-
-    \vspace{2cm}
-
-    \noindent
-    \begin{minipage}[t]{0.45\textwidth}
-        \centering
-        \rule{6cm}{0.6pt} \\
-        \textbf{Fdo. D. Antonio Sánchez Doña} \\
-        Colegiado Nº 06423 \\
-        DNI: 79380534J
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.45\textwidth}
-        \centering
-        \rule{6cm}{0.6pt} \\
-        \textbf{Fdo. D. Iván de la Torre Segato} \\
-        Colegiado Nº 06421 \\
-        DNI: 79383630G
-    \end{minipage}
+    \rule{5.3cm}{0.6pt} \\
+    \textbf{D. Antonio Sánchez Doña} \\
+    Director General  \\
+    ArthroDesign Solutions S.L. \\
+    Colegiado Nº 06423 \\
+    DNI: 79380534J
 \end{minipage}
-\vspace{1cm}
+\hfill
+\begin{minipage}[t]{0.35\textwidth}
+    \centering
+    \vspace{0.5cm}
+    \begin{tikzpicture}
+        % Círculo simulando un sello de empresa
+        \draw[ArthroTeal, thick, dashed] (0,0) circle (1.8cm);
+        
+        % Imagen del símbolo como marca de agua transparente (al fondo)
+        \node[opacity=0.15] at (0,0) {\includegraphics[width=2.5cm]{simbolo.jpeg}};
+        
+        % Texto del sello (por encima del símbolo)
+        \node[text width=3cm, align=center, color=ArthroNavy] at (0,0) {\scriptsize \textbf{SELLO OFICIAL} \\ \vspace{0.1cm} ArthroDesign \\ Solutions S.L.};
+    \end{tikzpicture}
+\end{minipage}
 
 % ======================================================
 % HOJA EN BLANCO CON MARCA DE AGUA
@@ -299,3 +283,4 @@ Se realiza un cálculo exhaustivo de costes, incluyendo materiales, mano de obra
 \vfill
 
 \end{document}
+

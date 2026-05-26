@@ -15,7 +15,6 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{float}
-\usepackage{multirow}
 \usepackage[table, xcdraw]{xcolor}
 
 % --- Definición de Colores Corporativos ArthroDesign ---
@@ -55,7 +54,7 @@
 % --- Configuración de Enlaces ---
 \hypersetup{colorlinks=true, linkcolor=ArthroNavy, urlcolor=ArthroTeal}
 
-% --- CONFIGURACIÓN DE ENCABEZADO Y PIE CORPORATIVO (Anexo XIII) ---
+% --- CONFIGURACIÓN DE ENCABEZADO Y PIE CORPORATIVO (Anexo VIII) ---
 \pagestyle{fancy}
 \fancyhf{}
 
@@ -64,7 +63,7 @@
 
 % Información de Encabezado
 \fancyhead[L]{\small \textbf{\color{ArthroNavy}Adaptador ergonómico - PR-PIB-GIS26-09}}
-\fancyhead[R]{\small \textbf{\color{ArthroNavy}Anexo XIII: Estimación económica}}
+\fancyhead[R]{\small \textbf{\color{ArthroNavy}Anexo VII: Ilustraciones}}
 
 % Información de Pie de Página
 \fancyfoot[L]{\small \color{ArthroGray}ArthroDesign Solutions S.L.}
@@ -75,8 +74,9 @@
 \renewcommand{\footrulewidth}{0.4pt}
 
 \begin{document}
+
 % ======================================================
-% PÁGINA 1: PORTADA (REQUISITOS UNE 157001)
+% PÁGINA 1: PORTADA
 % ======================================================
 \begin{titlepage}
     % --- Elementos Geométricos de Identidad (Cabecera y Pie) ---
@@ -98,10 +98,10 @@
     \vspace{2cm}
 
     % --- BLOQUE DE TÍTULO PRINCIPAL ---
-    {\color{ArthroGray}\Huge \textbf{ANEXO XI}} \\
+    {\color{ArthroGray}\Huge \textbf{ANEXO VII}} \\
     \vspace{0.5cm}
-    {\color{ArthroNavy}\Huge \textbf{ESTIMACIÓN ECONÓMICA}} \\
-    \vspace{0.6cm}
+    {\color{ArthroNavy}\Huge \textbf{ILUSTRACIONES}} \\
+    \vspace{0.3cm}
     {\color{ArthroTeal}\rule{12cm}{2pt}} \\
     \vspace{1cm}
     {\Large \textbf{TÍTULO DEL PROYECTO:}} \\
@@ -115,13 +115,13 @@
         \textbf{CÓDIGO DE IDENTIFICACIÓN:} \\
         {\large \texttt{PR-PIB-GIS26-09}} \\[0.8cm]
         
-        \textbf{EMPRESA DESARROLLADORA:} \\
+        \textbf{PROMOTOR Y EMPRESA DESARROLLADORA:} \\
         {ArthroDesign Solutions S.L.}
     \end{minipage}
 
     \vspace{1.5cm}
 
-    % --- BLOQUE DE PROYECTISTAS ---
+   % --- BLOQUE DE PROYECTISTAS ---
     \textbf{PROYECTISTAS (Equipo de ArthroDesign Solutions S.L.):} \\
     \vspace{0.3cm}
     \small
@@ -144,13 +144,16 @@
 \setcounter{page}{2}
 
 % ======================================================
-% HOJA EN BLANCO (TRAS LA PORTADA)
+% HOJA EN BLANCO CON MARCA DE AGUA
 % ======================================================
 \newpage
 \pagestyle{fancy}
+
 \begin{tikzpicture}[remember picture, overlay]
     \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
 \end{tikzpicture}
+
+% Empujamos el texto hacia la parte inferior del folio
 \vspace*{8.5cm} 
 \begin{center}
     \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
@@ -159,19 +162,24 @@
 \newpage
 
 % ======================================================
-% ÍNDICE
+% PÁGINA: ÍNDICE AUTOMÁTICO (CON ENCABEZADO)
 % ======================================================
+\markboth{Índice}{Índice}
 \tableofcontents
+\thispagestyle{fancy} % Fuerza el estilo fancy en esta página
 \newpage
 
 % ======================================================
-% HOJA EN BLANCO (TRAS EL ÍNDICE)
+% HOJA EN BLANCO CON MARCA DE AGUA
 % ======================================================
 \newpage
 \pagestyle{fancy}
+
 \begin{tikzpicture}[remember picture, overlay]
     \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
 \end{tikzpicture}
+
+% Empujamos el texto hacia la parte inferior del folio
 \vspace*{8.5cm} 
 \begin{center}
     \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
@@ -179,91 +187,76 @@
 \vfill
 \newpage
 
+
 % ======================================================
-% CONTENIDO (SOLO TABLAS)
+% DESARROLLO DEL PRODUCTO EN CAD (NUEVO CONTENIDO)
 % ======================================================
+\newpage
+\section{Desarrollo del producto en CAD}
 
-\section{MATERIALES Y EMPRESAS RELACIONADAS}
 
-\begin{table}[H]
-\centering
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\textwidth}{|l|X|X|}
-\hline
-\rowcolor{ArthroTeal}
-\textcolor{white}{\textbf{Material / Componente}} & \textcolor{white}{\textbf{Proveedor / Empresa Relacionada}} & \textcolor{white}{\textbf{Aplicación en el Diseño}} \\
-\hline
-Filamento de Polipropileno (PP) & Printfactory 3D & Fabricación aditiva de los tres componentes del producto (base, palanca y pivote). \\
-\hline
-Caja de embalaje unitario & MalagaPack & Suministro del cartonaje y protección física del dispositivo terminado. \\
-\hline
-Etiquetas comerciales & Precintos y Etiquetas, S.L. & Identificación de lote de trazabilidad, marca y marcado CE. \\
-\hline
-Distribución logística & Correos Express & Servicio externalizado de recogida en planta, almacenamiento centralizado, gestión de stock y distribución a puntos de venta. \\
-\hline
-\end{tabularx}
-\end{table}
+\subsection{Fase 1: Modelado del inhalador (MDI)}
 
-\section{COSTE DE FABRICACIÓN UNITARIA Y GLOBAL}
 
-\begin{table}[H]
-\centering
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\textwidth}{|X|r|r|}
-\hline
-\rowcolor{ArthroTeal}
-\textcolor{white}{\textbf{Concepto de Gasto Directo}} & \textcolor{white}{\textbf{Coste Unitario (€)}} & \textcolor{white}{\textbf{Coste Global Mensual (1.500 ud) (€)}} \\
-\hline
-Impresión 3D completa del producto (Base, palanca y pivote) & 2,65 & 3.975,00 \\
-\hline
-Caja de embalaje unitario y etiquetado & 0,35 & 525,00 \\
-\hline
-Mano de obra (Ensamblado de piezas y control de calidad) & 0,28 & 420,00 \\
-\hline
-\rowcolor{ArthroNavy!10}
-\textbf{TOTAL COSTES DIRECTOS} & \textbf{3,28} & \textbf{4.920,00} \\
-\hline
-\end{tabularx}
-\end{table}
-\vspace{2 cm}
+\begin{figure}[H]
+    \centering
+   
+   
+     \includegraphics[width=0.8\textwidth]{ANEXOS/CAD_Inhalador.png}
+    \caption{Modelo CAD del Inhalador de Dosis Medida (MDI) usado como referencia.}
+    \label{fig:cad_inhalador}
+\end{figure}
 
-\section{BENEFICIOS Y PROYECCIÓN MENSUAL}
 
-\begin{table}[H]
-\centering
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\textwidth}{|X|r|r|}
-\hline
-\rowcolor{ArthroTeal}
-\textcolor{white}{\textbf{Concepto Financiero (Base: 1.500 ud/mes)}} & \textcolor{white}{\textbf{Valor por Unidad (€)}} & \textcolor{white}{\textbf{Importe Mensual Total (€)}} \\
-\hline
-\multicolumn{3}{|l|}{\cellcolor{ArthroNavy!10}\textbf{Ingresos Estimados}} \\
-\hline
-Precio de Venta al Distribuidor (Ingreso ArthroDesign) & 8,50 & 12.750,00 \\
-\hline
-Precio de Venta al Público Final (PVP recomendado en Farmacia) & 13,95 & --- \\
-\hline
-\multicolumn{3}{|l|}{\cellcolor{ArthroNavy!10}\textbf{Costes Operativos de la Cadena}} \\
-\hline
-Coste de fabricación física en polipropileno y componentes & 3,28 & 4.920,00 \\
-\hline
-Tarifa logística de distribución (Correos Express) & 0,30 & 450,00 \\
-\hline
-Mantenimiento y amortización de equipos de impresión 3D & 0,20 & 300,00 \\
-\hline
-Gastos de gestión operativa y comercialización & 0,54 & 810,00 \\
-\hline
-\rowcolor{ArthroGray!20}
-\textbf{Total Costes de Operación} & \textbf{4,32} & \textbf{6.480,00} \\
-\hline
-\multicolumn{3}{|l|}{\cellcolor{ArthroNavy!10}\textbf{Proyección de Beneficios Netos de la Empresa}} \\
-\hline
-\rowcolor{ArthroTeal!20}
-\textbf{BENEFICIO NETO REAL (ArthroDesign Solutions S.L.)} & \textbf{4.18} & \textbf{6.270,00} \\
-\hline
-\end{tabularx}
-\end{table}
+\subsection{Fase 2: Diseño de la base}
 
+
+\begin{figure}[H]
+    \centering
+   
+    \includegraphics[width=0.8\textwidth]{CAD_Base.png}
+    \caption{Diseño CAD de la Base del adaptador.}
+    \label{fig:cad_base}
+\end{figure}
+
+\newpage
+\subsection{Fase 3: Desarrollo del pivote}
+
+\begin{figure}[H]
+    \centering
+   
+    \includegraphics[width=0.8\textwidth]{CAD_Pivote.png}
+    \caption{Modelo CAD del Pivote articulado.}
+    \label{fig:cad_pivote}
+\end{figure}
+
+\subsection{Fase 4: Diseño de la palanca}
+
+
+\begin{figure}[H]
+    \centering
+   
+     \includegraphics[width=0.8\textwidth]{CAD_Palanca.png}
+    \caption{Diseño CAD de la Palanca de actuación.}
+    \label{fig:cad_palanca}
+\end{figure}
+\newpage
+\subsection{Fase 5: Ensamblaje completo}
+
+
+\begin{figure}[H]
+    \centering
+   
+     \includegraphics[width=0.8\textwidth]{ANEXOS/CAD_Ensamblaje.png}
+    \caption{Ensamblaje completo de todos los componentes}
+    \label{fig:cad_palanca}
+\end{figure}
+
+
+% ======================================================
+% BLOQUE DE FIRMAS
+% ======================================================
+\newpage
 \noindent\begin{minipage}{\textwidth}
     \begin{flushright}
         En Málaga, a \today
@@ -306,6 +299,7 @@ Gastos de gestión operativa y comercialización & 0,54 & 810,00 \\
         DNI: 79383630G
     \end{minipage}
 \end{minipage}
+\vspace{1cm}
 
 % ======================================================
 % HOJA EN BLANCO CON MARCA DE AGUA

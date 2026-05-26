@@ -1,0 +1,525 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Paquetes de Estilo y Formato ---
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{top=3cm, bottom=3cm, left=3cm, right=2.5cm}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgf-pie}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{float}
+\usepackage[table, xcdraw]{xcolor}
+\usepackage{amsmath}
+\usepackage{booktabs}
+
+% --- Colores Corporativos ArthroDesign ---
+\definecolor{ArthroNavy}{HTML}{0F172A}
+\definecolor{ArthroTeal}{HTML}{0D9488}
+\definecolor{ArthroGray}{HTML}{64748B}
+\definecolor{ArthroTealLight}{HTML}{CCEDE9}
+\definecolor{ArthroTealMid}{HTML}{5BB8B0}
+\definecolor{ArthroNavyMid}{HTML}{3B5278}
+\definecolor{ArthroOrange}{HTML}{F59E0B}
+
+% --- Configuración de Párrafo ---
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0em}
+
+% --- Estilo de Títulos ---
+\titleformat{\section}
+  {\color{ArthroNavy}\Large\bfseries}
+  {\thesection.}{0.5em}{}
+  [{\color{ArthroTeal}\titlerule[1.5pt]}]
+
+\titleformat{\subsection}
+  {\color{ArthroNavy}\large\bfseries}
+  {\thesubsection.}{0.5em}{}
+  [{\color{ArthroTeal}\titlerule[1pt]}]
+
+\titleformat{\subsubsection}
+  {\color{ArthroNavy}\large\bfseries}
+  {\thesubsubsection.}{0.5em}{}
+
+% --- Viñetas en Turquesa ---
+\renewcommand{\labelitemi}{\color{ArthroTeal}\textbullet}
+\renewcommand{\labelitemii}{\color{ArthroTeal}\circ}
+
+% --- Configuración de Enlaces ---
+\hypersetup{colorlinks=true, linkcolor=ArthroNavy, urlcolor=ArthroTeal}
+
+% --- ENCABEZADO Y PIE CORPORATIVO ---
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{ArthroTeal}\leaders\hrule height 2pt\hfill}}
+\fancyhead[L]{\small \textbf{\color{ArthroNavy}Adaptador ergonómico - PR-PIB-GIS26-09}}
+\fancyhead[R]{\small \textbf{\color{ArthroNavy}Anexo XIII: Impresión 3D FDM}}
+\fancyfoot[L]{\small \color{ArthroGray}ArthroDesign Solutions S.L.}
+\fancyfoot[C]{\small \color{ArthroGray}\today}
+\fancyfoot[R]{\small \textbf{\color{ArthroNavy}Pág. \thepage\ de \pageref{LastPage}}}
+\setlength{\headheight}{15pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+
+% ======================================================
+% PORTADA
+% ======================================================
+\begin{titlepage}
+    \begin{tikzpicture}[remember picture,overlay]
+        \fill[ArthroNavy] (current page.north west) rectangle ([yshift=-4.5cm]current page.north east);
+        \fill[ArthroTeal] ([yshift=-4.5cm]current page.north west) rectangle ([yshift=-4.7cm]current page.north east);
+        \fill[ArthroNavy] (current page.south west) rectangle ([yshift=2.5cm]current page.south east);
+        \fill[ArthroTeal] ([yshift=2.5cm]current page.south west) rectangle ([yshift=2.7cm]current page.south east);
+    \end{tikzpicture}
+
+    \centering
+    \vspace*{-2cm}
+    \includegraphics[width=6.5cm]{logo_definitivo.png} \\
+    \vspace{2cm}
+
+    {\color{ArthroGray}\Huge \textbf{ANEXO XIII}} \\
+    \vspace{0.5cm}
+    {\color{ArthroNavy}\Huge \textbf{IMPRESIÓN 3D FDM}} \\
+    \vspace{0.3cm}
+    {\color{ArthroTeal}\rule{12cm}{2pt}} \\
+    \vspace{1cm}
+    {\Large \textbf{TÍTULO DEL PROYECTO:}} \\
+    \vspace{0.3cm}
+    {\Huge \bfseries Diseño de un adaptador ergonómico universal para la optimización de la pulsación manual en inhaladores de dosis medida (MDI)} \\
+    \vspace{1.5cm}
+
+    \begin{minipage}{0.8\textwidth}
+        \centering
+        \textbf{CÓDIGO DE IDENTIFICACIÓN:} \\
+        {\large \texttt{PR-PIB-GIS26-09}} \\[0.8cm]
+        \textbf{PROMOTOR Y EMPRESA DESARROLLADORA:} \\
+        {ArthroDesign Solutions S.L.}
+    \end{minipage}
+
+    \vspace{1.5cm}
+    \textbf{PROYECTISTAS (Equipo de ArthroDesign Solutions S.L.):} \\
+    \vspace{0.3cm}
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{l l}
+        \textbf{D. Sergio Carmona Muñoz} & Colegiado Nº 06424 (DNI: 26291930D) \\
+        \textbf{D. Juan Gabriel Navarro Valdivielso} & Colegiado Nº 06425 (DNI: 77666662D) \\
+        \textbf{D. Antonio Sánchez Doña} & Colegiado Nº 06423 (DNI: 79380534J) \\
+        \textbf{D. Iván de la Torre Segato} & Colegiado Nº 06421 (DNI: 79383630G) \\
+    \end{tabular}
+    \vfill
+    {\color{white} ArthroDesign Solutions S.L. \quad | \quad \today}
+    \vspace{-1.75cm}
+\end{titlepage}
+
+\setcounter{page}{2}
+
+% ======================================================
+% HOJA EN BLANCO
+% ======================================================
+\newpage
+\pagestyle{fancy}
+\begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
+\end{tikzpicture}
+\vspace*{8.5cm}
+\begin{center}
+    \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
+\end{center}
+\vfill
+\newpage
+
+% ======================================================
+% ÍNDICE
+% ======================================================
+\markboth{Índice}{Índice}
+\tableofcontents
+\thispagestyle{fancy}
+\newpage
+
+% ======================================================
+% HOJA EN BLANCO
+% ======================================================
+\newpage
+\pagestyle{fancy}
+\begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
+\end{tikzpicture}
+\vspace*{8.5cm}
+\begin{center}
+    \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
+\end{center}
+\vfill
+\newpage
+
+% ======================================================
+% CONTENIDO DEL ANEXO
+% ======================================================
+
+% --- SECCIÓN 1 ---
+\section{PARÁMETROS DE IMPRESIÓN}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\columncolor{ArthroNavy}\color{white}\bfseries\raggedright\arraybackslash}m{5.5cm}|>{\centering\arraybackslash}X|}
+\hline
+\textbf{Parámetro} & \textbf{Especificación} \\
+\hline
+Método de fabricación & Impresión 3D (FDM) \\
+\hline
+Material & Polipropileno Copolímero de grado médico (PP-C) \\
+\hline
+Espesor de capa & 0.15 mm \\
+\hline
+Porcentaje de relleno interno & 100\% \\
+\hline
+Patrón de relleno & Giroide \\
+\hline
+Tolerancias generales & $\pm$\,0.01 mm \\
+\hline
+\end{tabularx}
+\caption{Parámetros generales de fabricación por impresión 3D FDM.}
+\label{tab:parametros_impresion}
+\end{table}
+
+% --- SECCIÓN 2 ---
+\section{COMPONENTES DEL CONJUNTO}
+
+% Tabla dividida en dos para evitar cortes de texto:
+% Parte A: identificación y función
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\textwidth}{|>{\columncolor{ArthroNavy}\color{white}\bfseries\centering\arraybackslash}m{2.8cm}|>{\centering\arraybackslash}m{2.8cm}|>{\centering\arraybackslash}X|}
+\hline
+\rowcolor{ArthroNavy}
+\textcolor{white}{\textbf{Código}} &
+\textcolor{white}{\textbf{Componente}} &
+\textcolor{white}{\textbf{Función principal}} \\
+\hline
+AD-MDI-101 & Base &
+Alojamiento y estabilización del inhalador durante el accionamiento \\
+\hline
+AD-MDI-102 & Pivote &
+Conexión y articulación entre la base y la palanca \\
+\hline
+AD-MDI-103 & Palanca &
+Transmisión y amplificación del esfuerzo de pulsación manual \\
+\hline
+\end{tabularx}
+\caption{Identificación y función de los componentes del adaptador.}
+\label{tab:componentes_id}
+\end{table}
+
+% Parte B: datos de fabricación
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\textwidth}{|>{\columncolor{ArthroNavy}\color{white}\bfseries\centering\arraybackslash}m{2.8cm}|>{\centering\arraybackslash}m{2.8cm}|>{\centering\arraybackslash}m{3.2cm}|>{\centering\arraybackslash}m{2.8cm}|>{\centering\arraybackslash}X|}
+\hline
+\rowcolor{ArthroNavy}
+\textcolor{white}{\textbf{Código}} &
+\textcolor{white}{\textbf{Componente}} &
+\textcolor{white}{\textbf{Tiempo est.}} &
+\textcolor{white}{\textbf{PP-C (g)}} &
+\textcolor{white}{\textbf{Soportes}} \\
+\hline
+AD-MDI-101 & Base       & 4 h 15 min & 34 g & Sí \\
+\hline
+AD-MDI-102 & Pivote     & 0 h 45 min &  8 g & No \\
+\hline
+AD-MDI-103 & Palanca    & 2 h 10 min & 18 g & Sí \\
+\hline
+\rowcolor{ArthroTeal!20}
+\textbf{---} & \textbf{Total} & \textbf{7 h 10 min} & \textbf{60 g} & \textbf{---} \\
+\hline
+\end{tabularx}
+\caption{Datos estimados de fabricación por componente.}
+\label{tab:componentes_fab}
+\end{table}
+
+% --- SECCIÓN 3 ---
+\section{ANÁLISIS GRÁFICO DEL PROCESO}
+
+\subsection{Distribución del tiempo de impresión por componente}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\pie[
+    color={ArthroTeal, ArthroNavyMid, ArthroOrange},
+    text=legend,
+    radius=3.2,
+    before number=,
+    after number=\%
+]{
+    59/Base (AD-MDI-101) --- 4h 15min,
+    11/Pivote (AD-MDI-102) --- 0h 45min,
+    30/Palanca (AD-MDI-103) --- 2h 10min
+}
+\end{tikzpicture}
+\caption{Distribución porcentual del tiempo total de impresión por componente.}
+\label{fig:pie_tiempo}
+\end{figure}
+
+\subsection{Distribución del consumo de material por componente}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\pie[
+    color={ArthroTeal, ArthroNavyMid, ArthroOrange},
+    text=legend,
+    radius=3.2,
+    before number=,
+    after number=\%
+]{
+    57/Base (AD-MDI-101) --- 34 g,
+    13/Pivote (AD-MDI-102) --- 8 g,
+    30/Palanca (AD-MDI-103) --- 18 g
+}
+\end{tikzpicture}
+\caption{Distribución porcentual del consumo de PP-C por componente (total: 60 g).}
+\label{fig:pie_material}
+\end{figure}
+
+\subsection{Comparativa de tiempos de impresión por componente}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    ybar,
+    bar width=1.4cm,
+    width=13cm,
+    height=7cm,
+    symbolic x coords={Base (AD-MDI-101), Pivote (AD-MDI-102), Palanca (AD-MDI-103)},
+    xtick=data,
+    x tick label style={font=\small, align=center, text width=3.2cm},
+    ylabel={Tiempo de impresión (min)},
+    ylabel style={font=\small},
+    ymin=0, ymax=300,
+    ytick={0,50,100,150,200,250,300},
+    nodes near coords,
+    nodes near coords style={font=\small\bfseries, color=ArthroNavy},
+    every axis plot/.append style={fill=ArthroTeal, draw=ArthroNavy},
+    axis line style={color=ArthroNavy},
+    tick style={color=ArthroNavy},
+    grid=major,
+    grid style={dashed, color=ArthroGray!30},
+    enlarge x limits=0.25,
+]
+\addplot coordinates {
+    (Base (AD-MDI-101), 255)
+    (Pivote (AD-MDI-102), 45)
+    (Palanca (AD-MDI-103), 130)
+};
+\end{axis}
+\end{tikzpicture}
+\caption{Comparativa del tiempo de impresión estimado por componente (en minutos).}
+\label{fig:barras_tiempo}
+\end{figure}
+
+\subsection{Comparativa del consumo de material por componente}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    ybar,
+    bar width=1.4cm,
+    width=13cm,
+    height=7cm,
+    symbolic x coords={Base (AD-MDI-101), Pivote (AD-MDI-102), Palanca (AD-MDI-103)},
+    xtick=data,
+    x tick label style={font=\small, align=center, text width=3.2cm},
+    ylabel={Consumo de PP-C (g)},
+    ylabel style={font=\small},
+    ymin=0, ymax=45,
+    ytick={0,5,10,15,20,25,30,35,40,45},
+    nodes near coords,
+    nodes near coords style={font=\small\bfseries, color=ArthroNavy},
+    every axis plot/.append style={fill=ArthroNavyMid, draw=ArthroNavy},
+    axis line style={color=ArthroNavy},
+    tick style={color=ArthroNavy},
+    grid=major,
+    grid style={dashed, color=ArthroGray!30},
+    enlarge x limits=0.25,
+]
+\addplot coordinates {
+    (Base (AD-MDI-101), 34)
+    (Pivote (AD-MDI-102), 8)
+    (Palanca (AD-MDI-103), 18)
+};
+\end{axis}
+\end{tikzpicture}
+\caption{Comparativa del consumo estimado de PP-C por componente (en gramos).}
+\label{fig:barras_material}
+\end{figure}
+
+% --- SECCIÓN 4 ---
+\section{FLUJO DE FABRICACIÓN}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    node distance=1.6cm,
+    box/.style={
+        draw=ArthroNavy,
+        rounded corners=5pt,
+        minimum width=7cm,
+        minimum height=1.0cm,
+        align=center,
+        fill=ArthroTeal!15,
+        text=ArthroNavy,
+        font=\small\bfseries
+    },
+    arrow/.style={->, thick, color=ArthroNavy}
+]
+
+\node[box] (a) {1. Generación de archivos STL};
+\node[box, below of=a] (b) {2. Slicing y configuración de parámetros};
+\node[box, below of=b] (c) {3. Preparación del equipo de impresión};
+\node[box, below of=c] (d) {4. Impresión FDM};
+\node[box, below of=d] (e) {5. Postprocesado y ajuste de piezas};
+\node[box, below of=e] (f) {6. Control de calidad};
+
+\draw[arrow] (a) -- (b);
+\draw[arrow] (b) -- (c);
+\draw[arrow] (c) -- (d);
+\draw[arrow] (d) -- (e);
+\draw[arrow] (e) -- (f);
+
+\end{tikzpicture}
+\caption{Flujo de trabajo secuencial del proceso de impresión 3D FDM.}
+\label{fig:flujo_fabricacion}
+\end{figure}
+% --- SECCIÓN 5 ---
+\section{ESPECIFICACIONES DEL EQUIPO DE IMPRESIÓN}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\columncolor{ArthroNavy}\color{white}\bfseries\raggedright\arraybackslash}m{5.5cm}|>{\centering\arraybackslash}X|}
+\hline
+\textbf{Característica} & \textbf{Requisito} \\
+\hline
+Tecnología & FFF / FDM \\
+\hline
+Sistema de extrusión & Simple o doble (soporte hidrosoluble si necesario) \\
+\hline
+Resolución de posicionamiento & Alta precisión en ejes X, Y y Z \\
+\hline
+Placa de construcción & Cama caliente compatible con PP-C \\
+\hline
+Entorno de impresión & Cámara cerrada (reducción de warping) \\
+\hline
+Compatibilidad de material & Polipropileno Copolímero de grado médico \\
+\hline
+\end{tabularx}
+\caption{Especificaciones técnicas mínimas del equipo de impresión 3D.}
+\label{tab:equipo}
+\end{table}
+
+% --- SECCIÓN 6 ---
+\section{CONTROL DE CALIDAD}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}m{0.6cm}|>{\columncolor{ArthroNavy}\color{white}\bfseries\centering\arraybackslash}m{4.5cm}|>{\centering\arraybackslash}X|>{\centering\arraybackslash}m{3.0cm}|}
+\hline
+\rowcolor{ArthroNavy}
+\textcolor{white}{\textbf{\#}} &
+\textcolor{white}{\textbf{Punto de verificación}} &
+\textcolor{white}{\textbf{Criterio de aceptación}} &
+\textcolor{white}{\textbf{Instrumento}} \\
+\hline
+1 & Inspección visual & Sin delaminación, grietas ni deformaciones visibles & Visual \\
+\hline
+2 & Control dimensional & Cotas críticas dentro de $\pm$\,0.01 mm & Calibre digital \\
+\hline
+3 & Ensamblaje del conjunto & Base + Pivote + Palanca encajan sin interferencias & Montaje manual \\
+\hline
+4 & Ensayo funcional & Transmisión correcta del esfuerzo de pulsación & Ensayo manual \\
+\hline
+\end{tabularx}
+\caption{Puntos de control de calidad del conjunto fabricado.}
+\label{tab:calidad}
+\end{table}
+
+\newpage
+
+% ======================================================
+% BLOQUE DE FIRMAS
+% ======================================================
+\noindent\begin{minipage}{\textwidth}
+    \begin{flushright}
+        En Málaga, a \today
+    \end{flushright}
+    \vspace{2cm}
+
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Sergio Carmona Muñoz} \\
+        Colegiado Nº 06424 \\
+        DNI: 26291930D
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Juan Gabriel Navarro Valdivielso} \\
+        Colegiado Nº 06425 \\
+        DNI: 77666662D
+    \end{minipage}
+
+    \vspace{2cm}
+
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Antonio Sánchez Doña} \\
+        Colegiado Nº 06423 \\
+        DNI: 79380534J
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Iván de la Torre Segato} \\
+        Colegiado Nº 06421 \\
+        DNI: 79383630G
+    \end{minipage}
+\end{minipage}
+
+% ======================================================
+% HOJA EN BLANCO
+% ======================================================
+\newpage
+\pagestyle{fancy}
+\begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
+\end{tikzpicture}
+\vspace*{8.5cm}
+\begin{center}
+    \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
+\end{center}
+\vfill
+
+\end{document}

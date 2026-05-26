@@ -16,6 +16,7 @@
 \usepackage[table, xcdraw]{xcolor}
 \usepackage{amsmath}
 \usepackage{tocloft}
+\usepackage{tabularx}
 
 % --- Ajuste del espacio en el índice para números de dos cifras ---
 \setlength{\cftsecnumwidth}{2.5em} % <--- AMPLÍA EL ESPACIO ENTRE NÚMERO Y TEXTO
@@ -97,7 +98,7 @@
         \textbf{CÓDIGO DE IDENTIFICACIÓN:} \\
         {\large \texttt{PR-PIB-GIS26-09}} \\[0.8cm]
         
-        \textbf{EMPRESA DESARROLLADORA:} \\
+        \textbf{PROMOTOR Y EMPRESA DESARROLLADORA:} \\
         {ArthroDesign Solutions S.L.}
     \end{minipage}
 
@@ -156,8 +157,534 @@
  
  
 
- 
- 
+% ======================================================
+% DOCUMENTO Nº 7: PRESUPUESTO
+% ======================================================
+
+% Macros auxiliares para mantener el documento compacto y uniforme.
+% Los importes se expresan sin IVA salvo en los apartados finales donde se indica expresamente.
+
+\newcommand{\descBase}{Base del adaptador ergonómico ArthroPush. Pieza inferior de alojamiento del inhalador, referencia AD-MDI-101, fabricada en polipropileno copolímero (PP-C). Dimensiones máximas: 33,54 mm de longitud, 32 mm de anchura y 34,71 mm de altura.}
+\newcommand{\descPivote}{Pivote del adaptador ergonómico ArthroPush. Pieza intermedia de unión y guiado del mecanismo, referencia AD-MDI-102, fabricada en polipropileno copolímero (PP-C). Dimensiones máximas: 34,8 mm de longitud, 32 mm de anchura y 37,18 mm de altura.}
+\newcommand{\descPalanca}{Palanca superior del adaptador ergonómico ArthroPush. Elemento de accionamiento manual, referencia AD-MDI-103, fabricado en polipropileno copolímero (PP-C). Dimensiones máximas: 68,13 mm de longitud, 32 mm de anchura y 72,92 mm de altura.}
+\newcommand{\descEtiqueta}{Etiqueta exterior del embalaje individual ArthroPush, con identificación del modelo, código de proyecto, uso previsto, material, advertencias, limpieza, información ambiental, fabricante, lote, fecha y versión. Dimensiones: 100 mm de longitud, 70 mm de anchura y 0,20 mm de altura.}
+\newcommand{\descManual}{Manual de instrucciones de usuario ArthroPush, con contenido de producto, montaje de base, pivote y palanca, uso, retirada, limpieza, almacenamiento, advertencias y eliminación. Dimensiones: 210 mm de longitud, 148 mm de anchura y 1 mm de altura.}
+\newcommand{\descEmbalaje}{Embalaje individual del adaptador ArthroPush, destinado a contener una unidad completa del producto, su etiqueta exterior y el manual de instrucciones. Dimensiones: 120 mm de longitud, 80 mm de anchura y 45 mm de altura.}
+
+\section{CUADROS DE PRECIOS}
+
+\subsection{Cuadro de Precios Básicos}
+
+\subsubsection{Capítulo 1. Conjunto funcional}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|p{1.2cm}|p{1.4cm}|p{10.0cm}|p{2.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}Nº orden} &
+\textbf{\color{white}Unidades} &
+\textbf{\color{white}Descripción} &
+\textbf{\color{white}Precio (€)} \\
+\hline
+1.1 & Ud. & \descBase & 0,86 \\
+\hline
+1.2 & Ud. & \descPivote & 0,80 \\
+\hline
+1.3 & Ud. & \descPalanca & 1,27 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Capítulo 2. Documentación, etiquetado y embalaje}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|p{1.2cm}|p{1.4cm}|p{10.0cm}|p{2.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}Nº orden} &
+\textbf{\color{white}Unidades} &
+\textbf{\color{white}Descripción} &
+\textbf{\color{white}Precio (€)} \\
+\hline
+2.1 & Ud. & \descEtiqueta & 0,06 \\
+\hline
+2.2 & Ud. & \descManual & 0,12 \\
+\hline
+2.3 & Ud. & \descEmbalaje & 0,17 \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\subsection{Cuadro de Precios Unitarios}
+
+\subsubsection{Capítulo 1. Conjunto funcional}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|p{1.2cm}|p{1.4cm}|p{10.0cm}|p{2.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}Nº orden} &
+\textbf{\color{white}Unidades} &
+\textbf{\color{white}Descripción} &
+\textbf{\color{white}Precio (€)} \\
+\hline
+1.1 & Ud. & \descBase & 0,91 \\
+\hline
+1.2 & Ud. & \descPivote & 0,85 \\
+\hline
+1.3 & Ud. & \descPalanca & 1,35 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Capítulo 2. Documentación, etiquetado y embalaje}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|p{1.2cm}|p{1.4cm}|p{10.0cm}|p{2.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}Nº orden} &
+\textbf{\color{white}Unidades} &
+\textbf{\color{white}Descripción} &
+\textbf{\color{white}Precio (€)} \\
+\hline
+2.1 & Ud. & \descEtiqueta & 0,06 \\
+\hline
+2.2 & Ud. & \descManual & 0,13 \\
+\hline
+2.3 & Ud. & \descEmbalaje & 0,18 \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\subsection{Cuadro de Precios Descompuestos}
+
+\subsubsection{Capítulo 1. Conjunto funcional}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|p{1.1cm}|p{1.4cm}|p{9.0cm}|p{2.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}Nº orden} & \textbf{\color{white}Unidades} & \textbf{\color{white}Descripción} & \textbf{\color{white}Precio (€)} \\
+\hline
+1.1 & Ud. & \descBase
+
+\vspace{0.1cm}
+\textbf{MATERIALES} \hfill \textbf{0,25 €}
+
+\hspace{0.4cm}Ud. Polipropileno copolímero (PP-C) para base \hfill 0,25 €
+
+\textbf{MAQUINARIA} \hfill \textbf{0,43 €}
+
+\hspace{0.4cm}Ud. Impresión 3D / inyección y acabado de la base \hfill 0,43 €
+
+\textbf{MANO DE OBRA} \hfill \textbf{0,18 €}
+
+\hspace{0.4cm}Ud. Preparación, retirada de soportes y control visual \hfill 0,18 €
+
+\textbf{SUMA} \hfill \textbf{0,86 €}
+
+\textbf{COSTES INDIRECTOS (6\%)} \hfill \textbf{0,05 €}
+
+\textbf{TOTAL} \hfill \textbf{0,91 €}
+& 0,91 \\
+\hline
+1.2 & Ud. & \descPivote
+
+\vspace{0.1cm}
+\textbf{MATERIALES} \hfill \textbf{0,23 €}
+
+\hspace{0.4cm}Ud. Polipropileno copolímero (PP-C) para pivote \hfill 0,23 €
+
+\textbf{MAQUINARIA} \hfill \textbf{0,39 €}
+
+\hspace{0.4cm}Ud. Impresión 3D / inyección y acabado del pivote \hfill 0,39 €
+
+\textbf{MANO DE OBRA} \hfill \textbf{0,18 €}
+
+\hspace{0.4cm}Ud. Preparación, retirada de soportes y control visual \hfill 0,18 €
+
+\textbf{SUMA} \hfill \textbf{0,80 €}
+
+\textbf{COSTES INDIRECTOS (6\%)} \hfill \textbf{0,05 €}
+
+\textbf{TOTAL} \hfill \textbf{0,85 €}
+& 0,85 \\
+\hline
+1.3 & Ud. & \descPalanca
+
+\vspace{0.1cm}
+\textbf{MATERIALES} \hfill \textbf{0,37 €}
+
+\hspace{0.4cm}Ud. Polipropileno copolímero (PP-C) para palanca \hfill 0,37 €
+
+\textbf{MAQUINARIA} \hfill \textbf{0,63 €}
+
+\hspace{0.4cm}Ud. Impresión 3D / inyección y acabado de la palanca \hfill 0,63 €
+
+\textbf{MANO DE OBRA} \hfill \textbf{0,27 €}
+
+\hspace{0.4cm}Ud. Preparación, retirada de soportes y control visual \hfill 0,27 €
+
+\textbf{SUMA} \hfill \textbf{1,27 €}
+
+\textbf{COSTES INDIRECTOS (6\%)} \hfill \textbf{0,08 €}
+
+\textbf{TOTAL} \hfill \textbf{1,35 €}
+& 1,35 \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\subsubsection{Capítulo 2. Documentación, etiquetado y embalaje}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|p{1.1cm}|p{1.4cm}|p{9.0cm}|p{2.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}Nº orden} & \textbf{\color{white}Unidades} & \textbf{\color{white}Descripción} & \textbf{\color{white}Precio (€)} \\
+\hline
+2.1 & Ud. & \descEtiqueta
+
+\vspace{0.1cm}
+\textbf{MATERIALES} \hfill \textbf{0,04 €}
+
+\hspace{0.4cm}Ud. Papel adhesivo impreso para etiqueta exterior \hfill 0,04 €
+
+\textbf{MAQUINARIA} \hfill \textbf{0,01 €}
+
+\hspace{0.4cm}Ud. Impresión y corte de etiqueta \hfill 0,01 €
+
+\textbf{MANO DE OBRA} \hfill \textbf{0,01 €}
+
+\hspace{0.4cm}Ud. Revisión y colocación de etiqueta en embalaje \hfill 0,01 €
+
+\textbf{SUMA} \hfill \textbf{0,06 €}
+
+\textbf{COSTES INDIRECTOS (6\%)} \hfill \textbf{0,00 €}
+
+\textbf{TOTAL} \hfill \textbf{0,06 €}
+& 0,06 \\
+\hline
+2.2 & Ud. & \descManual
+
+\vspace{0.1cm}
+\textbf{MATERIALES} \hfill \textbf{0,08 €}
+
+\hspace{0.4cm}Ud. Papel impreso para manual de instrucciones \hfill 0,08 €
+
+\textbf{MAQUINARIA} \hfill \textbf{0,02 €}
+
+\hspace{0.4cm}Ud. Impresión, plegado y acabado del manual \hfill 0,02 €
+
+\textbf{MANO DE OBRA} \hfill \textbf{0,02 €}
+
+\hspace{0.4cm}Ud. Revisión e inclusión del manual en embalaje \hfill 0,02 €
+
+\textbf{SUMA} \hfill \textbf{0,12 €}
+
+\textbf{COSTES INDIRECTOS (6\%)} \hfill \textbf{0,01 €}
+
+\textbf{TOTAL} \hfill \textbf{0,13 €}
+& 0,13 \\
+\hline
+2.3 & Ud. & \descEmbalaje
+
+\vspace{0.1cm}
+\textbf{MATERIALES} \hfill \textbf{0,12 €}
+
+\hspace{0.4cm}Ud. Caja de cartón reciclable para unidad comercial \hfill 0,12 €
+
+\textbf{MAQUINARIA} \hfill \textbf{0,02 €}
+
+\hspace{0.4cm}Ud. Troquelado, plegado y preparación del embalaje \hfill 0,02 €
+
+\textbf{MANO DE OBRA} \hfill \textbf{0,03 €}
+
+\hspace{0.4cm}Ud. Montaje de caja e introducción del producto \hfill 0,03 €
+
+\textbf{SUMA} \hfill \textbf{0,17 €}
+
+\textbf{COSTES INDIRECTOS (6\%)} \hfill \textbf{0,01 €}
+
+\textbf{TOTAL} \hfill \textbf{0,18 €}
+& 0,18 \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\section{PRESUPUESTOS}
+
+\subsection{Presupuesto de Ejecución Material (PEM)}
+
+\subsubsection{Capítulo 1. Conjunto funcional}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{3pt}
+
+\begin{tabularx}{\textwidth}{|
+p{0.9cm}|
+p{1.4cm}|
+X|
+p{1.7cm}|
+p{1.4cm}|
+p{1.5cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}Nº orden} &
+\textbf{\color{white}Unidades} &
+\textbf{\color{white}Descripción} &
+\textbf{\color{white}Precio Unitario (€)} &
+\textbf{\color{white}Medición} &
+\textbf{\color{white}Precio (€)} \\
+\hline
+1.1 & Ud. & \descBase & 0,91 & 1 & 0,91 \\
+\hline
+1.2 & Ud. & \descPivote & 0,85 & 1 & 0,85 \\
+\hline
+1.3 & Ud. & \descPalanca & 1,35 & 1 & 1,35 \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsubsection{Capítulo 2. Documentación, etiquetado y embalaje}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.35}
+\setlength{\tabcolsep}{3pt}
+
+\begin{tabularx}{\textwidth}{|
+p{0.9cm}|
+p{1.4cm}|
+X|
+p{1.7cm}|
+p{1.4cm}|
+p{1.5cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}Nº orden} &
+\textbf{\color{white}Unidades} &
+\textbf{\color{white}Descripción} &
+\textbf{\color{white}Precio Unitario (€)} &
+\textbf{\color{white}Medición} &
+\textbf{\color{white}Precio (€)} \\
+\hline
+2.1 & Ud. & \descEtiqueta & 0,06 & 1 & 0,06 \\
+\hline
+2.2 & Ud. & \descManual & 0,13 & 1 & 0,13 \\
+\hline
+2.3 & Ud. & \descEmbalaje & 0,18 & 1 & 0,18 \\
+\hline
+\end{tabularx}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|p{11.0cm}|p{3.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}Presupuesto de Ejecución Material (PEM)} & \textbf{\color{white}Importe (€)} \\
+\hline
+Capítulo 1. Conjunto funcional & 3,11 \\
+\hline
+Capítulo 2. Documentación, etiquetado y embalaje & 0,37 \\
+\hline
+\rowcolor{gray!15}
+\textbf{PEM} & \textbf{3,48} \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent\textbf{El Presupuesto de Ejecución Material (PEM) asciende a tres euros con cuarenta y ocho céntimos.}
+
+\subsection{Presupuesto de Ejecución por Contrata (PEC)}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|p{11.0cm}|p{3.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}Presupuesto de Ejecución por Contrata (PEC)} & \textbf{\color{white}Importe (€)} \\
+\hline
+Capítulo 1. Conjunto funcional & 3,11 \\
+\hline
+Capítulo 2. Documentación, etiquetado y embalaje & 0,37 \\
+\hline
+\textbf{PEM} & \textbf{3,48} \\
+\hline
+Gastos Generales (10\% PEM) & 0,35 \\
+\hline
+Beneficio Industrial (20\% PEM) & 0,70 \\
+\hline
+Base imponible (PEM + GG + BI) & 4,53 \\
+\hline
+IVA (21\%) & 0,95 \\
+\hline
+\rowcolor{gray!15}
+\textbf{PEC} & \textbf{5,48} \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent\textbf{El Presupuesto de Ejecución por Contrata (PEC) asciende a cinco euros con cuarenta y ocho céntimos.}
+
+\subsection{Presupuesto para la Administración (PA)}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|p{11.0cm}|p{3.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}Presupuesto para la Administración (PA)} & \textbf{\color{white}Importe (€)} \\
+\hline
+PEC & 5,48 \\
+\hline
+Gastos de Ingeniería: 500 € a distribuir en 300 unidades & 1,67 \\
+\hline
+Gastos de Dirección Técnica: 200 € a distribuir en 300 unidades & 0,67 \\
+\hline
+Base Gastos Técnicos & 2,34 \\
+\hline
+IVA Gastos Técnicos (21\%) & 0,49 \\
+\hline
+\rowcolor{gray!15}
+\textbf{Presupuesto para la Administración} & \textbf{8,31} \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent\textbf{El Presupuesto para la Administración (PA) del proyecto es de ocho euros con treinta y un céntimos.}
+
+\newpage
+
+\section{RESUMEN DE PRESUPUESTOS}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{|p{5.0cm}|p{2.5cm}|p{7.0cm}|}
+\hline
+\rowcolor{ArthroTeal}
+\textbf{\color{white}Presupuesto} & \textbf{\color{white}Importe (€)} & \textbf{\color{white}Importe en letra} \\
+\hline
+PEM & 3,48 & Tres euros con cuarenta y ocho céntimos \\
+\hline
+PEC & 5,48 & Cinco euros con cuarenta y ocho céntimos \\
+\hline
+PA & 8,31 & Ocho euros con treinta y un céntimos \\
+\hline
+\end{tabular}
+\end{table}
+
+\vspace{0.3cm}
+
+\noindent\textbf{PEM} \hfill \textbf{3,48 €}
+
+\noindent El Presupuesto de Ejecución Material (PEM) asciende a tres euros con cuarenta y ocho céntimos.
+
+\vspace{0.3cm}
+
+\noindent\textbf{PEC} \hfill \textbf{5,48 €}
+
+\noindent El Presupuesto de Ejecución por Contrata (PEC) asciende a cinco euros con cuarenta y ocho céntimos.
+
+\vspace{0.3cm}
+
+\noindent\textbf{PA} \hfill \textbf{8,31 €}
+
+\noindent El Presupuesto para la Administración (PA) del proyecto es de ocho euros con treinta y un céntimos.
+
+\newpage
+
+% ======================================================
+% BLOQUE DE FIRMAS
+% ======================================================
+\newpage
+\noindent\begin{minipage}{\textwidth}
+    \begin{flushright}
+        En Málaga, a \today
+    \end{flushright}
+    \vspace{2cm}
+
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Sergio Carmona Muñoz} \\
+        Colegiado Nº 06424 \\
+        DNI: 26291930D
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Juan Gabriel Navarro Valdivielso} \\
+        Colegiado Nº 06425 \\
+        DNI: 77666662D
+    \end{minipage}
+
+    \vspace{2cm}
+
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Antonio Sánchez Doña} \\
+        Colegiado Nº 06423 \\
+        DNI: 79380534J
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Iván de la Torre Segato} \\
+        Colegiado Nº 06421 \\
+        DNI: 79383630G
+    \end{minipage}
+\end{minipage}
+\vspace{1cm}
+
+% 
+
+
 
 
 
