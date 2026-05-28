@@ -15,12 +15,15 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{float}
+\usepackage{array}
+\usepackage{colortbl}
 \usepackage[table, xcdraw]{xcolor}
 
 % --- Definición de Colores Corporativos ArthroDesign ---
 \definecolor{ArthroNavy}{HTML}{0F172A}
 \definecolor{ArthroTeal}{HTML}{0D9488}
 \definecolor{ArthroGray}{HTML}{64748B}
+\definecolor{tabblue}{RGB}{173, 204, 230}
 
 % --- Configuración de Párrafo ---
 \setlength{\parskip}{0.5em}
@@ -54,7 +57,7 @@
 % --- Configuración de Enlaces ---
 \hypersetup{colorlinks=true, linkcolor=ArthroNavy, urlcolor=ArthroTeal}
 
-% --- CONFIGURACIÓN DE ENCABEZADO Y PIE CORPORATIVO (Anexo I) ---
+% --- CONFIGURACIÓN DE ENCABEZADO Y PIE CORPORATIVO ---
 \pagestyle{fancy}
 \fancyhf{}
 
@@ -63,7 +66,7 @@
 
 % Información de Encabezado
 \fancyhead[L]{\small \textbf{\color{ArthroNavy}Adaptador ergonómico - PR-PIB-GIS26-09}}
-\fancyhead[R]{\small \textbf{\color{ArthroNavy}Anexo IX: Declaración de conformidad}}
+\fancyhead[R]{\small \textbf{\color{ArthroNavy}Anexo XIV: Impacto ambiental}}
 
 % Información de Pie de Página
 \fancyfoot[L]{\small \color{ArthroGray}ArthroDesign Solutions S.L.}
@@ -76,33 +79,24 @@
 \begin{document}
 
 % ======================================================
-% PÁGINA 1: PORTADA (REQUISITOS UNE 157001)
+% PÁGINA 1: PORTADA
 % ======================================================
 \begin{titlepage}
-    % --- Elementos Geométricos de Identidad (Cabecera y Pie) ---
     \begin{tikzpicture}[remember picture,overlay]
-        % Franja superior
         \fill[ArthroNavy] (current page.north west) rectangle ([yshift=-4.5cm]current page.north east);
         \fill[ArthroTeal] ([yshift=-4.5cm]current page.north west) rectangle ([yshift=-4.7cm]current page.north east);
-        
-        % Franja inferior
         \fill[ArthroNavy] (current page.south west) rectangle ([yshift=2.5cm]current page.south east);
         \fill[ArthroTeal] ([yshift=2.5cm]current page.south west) rectangle ([yshift=2.7cm]current page.south east);
     \end{tikzpicture}
 
-    \centering % Todo centrado a partir de aquí
-
-    % --- LOGO (Sobre la franja azul) ---
+    \centering
     \vspace*{-2cm}
     \includegraphics[width=6.5cm]{logo_definitivo.png} \\
     \vspace{2cm}
 
-    % --- BLOQUE DE TÍTULO PRINCIPAL ---
-    {\color{ArthroGray}\Huge \textbf{ANEXO IX}} \\
+    {\color{ArthroGray}\Huge \textbf{ANEXO XIV}} \\
     \vspace{0.5cm}
-    {\color{ArthroNavy}\Huge \textbf{DECLARACIÓN DE}} \\
-    \vspace{0.3cm}
-    {\color{ArthroNavy}\Huge \textbf{CONFORMIDAD}} \\
+    {\color{ArthroNavy}\Huge \textbf{ESTUDIO DE IMPACTO AMBIENTAL}} \\
     \vspace{0.6cm}
     {\color{ArthroTeal}\rule{12cm}{2pt}} \\
     \vspace{1cm}
@@ -127,7 +121,7 @@
 
     \vspace{1.0cm}
 
-    % --- BLOQUE DE PROYECTISTAS ---
+   % --- BLOQUE DE PROYECTISTAS ---
     \textbf{PROYECTISTAS (Equipo de ArthroDesign Solutions S.L.):} \\
     \vspace{0.3cm}
     \small
@@ -172,9 +166,24 @@
 % ======================================================
 \markboth{Índice}{Índice}
 \tableofcontents
-\thispagestyle{fancy} % Fuerza el estilo fancy en esta página
+\thispagestyle{fancy}
 \newpage
 
+% ======================================================
+% PÁGINA: ÍNDICE DE TABLAS
+% ======================================================
+\markboth{Índice de tablas}{Índice de tablas}
+\listoftables
+\thispagestyle{fancy}
+\newpage
+
+% ======================================================
+% PÁGINA: ÍNDICE DE FIGURAS
+% ======================================================
+\markboth{Índice de figuras}{Índice de figuras}
+\listoffigures
+\thispagestyle{fancy}
+\newpage
 
 % ======================================================
 % HOJA EN BLANCO CON MARCA DE AGUA
@@ -195,83 +204,65 @@
 \newpage
 
 % ======================================================
-% DECLARACIÓN UE DE CONFORMIDAD (DISEÑO TIPO CERTIFICADO)
+% CUERPO DEL DOCUMENTO
 % ======================================================
-% Añade esta línea para que aparezca en el índice:
-\addcontentsline{toc}{section}{1. DECLARACIÓN DE CONFORMIDAD}
+
+% AQUÍ SE REDACTARÁ EL CONTENIDO DEL ESTUDIO DE IMPACTO AMBIENTAL
+
+
+% ======================================================
+% BLOQUE DE FIRMAS
+% ======================================================
+\newpage
+\vspace{1.5cm}
 
 \vspace{0.5cm}
+    \noindent\begin{minipage}{\textwidth}
+    \begin{flushright}
+        En Málaga, a \today
+    \end{flushright}
+    \vspace{2cm}
 
-% --- CABECERA ESTILO CERTIFICADO ---
-\noindent
-{\renewcommand{\tabularxcolumn}[1]{m{#1}} % Fuerza a la columna X a centrarse verticalmente
-\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}m{3.5cm}|>{\centering\arraybackslash}X|>{\centering\arraybackslash}m{4cm}|}
-\hline
-\rowcolor{ArthroNavy}
-\cellcolor{white} \includegraphics[width=2cm]{logo_ce.png} &
-\color{white} \Large \textbf{DECLARACIÓN DE CONFORMIDAD} &
-\cellcolor{ArthroTeal} \color{white} \textbf{PR-PIB-GIS26-09} \\
-\hline
-\end{tabularx}}
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Sergio Carmona Muñoz} \\
+        Colegiado Nº 06424 \\
+        DNI: 26291930D
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Juan Gabriel Navarro Valdivielso} \\
+        Colegiado Nº 06425 \\
+        DNI: 77666662D
+    \end{minipage}
 
-\vspace{0.4cm}
+    \vspace{2cm}
 
-\noindent \textit{La presente declaración de conformidad se expide bajo la exclusiva responsabilidad del fabricante indicado a continuación:}
-
-\vspace{0.4cm}
-
-% --- TABLA DE DATOS (CUERPO DEL CERTIFICADO) ---
-\noindent
-{\renewcommand{\arraystretch}{2}
-\begin{tabularx}{\textwidth}{|>{\columncolor{gray!15}\bfseries\small}p{4.5cm}|X|}
-\hline
-FABRICANTE \newline \textit{MANUFACTURER} & \textbf{ArthroDesign Solutions S.L.} \newline Escuela de Ingenierías Industriales, Universidad de Málaga. \newline C/ Arquitecto Francisco Peñalosa, 6, 29071 Málaga (España). \\
-\hline
-IDENTIFICACIÓN DEL PRODUCTO \newline \textit{PRODUCT IDENTIFICATION} & \textbf{Nombre:} Adaptador ergonómico ArthroPush \newline \textbf{Modelo/Ref:} PR-PIB-GIS26-09 \newline \textbf{Descripción:} Dispositivo de asistencia mecánica no invasivo, fabricado mediante 3 piezas de polímero grado médico ensamblables por clipado. Sin componentes electrónicos. \\
-\hline
-USO PREVISTO \newline \textit{INTENDED USE} & Reducir el esfuerzo necesario en la pulsación de inhaladores de dosis medida (MDI) por parte de usuarios con limitaciones de fuerza o deformidad articular. Apto para el entorno doméstico y clínico. \\
-\hline
-LEGISLACIÓN DE APLICACIÓN \newline \textit{APPLICABLE REGULATION} & \textbf{Reglamento (UE) 2017/745} sobre los productos sanitarios. El producto se clasifica como Producto Sanitario de \textbf{Clase I} (Procedimiento de Autocertificación del fabricante). \newline \textbf{Real Decreto 192/2023}, por el que se regulan los productos sanitarios. \\
-\hline
-NORMAS ARMONIZADAS \newline \textit{HARMONISED STANDARDS} & \textbf{UNE-EN ISO 21856:2023:} Productos de apoyo. Requisitos generales y métodos de ensayo. \newline \textbf{UNE-EN ISO 14971:2020:} Dispositivos médicos. Aplicación de la gestión de riesgos a los productos sanitarios. \\
-\hline
-LUGAR Y FECHA DE EMISIÓN \newline \textit{PLACE AND DATE OF ISSUE} & Málaga, \today \\
-\hline
-\end{tabularx}}
-
-\vspace{0.1cm}
-
-% --- FIRMA DEL APODERADO ---
-\noindent
-\begin{minipage}[t]{0.55\textwidth}
-    \textbf{Firma del signatario apoderado:} \\
-    \vspace{1.5cm}
-
-    \rule{5.3cm}{0.6pt} \\
-    \textbf{D. Antonio Sánchez Doña} \\
-    Director General  \\
-    ArthroDesign Solutions S.L. \\
-    Colegiado Nº 06423 \\
-    DNI: 79380534J
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Antonio Sánchez Doña} \\
+        Colegiado Nº 06423 \\
+        DNI: 79380534J
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Iván de la Torre Segato} \\
+        Colegiado Nº 06421 \\
+        DNI: 79383630G
+    \end{minipage}
 \end{minipage}
-\hfill
-\begin{minipage}[t]{0.35\textwidth}
-    \centering
-    \vspace{0.5cm}
-    \begin{tikzpicture}
-        % Círculo simulando un sello de empresa
-        \draw[ArthroTeal, thick, dashed] (0,0) circle (1.8cm);
-        
-        % Imagen del símbolo como marca de agua transparente (al fondo)
-        \node[opacity=0.15] at (0,0) {\includegraphics[width=2.5cm]{simbolo.jpeg}};
-        
-        % Texto del sello (por encima del símbolo)
-        \node[text width=3cm, align=center, color=ArthroNavy] at (0,0) {\scriptsize \textbf{SELLO OFICIAL} \\ \vspace{0.1cm} ArthroDesign \\ Solutions S.L.};
-    \end{tikzpicture}
-\end{minipage}
+    \vspace{1cm}
 
 % ======================================================
-% HOJA EN BLANCO CON MARCA DE AGUA
+% HOJA EN BLANCO CON MARCA DE AGUA FINAL
 % ======================================================
 \newpage
 \pagestyle{fancy}
@@ -288,4 +279,3 @@ LUGAR Y FECHA DE EMISIÓN \newline \textit{PLACE AND DATE OF ISSUE} & Málaga, \
 \vfill
 
 \end{document}
-

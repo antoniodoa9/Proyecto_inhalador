@@ -108,7 +108,7 @@
     {\Large \textbf{TÍTULO DEL PROYECTO:}} \\
     \vspace{0.3cm}
     {\Huge \bfseries Diseño de un adaptador ergonómico universal para la optimización de la pulsación manual en inhaladores de dosis medida (MDI)} \\
-    \vspace{1.5cm}
+    \vspace{1.3cm}
 
     % --- BLOQUE DE IDENTIFICACIÓN TÉCNICA ---
     \begin{minipage}{0.8\textwidth}
@@ -117,10 +117,14 @@
         {\large \texttt{PR-PIB-GIS26-09}} \\[0.8cm]
         
         \textbf{PROMOTOR Y EMPRESA DESARROLLADORA:} \\
-        {ArthroDesign Solutions S.L.}
+        {ArthroDesign Solutions S.L.}\\
+        {Calle Severo Ochoa, Nº 12, 29590 Málaga, España}\\        
+        {NIF:} {B12345678} \\
+         
+        \href{mailto:contacto@arhtrodesign.com}{contacto@arhtrodesign.com}
     \end{minipage}
 
-    \vspace{1.5cm}
+    \vspace{1.0cm}
 
    % --- BLOQUE DE PROYECTISTAS ---
     \textbf{PROYECTISTAS (Equipo de ArthroDesign Solutions S.L.):} \\
@@ -171,6 +175,14 @@
 \newpage
 
 % ======================================================
+% PÁGINA: ÍNDICE DE TABLAS
+% ======================================================
+\markboth{Índice de tablas}{Índice de tablas}
+\listoftables
+\thispagestyle{fancy}
+\newpage
+
+% ======================================================
 % HOJA EN BLANCO CON MARCA DE AGUA
 % ======================================================
 \newpage
@@ -192,22 +204,15 @@
 % CONTENIDO DEL ANEXO X: GESTIÓN DE RIESGOS
 % ======================================================
 
-
-
 \section{METODOLOGÍA DE GESTIÓN DE RIESGOS}
-
-La gestión de riesgos se realiza mediante un análisis cualitativo de probabilidad e impacto. Para cada riesgo se calcula:
 
 \[
 R = P \times I
 \]
 
-donde \(P\) es la probabilidad, \(I\) el impacto y \(R\) el rango o criticidad del riesgo.
-
+donde \(P\) es la probabilidad, \(I\) el impacto y \(R\) el rango del riesgo u oportunidad.
 
 \subsection{Escala de probabilidad}
-
-La escala de probabilidad empleada se muestra en la Tabla \ref{tab:escala_probabilidad}. Se ha adoptado una escala discreta de cinco niveles, adecuada para proyectos de diseño de producto en fases iniciales.
 
 \begin{table}[H]
 \centering
@@ -234,8 +239,6 @@ Muy poco probable & 0.1 \\
 
 \subsection{Escala de impacto}
 
-La escala de impacto se muestra en la Tabla \ref{tab:escala_impacto}. El impacto se ha valorado considerando los cuatro objetivos principales del proyecto: coste, calendario, alcance y calidad/seguridad del producto.
-
 \begin{table}[H]
 \centering
 \renewcommand{\arraystretch}{1.3}
@@ -260,8 +263,6 @@ Muy bajo & 0.05 \\
 \end{table}
 
 \subsection{Matriz probabilidad-impacto}
-
-La matriz de probabilidad e impacto permite clasificar visualmente los riesgos según su rango \(P \times I\). Los valores en verde se consideran bajos, los valores en amarillo moderados y los valores en rojo altos.
 
 \begin{table}[H]
 \centering
@@ -293,9 +294,8 @@ La matriz de probabilidad e impacto permite clasificar visualmente los riesgos s
 }
 \end{table}
 
+\newpage
 \subsection{Criterio de riesgo general del proyecto}
-
-Para determinar el riesgo general del proyecto se calcula la media aritmética de los rangos individuales de todos los riesgos identificados. El criterio de calificación empleado se muestra en la Tabla \ref{tab:riesgo_general}.
 
 \begin{table}[H]
 \centering
@@ -316,27 +316,14 @@ Para determinar el riesgo general del proyecto se calcula la media aritmética d
 \end{tabularx}
 \end{table}
 
-\section{IDENTIFICACIÓN DE RIESGOS}
-
-La identificación de riesgos se ha realizado considerando la naturaleza del producto, los usuarios previstos, las fases de desarrollo y las restricciones principales del proyecto. Se han agrupado los riesgos en seis categorías:
-
-\begin{itemize}
-    \item \textbf{Riesgos técnicos:} relacionados con el mecanismo de palanca, la geometría, la compatibilidad con inhaladores MDI, la resistencia de los componentes y la seguridad de uso.
-    \item \textbf{Riesgos de proyecto:} asociados a retrasos, cambios de alcance, carga de trabajo del equipo y coordinación documental.
-    \item \textbf{Riesgos normativos:} derivados de la clasificación del producto como producto sanitario de clase I y de la necesidad de cumplir criterios de seguridad, documentación y trazabilidad.
-    \item \textbf{Riesgos económicos:} vinculados al coste de prototipado, fabricación, materiales, proveedores y escalabilidad.
-    \item \textbf{Riesgos de usuario y mercado:} relacionados con la aceptación por parte de pacientes, cuidadores, farmacias y centros sanitarios.
-    \item \textbf{Riesgos ambientales y de sostenibilidad:} asociados a la selección de materiales, reciclabilidad y fin de vida del producto.
-\end{itemize}
+\newpage
 
 \section{REGISTRO Y PRIORIZACIÓN DE RIESGOS}
-
-En la Tabla \ref{tab:registro_riesgos} se recoge el registro inicial de riesgos del proyecto. Los riesgos han sido ordenados de forma descendente según su rango \(P \times I\), de manera que los riesgos prioritarios aparecen en primer lugar.
 
 \begin{table}[H]
 \centering
 \renewcommand{\arraystretch}{1.25}
-\caption{Registro priorizado de riesgos del proyecto.}
+\caption{Registro priorizado de riesgos y oportunidades del proyecto.}
 \label{tab:registro_riesgos}
 \resizebox{\textwidth}{!}{
 \begin{tabular}{|c|p{3.2cm}|p{5.2cm}|p{2.7cm}|c|c|c|}
@@ -344,7 +331,7 @@ En la Tabla \ref{tab:registro_riesgos} se recoge el registro inicial de riesgos 
 \rowcolor{ArthroNavy}
 \textcolor{white}{\textbf{Código}} &
 \textcolor{white}{\textbf{Causa}} &
-\textcolor{white}{\textbf{Descripción del riesgo}} &
+\textcolor{white}{\textbf{Descripción del riesgo / oportunidad}} &
 \textcolor{white}{\textbf{Referencia WBS}} &
 \textcolor{white}{\textbf{P}} &
 \textcolor{white}{\textbf{I}} &
@@ -360,17 +347,44 @@ RT-004 & Geometría de apoyo mal definida & El mecanismo podría interferir con 
 \hline
 RN-001 & Interpretación incompleta de requisitos normativos & La documentación técnica puede no justificar adecuadamente la seguridad y funcionamiento del producto sanitario de clase I. & Normativa / Documentación & 0.3 & 0.8 & \cellcolor{red!40}0.24 \\
 \hline
+RO-001 & Alta difusión del producto en redes o medios sanitarios & El producto puede hacerse viral y generar una demanda superior a la capacidad inicial de fabricación y distribución. & Comercialización / Producción & 0.3 & 0.8 & \cellcolor{ArthroTeal!35}0.24 \\
+\hline
 RT-002 & Estimación incorrecta de la ventaja mecánica & La reducción de fuerza obtenida puede ser insuficiente para usuarios con artritis o debilidad muscular severa. & Diseño conceptual / Validación & 0.5 & 0.4 & \cellcolor{red!40}0.20 \\
 \hline
 RE-001 & Subestimación del coste de prototipado o fabricación & El coste unitario puede superar el objetivo previsto, reduciendo la viabilidad económica del producto. & Estudio de fabricación / Presupuesto & 0.5 & 0.4 & \cellcolor{red!40}0.20 \\
 \hline
 RC-001 & Dependencia de proveedor externo & El proveedor puede no cumplir tolerancias, plazos o requisitos de material, afectando a la calidad del prototipo. & Fabricación / Compras & 0.5 & 0.4 & \cellcolor{red!40}0.20 \\
 \hline
+RO-002 & Interés de farmacias, ortopedias o centros sociosanitarios & El producto puede despertar interés en clientes institucionales y facilitar acuerdos de distribución o compra por lotes. & Comercialización / Clientes & 0.3 & 0.4 & \cellcolor{ArthroTeal!35}0.12 \\
+\hline
 RP-002 & Cambios tardíos en las especificaciones & La modificación de requisitos durante el diseño en detalle puede generar retrasos y retrabajo. & Gestión del proyecto & 0.3 & 0.4 & \cellcolor{yellow!55}0.12 \\
+\hline
+\end{tabular}
+}
+\end{table}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.25}
+\caption{Registro priorizado de riesgos y oportunidades del proyecto.}
+\label{tab:registro_riesgos}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|c|p{3.2cm}|p{5.2cm}|p{2.7cm}|c|c|c|}
+\hline
+\rowcolor{ArthroNavy}
+\textcolor{white}{\textbf{Código}} &
+\textcolor{white}{\textbf{Causa}} &
+\textcolor{white}{\textbf{Descripción del riesgo / oportunidad}} &
+\textcolor{white}{\textbf{Referencia WBS}} &
+\textcolor{white}{\textbf{P}} &
+\textcolor{white}{\textbf{I}} &
+\textcolor{white}{\textbf{Rango}} \\
 \hline
 RU-001 & Baja aceptación del usuario final & El usuario puede percibir el adaptador como voluminoso, poco intuitivo o difícil de colocar. & Validación / Usuario & 0.3 & 0.4 & \cellcolor{yellow!55}0.12 \\
 \hline
 RA-001 & Selección de material poco sostenible o no adecuado & El material elegido puede dificultar el reciclaje, la limpieza o la seguridad de contacto con el usuario. & Materiales / Sostenibilidad & 0.3 & 0.4 & \cellcolor{yellow!55}0.12 \\
+\hline
+RO-003 & Mejora de imagen por diseño accesible y sostenible & La orientación a usuarios vulnerables y el uso de criterios de sostenibilidad pueden reforzar la percepción positiva de ArthroDesign Solutions S.L. & Identidad de marca / Sostenibilidad & 0.5 & 0.2 & \cellcolor{ArthroTeal!35}0.10 \\
 \hline
 RP-001 & Retrasos en CAD, planos o documentación & La carga de trabajo del equipo puede retrasar la entrega final del anexo, planos o documentación asociada. & Planificación / Documentación & 0.5 & 0.2 & \cellcolor{yellow!55}0.10 \\
 \hline
@@ -378,31 +392,22 @@ RP-001 & Retrasos en CAD, planos o documentación & La carga de trabajo del equi
 }
 \end{table}
 
-El riesgo general inicial del proyecto se calcula como la media de los rangos anteriores:
-
 \[
+\resizebox{\textwidth}{!}{$
 R_{\text{general inicial}} =
-\frac{0.40 + 0.28 + 0.24 + 0.24 + 0.24 + 0.20 + 0.20 + 0.20 + 0.12 + 0.12 + 0.12 + 0.10}{12}
-= 0.205
+\frac{0.40 + 0.28 + 0.24 + 0.24 + 0.24 + 0.24 + 0.20 + 0.20 + 0.20 + 0.12 + 0.12 + 0.12 + 0.12 + 0.10 + 0.10}{15}
+= 0.194
+$}
 \]
 
-Por tanto, el proyecto presenta inicialmente un \textbf{riesgo general alto}. Este resultado es coherente con la naturaleza del proyecto, ya que se trata de un producto de apoyo con posible consideración sanitaria, destinado a usuarios vulnerables y dependiente de una correcta interacción mecánica con un dispositivo de administración de medicamento.
+\newpage
 
 \section{PLAN DE RESPUESTA A LOS RIESGOS}
-
-Una vez priorizados los riesgos, se establece un plan de respuesta para cada uno de ellos. Las estrategias consideradas son:
-
-\begin{itemize}
-    \item \textbf{Eliminar:} modificar el diseño, la planificación o el alcance para suprimir la causa del riesgo.
-    \item \textbf{Mitigar:} reducir la probabilidad o el impacto del riesgo mediante acciones preventivas.
-    \item \textbf{Transferir:} trasladar parte del riesgo a un tercero, como proveedor, fabricante o entidad especializada.
-    \item \textbf{Aceptar:} asumir el riesgo, estableciendo en su caso un plan de contingencia.
-\end{itemize}
 
 \begin{table}[H]
 \centering
 \renewcommand{\arraystretch}{1.2}
-\caption{Plan de respuesta a los riesgos identificados.}
+\caption{Plan de respuesta a los riesgos y oportunidades identificados.}
 \label{tab:plan_respuesta}
 \resizebox{\textwidth}{!}{
 \begin{tabular}{|c|p{2.1cm}|p{4.2cm}|p{3.2cm}|p{3.3cm}|p{1.1cm}|p{1.1cm}|p{2.6cm}|p{2.8cm}|c|c|c|}
@@ -410,7 +415,7 @@ Una vez priorizados los riesgos, se establece un plan de respuesta para cada uno
 \rowcolor{ArthroNavy}
 \textcolor{white}{\textbf{Cód.}} &
 \textcolor{white}{\textbf{Estrategia}} &
-\textcolor{white}{\textbf{Acciones preventivas}} &
+\textcolor{white}{\textbf{Acciones preventivas / de aprovechamiento}} &
 \textcolor{white}{\textbf{Plan de respaldo}} &
 \textcolor{white}{\textbf{Plan de contingencia}} &
 \textcolor{white}{\textbf{T}} &
@@ -431,11 +436,15 @@ RT-004 & Eliminar & Revisar la trayectoria de la palanca para que no invada la z
 \hline
 RN-001 & Mitigar & Revisar Reglamento (UE) 2017/745, RD 192/2023, UNE-EN ISO 21856 e ISO 14971; justificar clase I y requisitos de seguridad. & Consultar documentación técnica de productos de apoyo similares. & Incluir advertencia de uso y actualizar declaración de conformidad. & -- & -- & Falta de justificación normativa en memoria o anexos. & Sergio Carmona Muñoz & 0.1 & 0.8 & \cellcolor{yellow!55}0.08 \\
 \hline
+RO-001 & Explotar & Prever proveedor alternativo, escalado por lotes y comunicación clara de plazos de entrega. & Priorizar pedidos institucionales y abrir lista de espera. & Activar fabricación por lotes adicionales si la demanda supera la previsión inicial. & 2 días & 150 & Aumento brusco de solicitudes, reservas o contactos comerciales. & Juan Gabriel Navarro Valdivielso & 0.5 & 0.8 & \cellcolor{ArthroTeal!35}0.40 \\
+\hline
 RT-002 & Mitigar & Estimar la ventaja mecánica mediante relación de brazos de palanca y validar con ensayo manual comparativo. & Aumentar longitud útil de la palanca manteniendo el límite ergonómico. & Reabrir diseño conceptual si no reduce suficientemente la fuerza. & -- & -- & El usuario sigue necesitando aplicar fuerza elevada. & Iván de la Torre Segato & 0.3 & 0.2 & \cellcolor{yellow!55}0.06 \\
 \hline
 RE-001 & Mitigar & Comparar fabricación por impresión 3D, mecanizado de prototipo e inyección; solicitar presupuestos alternativos. & Reducir complejidad geométrica o unificar espesores para abaratar fabricación. & Recalcular presupuesto y ajustar lote inicial. & -- & -- & Coste unitario superior al objetivo económico. & Juan Gabriel Navarro Valdivielso & 0.3 & 0.2 & \cellcolor{yellow!55}0.06 \\
 \hline
 RC-001 & Transferir & Seleccionar proveedor con experiencia en prototipado y exigir especificación de material y tolerancias. & Disponer de un segundo proveedor local o servicio alternativo de impresión 3D. & Reprogramar validación con el proveedor alternativo. & -- & -- & Retraso de entrega o pieza fuera de tolerancia. & Antonio Sánchez Doña & 0.3 & 0.2 & \cellcolor{yellow!55}0.06 \\
+\hline
+RO-002 & Mejorar & Preparar ficha técnica breve, argumentos de valor y propuesta de lote para farmacias, ortopedias y residencias. & Contactar primero con canales locales o conocidos. & Ajustar presentación comercial según respuesta recibida. & 1 día & -- & Interés directo de farmacia, ortopedia, residencia o centro sanitario. & Sergio Carmona Muñoz & 0.5 & 0.4 & \cellcolor{ArthroTeal!35}0.20 \\
 \hline
 RP-002 & Mitigar & Congelar especificaciones antes del diseño en detalle y registrar cualquier cambio como revisión controlada. & Priorizar solo cambios que afecten a seguridad o funcionamiento esencial. & Ampliar una jornada de revisión documental. & 1 día & -- & Solicitud de cambio tras cerrar CAD o planos. & Sergio Carmona Muñoz & 0.1 & 0.4 & \cellcolor{green!35}0.04 \\
 \hline
@@ -443,34 +452,32 @@ RU-001 & Aceptar & Mantener diseño simple, intuitivo y sin herramientas; inclui
 \hline
 RA-001 & Mitigar & Seleccionar material reciclable, resistente y compatible con limpieza superficial; evitar mezclas innecesarias de materiales. & Cambiar a un polímero alternativo si el elegido no cumple requisitos. & Actualizar instrucciones de fin de vida y reciclaje. & -- & -- & Material no reciclable o con acabado poco higiénico. & Juan Gabriel Navarro Valdivielso & 0.1 & 0.4 & \cellcolor{green!35}0.04 \\
 \hline
+RO-003 & Mejorar & Reforzar en etiqueta, instrucciones y memoria el enfoque accesible, simple y sostenible del producto. & Incorporar el argumento de accesibilidad en la comunicación de marca. & Usar esta ventaja en futuras propuestas o presentaciones del producto. & -- & -- & Comentarios positivos sobre accesibilidad, utilidad o sostenibilidad. & Antonio Sánchez Doña & 0.7 & 0.2 & \cellcolor{ArthroTeal!35}0.14 \\
+\hline
 RP-001 & Aceptar & Repartir tareas por responsable y revisar semanalmente el avance de anexos, planos y presupuesto. & Redistribuir redacción entre miembros del equipo si una tarea se bloquea. & Utilizar la reserva temporal del cronograma antes de la entrega final. & 1 día & -- & Falta de avance en CAD, planos o anexos antes de la fecha prevista. & Antonio Sánchez Doña & 0.3 & 0.2 & \cellcolor{yellow!55}0.06 \\
 \hline
 \end{tabular}
 }
 \end{table}
 
-\section{RIESGO RESIDUAL Y RESERVAS}
+\newpage
 
-Tras aplicar las acciones preventivas definidas en el plan de respuesta, se obtiene un nuevo rango residual para cada riesgo. El riesgo general post-plan se calcula como:
+\section{RIESGO RESIDUAL Y RESERVAS}
 
 \[
 \resizebox{\textwidth}{!}{$
 R_{\text{general post-plan}} =
-\frac{0.08 + 0.06 + 0.08 + 0.08 + 0.08 + 0.06 + 0.06 + 0.06 + 0.04 + 0.04 + 0.04 + 0.06}{12}
-= 0.062
+\frac{0.08 + 0.06 + 0.08 + 0.08 + 0.08 + 0.40 + 0.06 + 0.06 + 0.06 + 0.20 + 0.04 + 0.04 + 0.04 + 0.14 + 0.06}{15}
+= 0.099
 $}
 \]
 
-Por tanto, tras aplicar el plan de respuesta, el riesgo general del proyecto pasa de \textbf{alto} a \textbf{moderado}. Este resultado se considera aceptable para una fase académica de diseño de producto, siempre que las acciones preventivas se integren en el cronograma y se revisen antes del cierre de la documentación técnica.
-
 \subsection{Reservas para contingencias}
-
-Las reservas se asignan a los riesgos aceptados que requieren tiempo o coste adicional en caso de activarse su contingencia. Para este proyecto se establecen las reservas indicadas en la Tabla \ref{tab:reservas}.
 
 \begin{table}[H]
 \centering
 \renewcommand{\arraystretch}{1.3}
-\caption{Reservas para contingencias del proyecto.}
+\caption{Reservas para contingencias y oportunidades del proyecto.}
 \label{tab:reservas}
 \begin{tabularx}{\textwidth}{|c|X|c|c|}
 \hline
@@ -480,42 +487,75 @@ Las reservas se asignan a los riesgos aceptados que requieren tiempo o coste adi
 \textcolor{white}{\textbf{Reserva temporal}} &
 \textcolor{white}{\textbf{Reserva económica}} \\
 \hline
+RO-001 & Escalado inicial de fabricación ante aumento brusco de demanda. & 2 días & 150 € \\
+\hline
+RO-002 & Preparación de ficha comercial y propuesta de lote para canales sanitarios. & 1 día & -- \\
+\hline
 RU-001 & Validación rápida con usuario representativo y ajuste de instrucciones. & 1 día & 80 € \\
 \hline
 RP-001 & Margen temporal para cierre de CAD, planos o documentación. & 1 día & -- \\
 \hline
 \rowcolor{ArthroTeal!20}
-\textbf{Total} & \textbf{Reserva total recomendada} & \textbf{2 días} & \textbf{80 €} \\
+\textbf{Total} & \textbf{Reserva total recomendada} & \textbf{5 días} & \textbf{230 €} \\
 \hline
 \end{tabularx}
 \end{table}
 
-
-
 \section{SEGUIMIENTO Y CONTROL DE RIESGOS}
 
-La gestión de riesgos no debe considerarse una actividad aislada, sino un proceso iterativo durante todo el desarrollo del proyecto. Por ello, se establece el siguiente procedimiento de seguimiento:
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.25}
+\caption{Seguimiento y control de riesgos del proyecto.}
+\label{tab:seguimiento_riesgos}
+\begin{tabularx}{\textwidth}{|c|X|}
+\hline
+\rowcolor{ArthroNavy}
+\textcolor{white}{\textbf{Nº}} &
+\textcolor{white}{\textbf{Acción de seguimiento}} \\
+\hline
+1 & Revisar el registro de riesgos al finalizar cada fase principal del proyecto. \\
+\hline
+2 & Comprobar especialmente los riesgos técnicos antes de cerrar el diseño en detalle. \\
+\hline
+3 & Validar el ajuste del adaptador con varios modelos de inhaladores MDI. \\
+\hline
+4 & Registrar cualquier cambio de diseño que afecte a geometría, material, mecanismo de palanca o compatibilidad. \\
+\hline
+5 & Revisar la documentación normativa antes de la entrega final del proyecto. \\
+\hline
+6 & Confirmar que las instrucciones de uso incluyan advertencias sobre montaje, compatibilidad y limpieza. \\
+\hline
+7 & Vigilar oportunidades comerciales o institucionales detectadas durante la validación o presentación del producto. \\
+\hline
+\end{tabularx}
+\end{table}
 
-\begin{itemize}
-    \item Revisar el registro de riesgos al finalizar cada fase principal del proyecto.
-    \item Comprobar especialmente los riesgos técnicos antes de cerrar el diseño en detalle.
-    \item Validar el ajuste del adaptador con varios modelos de inhaladores MDI antes de considerar finalizada la solución.
-    \item Registrar cualquier cambio de diseño que afecte a geometría, material, mecanismo de palanca o compatibilidad.
-    \item Revisar la documentación normativa antes de la entrega final del proyecto.
-    \item Confirmar que las instrucciones de uso incluyan advertencias claras sobre montaje, compatibilidad y limpieza.
-\end{itemize}
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.25}
+\caption{Hitos principales de control.}
+\label{tab:hitos_control}
+\begin{tabularx}{\textwidth}{|c|X|}
+\hline
+\rowcolor{ArthroNavy}
+\textcolor{white}{\textbf{Hito}} &
+\textcolor{white}{\textbf{Descripción}} \\
+\hline
+1 & Cierre de especificaciones del producto. \\
+\hline
+2 & Selección del diseño conceptual definitivo. \\
+\hline
+3 & Revisión del modelo CAD y de los planos. \\
+\hline
+4 & Validación funcional del mecanismo de palanca. \\
+\hline
+5 & Revisión final de anexos, declaración de conformidad, instrucciones y documentación técnica. \\
+\hline
+\end{tabularx}
+\end{table}
 
-Los hitos principales de control serán:
-
-\begin{itemize}
-    \item \textbf{Hito 1:} cierre de especificaciones del producto.
-    \item \textbf{Hito 2:} selección del diseño conceptual definitivo.
-    \item \textbf{Hito 3:} revisión del modelo CAD y de los planos.
-    \item \textbf{Hito 4:} validación funcional del mecanismo de palanca.
-    \item \textbf{Hito 5:} revisión final de anexos, declaración de conformidad, instrucciones y documentación técnica.
-\end{itemize}
-
-\newpage
+\vspace{2cm}
 
 % ======================================================
 % BLOQUE DE FIRMAS

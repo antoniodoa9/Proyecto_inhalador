@@ -11,6 +11,7 @@
 \usepackage{tikz}
 \usepackage{tabularx}
 \usepackage[table, xcdraw]{xcolor}
+\usepackage{hyperref}
 
 % --- Definición de Colores Corporativos ArthroDesign ---
 \definecolor{ArthroNavy}{HTML}{0F172A}
@@ -46,7 +47,7 @@
             \includegraphics[width=7.5cm]{logo_definitivo.png}
         \end{flushright}
         
-        \vspace{2.5cm}
+        \vspace{1cm}
         
         % 2. Títulos Principales de Jerarquía Técnica
         {\color{ArthroNavy}\fontsize{28pt}{34pt}\selectfont\textbf{PROYECTO DE INGENIERÍA}} \\[0.4cm]
@@ -60,16 +61,28 @@
         
         \vspace{1.5cm}
         
-        % 4. Caja de Identificación Técnica Remarcada
-        \noindent
-        \begin{tikzpicture}
-            \node[draw=ArthroTeal, fill=white, lwd=1.5pt, inner sep=15pt, rounded corners=4pt, text width=11.5cm, align=left] {
-                {\color{ArthroNavy}\small\textbf{CÓDIGO DE IDENTIFICACIÓN:}} \\
-                {\large\texttt{PR-PIB-GIS26-09}} \\[0.4cm]
-                {\color{ArthroNavy}\small\textbf{PROMOTOR Y EMPRESA DESARROLLADORA:}} \\
-                {\large\textbf{ArthroDesign Solutions S.L.}}
-            };
-        \end{tikzpicture}
+       % 4. Caja de Identificación Técnica Remarcada
+    \noindent
+    \begin{tikzpicture}
+        \node[
+            draw=ArthroTeal,
+            fill=white,
+            line width=1.5pt,
+            inner sep=15pt,
+            rounded corners=4pt,
+            text width=11.5cm,
+            align=left
+        ] {
+            \textbf{CÓDIGO DE IDENTIFICACIÓN:} \\
+            {\large \texttt{PR-PIB-GIS26-09}} \\[0.6cm]
+            
+            \textbf{PROMOTOR Y EMPRESA DESARROLLADORA:} \\
+            {ArthroDesign Solutions S.L.}\\
+            {Calle Severo Ochoa, Nº 12, 29590 Málaga, España}\\
+            {NIF:} {B12345678} \\
+            \href{mailto:contacto@arhtrodesign.com}{contacto@arhtrodesign.com}
+        };
+    \end{tikzpicture}
         
         \vfill
         \vspace{0.5cm}

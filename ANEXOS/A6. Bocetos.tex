@@ -110,7 +110,7 @@
     {\Large \textbf{TÍTULO DEL PROYECTO:}} \\
     \vspace{0.3cm}
     {\Huge \bfseries Diseño de un adaptador ergonómico universal para la optimización de la pulsación manual en inhaladores de dosis medida (MDI)} \\
-    \vspace{1.5cm}
+    \vspace{1.3cm}
 
     % --- BLOQUE DE IDENTIFICACIÓN TÉCNICA ---
     \begin{minipage}{0.8\textwidth}
@@ -119,10 +119,14 @@
         {\large \texttt{PR-PIB-GIS26-09}} \\[0.8cm]
         
         \textbf{PROMOTOR Y EMPRESA DESARROLLADORA:} \\
-        {ArthroDesign Solutions S.L.}
+        {ArthroDesign Solutions S.L.}\\
+        {Calle Severo Ochoa, Nº 12, 29590 Málaga, España}\\        
+        {NIF:} {B12345678} \\
+         
+        \href{mailto:contacto@arhtrodesign.com}{contacto@arhtrodesign.com}
     \end{minipage}
 
-    \vspace{1.5cm}
+    \vspace{1.0cm}
 
     % --- BLOQUE DE PROYECTISTAS ---
     \textbf{PROYECTISTAS (Equipo de ArthroDesign Solutions S.L.):} \\
@@ -168,6 +172,22 @@
 % ======================================================
 \markboth{Índice}{Índice}
 \tableofcontents
+\thispagestyle{fancy}
+\newpage
+
+% ======================================================
+% PÁGINA: ÍNDICE DE TABLAS
+% ======================================================
+\markboth{Índice de tablas}{Índice de tablas}
+\listoftables
+\thispagestyle{fancy}
+\newpage
+
+% ======================================================
+% PÁGINA: ÍNDICE DE FIGURAS
+% ======================================================
+\markboth{Índice de figuras}{Índice de figuras}
+\listoffigures
 \thispagestyle{fancy}
 \newpage
 
@@ -381,26 +401,50 @@
 
 \newpage
 
+
+
 % ======================================================
 % MATRIZ DE EVALUACIÓN Y SELECCIÓN DE DISEÑO
 % ======================================================
 
 \section{Matriz de evaluación y selección de diseño}
 
-Tras la generación de las diferentes alternativas conceptuales presentadas en el apartado anterior, se procede a su evaluación sistemática mediante una matriz de selección de conceptos (Matriz de Pugh). En esta matriz se evalúan las 20 propuestas generadas frente a 7 criterios técnicos y funcionales, adaptados de las Especificaciones del Producto (Anexo V) para permitir una valoración cualitativa en fase de bocetaje.
 
-Los criterios evaluados son los siguientes:
-\begin{itemize}
-    \item \textbf{A (Ergonomía de accionamiento):} El diseño visual sugiere la capacidad de sustituir el movimiento de pinza por empuje palmar para reducir el esfuerzo.
-    \item \textbf{B (Facilidad de montaje/desmontaje):} La geometría propuesta parece permitir un ensamblaje intuitivo sin necesidad de herramientas ni movimientos finos.
-    \item \textbf{C (Confort y seguridad de agarre):} Presencia de superficies redondeadas, zonas amplias de contacto y posibles texturas antideslizantes.
-    \item \textbf{D (Viabilidad geométrica de fabricación):} Diseño simplificado que apunte a un fácil desmoldeo (o fabricación 3D) sin contrasalidas excesivas.
-    \item \textbf{E (Facilidad de limpieza):} Acceso visual y físico abierto a la cavidad interior, evitando el diseño de recovecos donde se acumule suciedad.
-    \item \textbf{F (Uso autónomo a una mano):} La disposición de las piezas permite deducir que el usuario podría operar el dispositivo de forma independiente.
-    \item \textbf{G (Estética e identidad visual):} Aspecto general del boceto diferenciado de los competidores directos, manteniendo un carácter discreto y médico.
-\end{itemize}
+\nopagebreak
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.4} % Mayor holgura vertical para lectura cómoda
+    \renewcommand{\tabularxcolumn}[1]{m{#1}} % <--- SOLUCIÓN: Centra verticalmente todas las columnas X
+    \begin{tabularx}{\linewidth}{>{\color{ArthroNavy}\bfseries\centering\arraybackslash}m{2.2cm} X}
+        \hline
+        \rowcolor{ArthroNavy}
+        \color{white}\textbf{Criterio} & \multicolumn{1}{>{\centering\arraybackslash}X}{\color{white}\textbf{Definición Técnica y Funcional}} \\ \hline
+        
+        \rowcolor{ArthroTeal!5}
+        A & \textbf{Ergonomía de accionamiento:} El diseño visual sugiere la capacidad de sustituir el movimiento de pinza por empuje palmar para reducir el esfuerzo. \\
+        
+        B & \textbf{Facilidad de montaje/desmontaje:} La geometría propuesta parece permitir un ensamblaje intuitivo sin necesidad de herramientas ni movimientos finos. \\
+        
+        \rowcolor{ArthroTeal!5}
+        C & \textbf{Confort y seguridad de agarre:} Presencia de superficies redondeadas, zonas amplias de contacto y posibles texturas antideslizantes. \\
+        
+        D & \textbf{Viabilidad geométrica de fabricación:} Diseño simplificado que apunte a un fácil desmoldeo (o fabricación 3D) sin contrasalidas excesivas. \\
+        
+        \rowcolor{ArthroTeal!5}
+        E & \textbf{Facilidad de limpieza:} Acceso visual y físico abierto a la cavidad interior, evitando el diseño de recovecos donde se acumule suciedad. \\
+        
+        F & \textbf{Uso autónomo a una mano:} La disposición de las piezas permite deducir que el usuario podría operar el dispositivo de forma independiente. \\
+        
+        \rowcolor{ArthroTeal!5}
+        G & \textbf{Estética e identidad visual:} Aspecto general del boceto diferenciado de los competidores directos, manteniendo un carácter discreto y médico. \\ \hline
+    \end{tabularx}
+    \caption{Definición de los criterios técnicos y funcionales de evaluación cualitativa empleados en la Matriz de selección de conceptos (Matriz de Pugh) para evaluar las alternativas generadas.}
+    \label{tab:criterios_evaluacion}
+\end{table}
 
-Para esta comparativa, se ha tomado como referencia base (DATUM) el Concepto 10. En la siguiente tabla se detallan las puntuaciones asignadas (\textbf{+}: mejor que la referencia, \textbf{-}: peor que la referencia, \textbf{S}: igual o similar), así como la suma de valores positivos y negativos para cada alternativa. Debido a la extensión de la matriz, la tabla ha sido auto-ajustada al ancho de la página.
+\vspace{0.3cm}
+
 
 \vspace{0.5cm}
 
@@ -478,7 +522,7 @@ Para esta comparativa, se ha tomado como referencia base (DATUM) el Concepto 10.
 \end{landscape}
 
 \vspace{0.5cm}
-En base a los resultados de la matriz, el \textbf{Concepto NÚMERO 1} obtiene el mejor balance entre puntuaciones positivas y negativas, superando las características del diseño de referencia (DATUM), por lo que se determina como la alternativa óptima a desarrollar en las fases posteriores del proyecto.
+
 
 \vspace{1cm}
 
@@ -489,7 +533,7 @@ En base a los resultados de la matriz, el \textbf{Concepto NÚMERO 1} obtiene el
     \label{fig:seleccion_final}
 \end{figure}
 
-\newpage
+
 
 % ======================================================
 % BLOQUE DE FIRMAS

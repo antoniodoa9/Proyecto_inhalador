@@ -16,9 +16,11 @@
 \usepackage[table, xcdraw]{xcolor}
 \usepackage{amsmath}
 \usepackage{tocloft}
+\usepackage{float}
+\usepackage{multirow}
 
 % --- Ajuste del espacio en el índice para números de dos cifras ---
-\setlength{\cftsecnumwidth}{2.5em} % <--- AMPLÍA EL ESPACIO ENTRE NÚMERO Y TEXTO
+\setlength{\cftsecnumwidth}{2.5em} 
 
 % --- Definición de Colores Corporativos ArthroDesign ---
 \definecolor{ArthroNavy}{HTML}{0F172A}
@@ -36,7 +38,7 @@
   {}
   [{\color{ArthroTeal}\titlerule[1.5pt]}]
 
-% --- CONFIGURACIÓN DE ENCABEZADO Y PIE CORPORATIVO (Anexo I) ---
+% --- CONFIGURACIÓN DE ENCABEZADO Y PIE CORPORATIVO ---
 \pagestyle{fancy}
 \fancyhf{}
 
@@ -58,7 +60,7 @@
 \begin{document}
 
 % ======================================================
-% PÁGINA 1: PORTADA GENERAL DE ANEXOS
+% PÁGINA 1: PORTADA GENERAL
 % ======================================================
 \begin{titlepage}
     % --- Elementos Geométricos de Identidad (Cabecera y Pie) ---
@@ -72,9 +74,9 @@
         \fill[ArthroTeal] ([yshift=2.5cm]current page.south west) rectangle ([yshift=2.7cm]current page.south east);
     \end{tikzpicture}
 
-    \centering % Todo centrado a partir de aquí
+    \centering 
 
-    % --- LOGO (Sobre la franja azul) ---
+    % --- LOGO ---
     \vspace*{-2cm}
     \includegraphics[width=6.5cm]{logo_definitivo.png} \\
     \vspace{2cm}
@@ -89,7 +91,7 @@
     {\Large \textbf{TÍTULO DEL PROYECTO:}} \\
     \vspace{0.3cm}
     {\Huge \bfseries Diseño de un adaptador ergonómico universal para la optimización de la pulsación manual en inhaladores de dosis medida (MDI)} \\
-    \vspace{1.5cm}
+    \vspace{1.3cm}
 
     % --- BLOQUE DE IDENTIFICACIÓN TÉCNICA ---
     \begin{minipage}{0.8\textwidth}
@@ -98,10 +100,14 @@
         {\large \texttt{PR-PIB-GIS26-09}} \\[0.8cm]
         
         \textbf{PROMOTOR Y EMPRESA DESARROLLADORA:} \\
-        {ArthroDesign Solutions S.L.}
+        {ArthroDesign Solutions S.L.}\\
+        {Calle Severo Ochoa, Nº 12, 29590 Málaga, España}\\        
+        {NIF:} {B12345678} \\
+         
+        \href{mailto:contacto@arhtrodesign.com}{contacto@arhtrodesign.com}
     \end{minipage}
 
-    \vspace{1.5cm}
+    \vspace{1.0cm}
 
     % --- BLOQUE DE PROYECTISTAS ---
     \textbf{PROYECTISTAS (Equipo de ArthroDesign Solutions S.L.):} \\
@@ -122,12 +128,10 @@
     \vspace{-1.75cm} 
 \end{titlepage}
 
-% AÑADE ESTA LÍNEA AQUÍ PARA QUE LA SIGUIENTE PÁGINA SEA LA 2:
 \setcounter{page}{2}
 
-
 % ======================================================
-% HOJA EN BLANCO CON MARCA DE AGUA
+% HOJA EN BLANCO 1 (CORTESÍA DE PORTADA)
 % ======================================================
 \newpage
 \pagestyle{fancy}
@@ -136,7 +140,6 @@
     \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
 \end{tikzpicture}
 
-% Empujamos el texto hacia la parte inferior del folio
 \vspace*{8.5cm} 
 \begin{center}
     \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
@@ -145,40 +148,259 @@
 \newpage
 
 % ======================================================
-% PÁGINA: ÍNDICE AUTOMÁTICO (CON ENCABEZADO)
+% PÁGINA 3: ÍNDICE AUTOMÁTICO
 % ======================================================
 \markboth{Índice}{Índice}
 \tableofcontents
 \thispagestyle{fancy}
 \newpage
 
-
-
- 
-
- 
- 
-
-
-
-
 % ======================================================
-% HOJA EN BLANCO CON MARCA DE AGUA
+% HOJA EN BLANCO 2 (COMPLETAMENTE LIMPIA SIN ENCABEZADOS)
 % ======================================================
 \newpage
-\pagestyle{fancy}
+\pagestyle{empty} 
 
 \begin{tikzpicture}[remember picture, overlay]
     \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
 \end{tikzpicture}
 
-% Empujamos el texto hacia la parte inferior del folio
 \vspace*{8.5cm} 
 \begin{center}
     \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
 \end{center}
 \vfill
+\newpage
 
+% ======================================================
+% DESARROLLO DEL PLIEGO DE CONDICIONES
+% ======================================================
+\pagestyle{fancy} 
 
+\section{CONDICIONES GENERALES}
+El presente documento establece los requisitos y especificaciones generales para la fabricación de un \textbf{ adaptador ergonómico universal para inhaladores de dosis medida (MDI)} mediante tecnologías de transformación industrial. El objetivo principal es producir un dispositivo sanitario de apoyo que sea biomecánicamente eficiente y plenamente apto para facilitar la autoadministración de medicación inhalada. El producto final deberá cumplir estrictamente con los estándares de calidad, funcionalidad y seguridad definidos por ArthroDesign Solutions S.L. Las directrices especificadas en este pliego son de obligado cumplimiento para los fabricantes con el fin de garantizar un producto homogéneo que responda a las necesidades de los usuarios.
+\section{CONDICIONES TÉCNICAS}
+
+\subsection{Maquinaria}
+\begin{itemize}
+    \item Las series de validación se fabricarán mediante equipos de impresión 3D FDM industriales o inyectoras automáticas con marcado CE.
+    \item Se exige un mantenimiento preventivo riguroso de los equipos para asegurar una calibración idónea de los componentes.
+    \item La responsabilidad del contratista abarca desde el aprovisionamiento de la materia prima hasta la entrega del producto en su envase unitario.
+\end{itemize}
+
+\subsection{Materiales}
+\begin{itemize}
+    \item El material constitutivo de la solución de tres piezas será obligatoriamente polipropileno copolímero (PP-C).
+    \item El filamento o la granza empleada deberá contar con certificados del proveedor que aseguren el cumplimiento de la norma UNE-EN ISO 10993-1.
+    \item El plástico estará cien por cien libre de bisfenol A (BPA) y cumplirá las restricciones del reglamento REACH (CE 1907/2006).
+    \item Las materias primas se almacenarán en lugares frescos, secos y oscuros para protegerlas de la radiación ultravioleta.
+\end{itemize}
+
+\subsection{Geometría y acabado}
+\begin{itemize}
+    \item La cavidad de inserción presentará un diámetro interno compatible con cartuchos MDI estándar de 22\,mm con una tolerancia de más o menos 0.5\,mm.
+    \item Las dimensiones globales de la estructura respetarán una envolvente máxima de 120\,x\,50\,x\,60\,mm con un margen de más o menos 2\,mm.
+    \item El conjunto ensamblado tendrá una masa máxima de 40 gramos para mantener inalterado el centro de gravedad del inhalador original.
+    \item El eje de articulación y los pivotes se fabricarán con tolerancias estrictas de más o menos 0.15\,mm según la norma ISO 20457.
+    \item El acabado superficial perimetral será liso, redondeado y con un fillet mínimo de 2\,mm en los cantos para evitar aristas vivas.
+    \item Las líneas de partición del molde o costuras de impresión se entregarán completamente enrasadas y no cortantes.
+    \item Las piezas con un peso superior a 10 gramos llevarán grabado el código de material ($>$PP-C$<$) bajo la norma ISO 11469.
+\end{itemize}
+
+\subsection{Seguridad industrial}
+\begin{itemize}
+    \item Se instalarán sistemas de ventilación forzada o campanas de extracción en el entorno de los equipos debido a las emisiones de gases del plástico.
+    \item Los operarios utilizarán obligatoriamente guantes térmicos protectores, calzado de seguridad con puntera reforzada y protección ocular.
+    \item Se dispondrán extintores CO2 anexos a las máquinas de producción y tomas de corriente eléctrica conectadas a tierra de forma reglamentaria.
+\end{itemize}
+
+\subsection{Entorno y química}
+\begin{itemize}
+    \item El adaptador mantendrá su integridad estructural en un rango térmico de uso y transporte de -10\,°C a 50\,°C.
+    \item El dispositivo soportará humedades relativas de hasta el 85\% sin sufrir alteraciones mecánicas.
+    \item El polímero no experimentará degradación al entrar en contacto con gases propelentes comerciales o restos del fármaco.
+    \item Se prohíbe el uso de alcohol concentrado para la desinfección, prescribiendo el empleo de un paño húmedo, agua tibia y jabón neutro.
+\end{itemize}
+
+\subsection{Ergonomía y mantenimiento}
+\begin{itemize}
+    \item El dispositivo permitirá el accionamiento mediante empuje palmar o presión de mano completa para suprimir la pinza digital dolorosa.
+    \item El mantenimiento mecánico por parte del usuario final será completamente nulo durante la vida útil del producto.
+    \item El desmontaje de la palanca y la base para su limpieza profunda se realizará de forma manual sin necesidad de herramientas especiales.
+\end{itemize}
+
+\subsection{Ensayos y calidad}
+\begin{itemize}
+    \item Cada lote industrial deberá superar de forma presencial un protocolo regulado de pruebas antes de proceder a su aceptación técnica.
+    \item El ensayo de caída libre se realizará desde una altura de 1.20 metros sobre una superficie rígida bajo la norma UNE-EN ISO 21856:2023.
+    \item La prueba de impacto exigirá como resultado mínimo la ausencia de fracturas en las piezas y la estabilidad de las uniones a presión.
+    \item El ensayo de fatiga mecánica consistirá en aplicar una fuerza de compresión de 250 N durante un ciclo continuo de 2.000 pulsaciones.
+    \item El criterio de aceptación del ciclado requerirá la total ausencia de deformación plástica permanente o fatiga estructural.
+\end{itemize}
+
+\subsection{Embalaje y logística}
+\begin{itemize}
+    \item El embalaje unitario consistirá en una caja individual de cartoncillo de gramaje mínimo de 250 g/m\textsuperscript{2}.
+    \item El contenedor individual limitará el volumen de aire libre a un máximo del 40\% con unas dimensiones de 150x100x80\,mm.
+    \item La caja incorporará una ventana transparente de 30x30\,mm, un esquema gráfico de montaje en 4 pasos y un código QR de soporte.
+    \item El material del empaquetado será al menos un 80\% reciclable y el peso total del conjunto no superará los 80 gramos.
+    \item Los lotes comerciales se agruparán en cajas secundarias de cartón ondulado con capacidad para 50 unidades y cotas de 400x300x200\,mm.
+    \item Se garantizará una eficiencia volumétrica de empaquetado mínima del 60\% durante el transporte y distribución masiva.
+\end{itemize}
+
+\section{CONDICIONES FACULTATIVAS}
+
+\subsection{Roles del proyecto}
+\begin{itemize}
+    \item ArthroDesign Solutions S.L. actúa como la propiedad en calidad de entidad promotora, financiadora y titular de los derechos de propiedad intelectual.
+    \item El equipo de ingenieros proyectistas firmantes constituye la dirección técnica encargada de velar por el estricto cumplimiento del diseño.
+    \item La empresa industrial adjudicataria actúa como el contratista encargado del suministro de materiales y de la producción física de las piezas.
+\end{itemize}
+
+\subsection{Deberes del fabricante}
+\begin{itemize}
+    \item El contratista declarará contractualmente haber estudiado la totalidad de los planos, la memoria y el pliego antes de iniciar la producción.
+    \item El fabricante asumirá la viabilidad técnica del diseño y nombrará a un responsable cualificado en la planta para coordinar las operaciones.
+    \item Se notificará a la dirección técnica con un plazo mínimo de 48 horas de antelación la realización de los ensayos y calibraciones críticas.
+\end{itemize}
+
+\subsection{Control de la fábrica}
+\begin{itemize}
+    \item La dirección técnica actuará como la máxima autoridad técnico-legal dentro de las instalaciones de fabricación industriales.
+    \item Los ingenieros proyectistas tendrán libre acceso a la planta para verificar el estado de los moldes, materiales y calibración de maquinaria.
+    \item La dirección técnica podrá ordenar la paralización de la producción y el rechazo de lotes que presenten rebabas, porosidades o defectos.
+    \item Corresponde a los ingenieros resolver e interpretar de forma vinculante los planos del proyecto ante cualquier duda del fabricante.
+\end{itemize}
+
+\subsection{Prioridad de documentos}
+\begin{itemize}
+    \item Se establece un orden jerárquico vinculante y obligatorio para el contratista en caso de discrepancias en la documentación técnica.
+    \item Los planos de detalle constituyen el documento de máxima prioridad legal sobre la geometría, las cotas críticas y los redondeados.
+    \item El pliego de condiciones ocupa el segundo lugar jerárquico y rige sobre la naturaleza de los materiales, normativas y ensayos.
+    \item El presupuesto se sitúa en tercer lugar regulando las valoraciones económicas, costes unitarios y bases impositivas de facturación.
+    \item La memoria del proyecto queda relegada a la última instancia al poseer un carácter puramente descriptivo e informativo.
+\end{itemize}
+
+\subsection{Cambios en el diseño}
+\begin{itemize}
+    \item Cualquier propuesta de modificación sobre la palanca o la base planteada por el contratista deberá justificarse formalmente por escrito.
+    \item Las alteraciones del diseño requerirán la firma de conformidad expresa de la dirección técnica antes de aplicarse en la planta.
+    \item Las modificaciones aceptadas deberán quedar reflejadas al milímetro en los planos finales de obra terminada para el archivo histórico.
+\end{itemize}
+
+\section{CONDICIONES ECONÓMICAS}
+
+\subsection{Precios y tarifas}
+\begin{itemize}
+    \item Los precios de contrata aplicables a los componentes del adaptador se regirán por los importes estipulados en el cuadro de precios del documento nº 7.
+    \item El contrato se ejecutará bajo la modalidad de precios unitarios a destajo sobre unidades completamente fabricadas y validadas.
+    \item La propiedad pagará únicamente los adaptadores ergonómicos que hayan superado de forma satisfactoria los controles de calidad en planta.
+    \item Todos los precios consignados se consideran bases imponibles netas exentas del impuesto sobre el valor añadido (I.V.A.).
+    \item El porcentaje legal correspondiente al I.V.A. se desglosará y aplicará de forma obligatoria sobre el montante total en la liquidación final.
+\end{itemize}
+
+\subsection{Pagos mensuales}
+\begin{itemize}
+    \item El procedimiento de abono al contratista por los trabajos realizados se estructurará mediante el método de certificaciones ordinarias.
+    \item El contratista emitirá al cierre de cada mes natural una relación valorada detallando la cantidad exacta de piezas conformes producidas.
+    \item Ninguna certificación mensual será tramitada administrativamente para su pago sin la firma conforme y el visto bueno de la dirección técnica.
+\end{itemize}
+
+\subsection{Retenciones y fianzas}
+\begin{itemize}
+    \item Se fija una retención económica equivalente al 5\% del presupuesto de adjudicación en concepto de fianza definitiva frente a vicios ocultos.
+    \item La fianza definitiva se formalizará legalmente mediante aval bancario o retención directa sobre las certificaciones mensuales ordinarias.
+    \item El importe de la fianza no se devolverá al contratista hasta la firma del acta de recepción definitiva tras finalizar los 6 meses de garantía clínica.
+\end{itemize}
+
+\subsection{Multas por retrasos}
+\begin{itemize}
+    \item Se aplicará una penalización económica diaria equivalente al 0.5\% del valor total del contrato por cada día de retraso posterior al 04/06/2026.
+    \item Las multas diarias por demoras injustificadas tienen como fin responder por las pérdidas comerciales derivadas de una rotura de stock.
+    \item La dirección técnica podrá contratar a un tercero externo para reparar o post-procesar lotes defectuosos si el contratista se niega a hacerlo.
+    \item Los costes financieros derivados de las reparaciones externas se detraerán directamente de la fianza definitiva depositada por el fabricante.
+\end{itemize}
+
+\subsection{Seguro obligatorio}
+\begin{itemize}
+    \item El contratista mantendrá en vigor durante toda la vigencia de la fabricación un seguro de responsabilidad civil general.
+    \item La póliza cubrirá los daños materiales en planta y los posibles accidentes laborales de los operarios vinculados al proceso industrial.
+    \item La cobertura incluirá las reclamaciones sanitarias derivadas de cualquier defecto físico latente en el diseño o inyección del adaptador MDI.
+\end{itemize}
+
+\section{CONDICIONES LEGALES}
+
+\subsection{Plazos de ejecución y recepción de suministros}
+\begin{itemize}
+    \item Se establece el \textbf{04/06/2026} como la fecha límite e improrrogable para realizar la recepción provisional del pedido comercial.
+    \item Se ejecutará un examen visual y funcional exhaustivo de los lotes entregados por el fabricante en la planta de producción.
+    \item Se procederá a la firma oficial del acta de recepción definitiva una vez transcurridos 6 meses continuos sin incidencias mecánicas.
+\end{itemize}
+
+\subsection{Garantías de suministro y funcionamiento}
+\begin{itemize}
+    \item El fabricante ofrecerá una garantía de suministro obligatoria de 2 años contra defectos estructurales o fallos de inyección de las piezas.
+    \item Se exige una garantía de funcionamiento clínico de 6 meses bajo el régimen de uso doméstico prescrito de un mínimo de 3 inhalaciones diarias.
+    \item El contratista asumirá la responsabilidad civil por daños derivados de fallos latentes de fabricación mediante una póliza de cobertura adecuada.
+\end{itemize}
+
+\subsection{Propiedad industrial y libertad de operación}
+\begin{itemize}
+    \item El contratista garantiza que los procesos empleados y el diseño de la articulación eluden los mecanismos de las marcas competidoras.
+    \item Se asegura la total libertad de operación en el mercado europeo para evitar conflictos de patentes con dispositivos de la competencia.
+    \item Las técnicas de fabricación empleadas blindarán la identidad de marca propia y los derechos comerciales de ArthroDesign Solutions S.L.
+\end{itemize}
+
+\subsection{Jurisdicción aplicable}
+\begin{itemize}
+    \item Las partes renuncian expresamente a sus fueros particulares en caso de litigios o arbitrajes derivados del incumplimiento del pliego.
+    \item Todo conflicto legal derivado del contrato se someterá estrictamente a los juzgados y tribunales de la ciudad de Málaga.
+\end{itemize}
+
+% ======================================================
+% BLOQUE DE FIRMAS (HOJA INDEPENDIENTE)
+% ======================================================
+\noindent\begin{minipage}{\textwidth}
+    \begin{flushright}
+        En Málaga, a \today
+    \end{flushright}
+    \vspace{2cm}
+
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Sergio Carmona Muñoz} \\
+        Colegiado Nº 06424 \\
+        DNI: 26291930D
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Juan Gabriel Navarro Valdivielso} \\
+        Colegiado Nº 06425 \\
+        DNI: 77666662D
+    \end{minipage}
+
+    \vspace{2cm}
+
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Antonio Sánchez Doña} \\
+        Colegiado Nº 06423 \\
+        DNI: 79380534J
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Iván de la Torre Segato} \\
+        Colegiado Nº 06421 \\
+        DNI: 79383630G
+    \end{minipage}
+\end{minipage}
 
 \end{document}

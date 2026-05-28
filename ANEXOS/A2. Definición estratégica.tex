@@ -54,6 +54,7 @@
 % --- Configuración de Enlaces ---
 \hypersetup{colorlinks=true, linkcolor=ArthroNavy, urlcolor=ArthroTeal}
 
+
 % --- CONFIGURACIÓN DE ENCABEZADO Y PIE CORPORATIVO (Anexo I) ---
 \pagestyle{fancy}
 \fancyhf{}
@@ -106,7 +107,7 @@
     {\Large \textbf{TÍTULO DEL PROYECTO:}} \\
     \vspace{0.3cm}
     {\Huge \bfseries Diseño de un adaptador ergonómico universal para la optimización de la pulsación manual en inhaladores de dosis medida (MDI)} \\
-    \vspace{1.5cm}
+    \vspace{1.3cm}
 
     % --- BLOQUE DE IDENTIFICACIÓN TÉCNICA ---
     \begin{minipage}{0.8\textwidth}
@@ -115,10 +116,14 @@
         {\large \texttt{PR-PIB-GIS26-09}} \\[0.8cm]
         
         \textbf{PROMOTOR Y EMPRESA DESARROLLADORA:} \\
-        {ArthroDesign Solutions S.L.}
+        {ArthroDesign Solutions S.L.}\\
+        {Calle Severo Ochoa, Nº 12, 29590 Málaga, España}\\        
+        {NIF:} {B12345678} \\
+         
+        \href{mailto:contacto@arhtrodesign.com}{contacto@arhtrodesign.com}
     \end{minipage}
 
-    \vspace{1.5cm}
+    \vspace{1.0cm}
 
     % --- BLOQUE DE PROYECTISTAS ---
     \textbf{PROYECTISTAS (Equipo de ArthroDesign Solutions S.L.):} \\
@@ -169,6 +174,14 @@
 \newpage
 
 % ======================================================
+% PÁGINA: ÍNDICE DE TABLAS
+% ======================================================
+\markboth{Índice de tablas}{Índice de tablas}
+\listoftables
+\thispagestyle{fancy}
+\newpage
+
+% ======================================================
 % HOJA EN BLANCO CON MARCA DE AGUA
 % ======================================================
 \newpage
@@ -187,73 +200,212 @@
 \newpage
 
 \section{PROBLEMA O CUESTIÓN}
-El asma y otras enfermedades respiratorias exigen el uso frecuente de inhaladores de dosis medida (MDI) como el Ventolín. Sin embargo, su uso no es en absoluto sencillo. Según fuentes como el Centro de Información de Medicamentos de Cataluña (Cedimcat), "se calcula que menos del 50\% de los pacientes los usa bien" \cite{cedimcat}. Esto provoca que una gran parte del fármaco se quede en la boca y no llegue al sistema respiratorio.
 
-Este problema se convierte en una barrera insalvable para las personas que, además de asma, padecen enfermedades articulares o cualquier problema o discapacidad física de naturaleza similar que afecte a la fuerza o coordinación de las manos. Investigaciones recientes han puesto el foco en la relación entre el asma y la Artritis Reumatoide (AR). Apretar el cartucho de un inhalador requiere aplicar una fuerza considerable con los dedos. Para un paciente con las articulaciones de la mano inflamadas o deformadas por la AR, este movimiento básico resulta doloroso o imposible. El problema a resolver es, por tanto, la falta de adherencia al tratamiento provocada por el mal diseño ergonómico de los inhaladores estándar frente a pacientes con movilidad reducida en las manos.
+
+\renewcommand{\arraystretch}{1.6}
+\begin{table}[H]
+\centering\small
+\begin{tabular}{|p{3.8cm}|p{10.2cm}|}
+\hline
+\rowcolor{ArthroNavy}
+\textbf{\color{white}Dimensión de análisis} & \textbf{\color{white}Especificación del problema} \\
+\hline
+\textbf{Contexto de uso} & El asma y otras enfermedades respiratorias exigen el uso frecuente de inhaladores de dosis medida (MDI) como el Ventolín. Sin embargo, su uso no es en absoluto sencillo. Según fuentes como el Centro de Información de Medicamentos de Cataluña (Cedimcat), ``se calcula que menos del 50\% de los pacientes los usa bien'' \cite{cedimcat}. Esto provoca que una gran parte del fármaco se quede en la boca y no llegue al sistema respiratorio. \\
+\hline
+\textbf{Limitaciones y efecto en la salud} & Este problema se convierte en una barrera insalvable para las personas que, además de asma, padecen enfermedades articulares o cualquier problema o discapacidad física de naturaleza similar que afecte a la fuerza o coordinación de las manos. Investigaciones recientes han puesto el foco en la relación entre el asma y la Artritis Reumatoide (AR). Apretar el cartucho de un inhalador requiere aplicar una fuerza considerable con los dedos. Para un paciente con las articulaciones de la mano inflamadas o deformadas por la AR, este movimiento básico resulta doloroso o imposible. El problema a resolver es, por tanto, la falta de adherencia al tratamiento provocada por el mal diseño ergonómico de los inhaladores estándar frente a pacientes con movilidad reducida en las manos. \\
+\hline
+\end{tabular}
+\caption{Matriz de definición del problema y justificación de la necesidad clínica.}
+\end{table}
 
 
 \section{LÍNEA DE LA EMPRESA}
-Somos el equipo 09, y nos constituimos como una pequeña oficina técnica de diseño formada por estudiantes de ingeniería. Nos constituimos como un equipo de ingeniería puro de diseño, centrando nuestra actividad en la innovación y el desarrollo técnico, mientras que la producción industrial sería externalizada a fabricantes especializados. Nuestra filosofía de trabajo es que la mejor ingeniería es la que resuelve problemas complejos con soluciones simples. Nos especializamos en el diseño de "productos de apoyo" (ayudas técnicas cotidianas) que mejoren la calidad de vida de los usuarios mediante soluciones puramente mecánicas, evitando depender de la electrónica o de procesos de fabricación costosos.
 
 
+\renewcommand{\arraystretch}{1.6}
+\begin{table}[H]
+\centering\small
+\begin{tabular}{|p{3.8cm}|p{10.2cm}|}
+\hline
+\rowcolor{ArthroNavy}
+\textbf{\color{white}Parámetro estratégico} & \textbf{\color{white}Definición corporativa} \\
+\hline
+\textbf{Naturaleza de la entidad} & Somos el equipo 09, y nos constituimos como una pequeña oficina técnica de diseño formada por estudiantes de ingeniería. \\
+\hline
+\textbf{Modelo operativo} & Nos constituimos como un equipo de ingeniería puro de diseño, centrando nuestra actividad en la innovación y el desarrollo técnico, mientras que la producción industrial sería externalizada a fabricantes especializados. \\
+\hline
+\textbf{Visión y filosofía} & Nuestra filosofía de trabajo es que la mejor ingeniería es la que resuelve problemas complejos con soluciones simples. \\
+\hline
+\textbf{Área de especialización} & Nos especializamos en el diseño de ``productos de apoyo'' (ayudas técnicas cotidianas) que mejoren la calidad de vida de los usuarios mediante soluciones puramente mecánicas, evitando depender de la electrónica o de procesos de fabricación costosos. \\
+\hline
+\end{tabular}
+\caption{Matriz de definición estratégica y línea corporativa de la empresa.}
+\end{table}
+
+\newpage
 \section{AFINIDAD DEL PROYECTO CON LA EMPRESA}
-El diseño de este adaptador ergonómico encaja a la perfección con la línea de nuestro equipo. Se trata de un problema físico muy específico y cotidiano que puede solucionarse aplicando un principio básico de la física: la ventaja mecánica de una palanca. Es un proyecto de ingeniería de diseño de producto puro, donde estudiando la geometría y la resistencia de los componentes mecánicos podemos aportar un beneficio enorme a la salud del paciente.
+
+
+\renewcommand{\arraystretch}{1.6}
+\begin{table}[H]
+\centering\small
+\begin{tabular}{|p{3.8cm}|p{10.2cm}|}
+\hline
+\rowcolor{ArthroNavy}
+\textbf{\color{white}Criterio de afinidad} & \textbf{\color{white}Justificación estratégica} \\
+\hline
+\textbf{Alineación general} & El diseño de este adaptador ergonómico encaja a la perfección con la línea de nuestro equipo. \\
+\hline
+\textbf{Naturaleza de la solución} & Se trata de un problema físico muy específico y cotidiano que puede solucionarse aplicando principios básicos de la física y la biomecánica para generar una ventaja mecánica que asista al paciente, sin presuponer aún una geometría específica. \\
+\hline
+\textbf{Disciplina e impacto} & Es un proyecto de ingeniería de diseño de producto puro, donde estudiando la geometría y la resistencia de los componentes mecánicos podemos aportar un beneficio enorme a la salud del paciente. \\
+\hline
+\end{tabular}
+\caption{Matriz de alineación entre el proyecto desarrollado y la estrategia de la empresa.}
+\end{table}
 
 \section{MISIÓN Y LIMITACIONES}
-\subsection{MISIÓN}
-Nuestra misión es diseñar un accesorio mecánico y ergonómico que se acople fácilmente a un inhalador MDI estándar. Este adaptador incorporará un mecanismo de palanca o sistema de asistencia similar diseñado para reducir drásticamente la fuerza que el paciente debe ejercer con sus dedos para liberar la dosis de medicamento.
 
 
-\subsection{LIMITACIONES}
-\begin{itemize}
-    \item Para mantener la viabilidad del proyecto, se buscará la máxima simplicidad mecánica mediante un diseño de componentes optimizados que faciliten el ensamblaje sin herramientas. No habrá resortes adicionales ni mecanismos complejos.
-    \item El coste de fabricación debe mantenerse en mínimos (adaptable a inyección o impresión 3D) para que sea un producto asequible.
-    \item  Todo el trabajo debe estar finalizado, empaquetado en los formatos requeridos y subido a la plataforma del campus virtual antes de la fecha límite del jueves 4 de junio de 2026 a las 20:00.
-\end{itemize}
+\renewcommand{\arraystretch}{1.6}
+\begin{table}[H]
+\centering\small
+\begin{tabular}{|p{3.8cm}|p{10.2cm}|}
+\hline
+\rowcolor{ArthroNavy}
+\textbf{\color{white}Parámetro del proyecto} & \textbf{\color{white}Descripción y alcance} \\
+\hline
+\textbf{Misión principal} & Nuestra misión es diseñar un accesorio mecánico y ergonómico que se acople fácilmente a un inhalador MDI estándar. Este adaptador incorporará un mecanismo de palanca o sistema de asistencia similar diseñado para reducir drásticamente la fuerza que el paciente debe ejercer con sus dedos para liberar la dosis de medicamento. \\
+\hline
+\textbf{Limitaciones de diseño} & Para mantener la viabilidad del proyecto, se buscará la máxima simplicidad mecánica mediante un diseño de componentes optimizados que faciliten el ensamblaje sin herramientas. No habrá resortes adicionales ni mecanismos complejos. \\
+\hline
+\textbf{Limitaciones económicas y de fabricación} & El coste de fabricación debe mantenerse en mínimos (adaptable a inyección o impresión 3D) para que sea un producto asequible. \\
+\hline
+\textbf{Limitaciones temporales} & Todo el trabajo debe estar finalizado, empaquetado en los formatos requeridos y subido a la plataforma del campus virtual antes de la fecha límite del jueves 4 de junio de 2026 a las 20:00. \\
+\hline
+\end{tabular}
+\caption{Matriz de misión estratégica y restricciones del proyecto.}
+\end{table}
 
-
+\newpage
 \section{CLIENTES, USUARIOS Y CANALES DE DISTRIBUCIÓN}
 
-En el diseño de ingeniería de productos de apoyo, es fundamental establecer la diferencia entre el usuario final (quien interactúa físicamente con el dispositivo) y el cliente (quien toma la decisión de compra y asume el coste). Para este adaptador ergonómico, hemos definido los siguientes perfiles:
+
+% --- INTRODUCCIÓN GENERAL ---
+\renewcommand{\arraystretch}{1.6}
+\begin{table}[H]
+\centering\small
+\begin{tabular}{|p{14.5cm}|}
+\hline
+\rowcolor{ArthroGray!15}
+\textbf{\color{ArthroNavy}} En el diseño de ingeniería de productos de apoyo, es fundamental establecer la diferencia entre el usuario final (quien interactúa físicamente con el dispositivo) y el cliente (quien toma la decisión de compra y asume el coste). Para este adaptador ergonómico, hemos definido los siguientes perfiles: \\
+\hline
+\end{tabular}
+\end{table}
+
+\vspace{0.2cm}
+
+% --- TABLA 1: USUARIOS FINALES ---
+\begin{table}[H]
+\centering\small
+\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+\hline
+\rowcolor{ArthroNavy}
+\multicolumn{2}{|p{14.5cm}|}{\textbf{\color{white}USUARIOS FINALES:} \color{white}El producto está diseñado pensando exclusivamente en resolver las limitaciones físicas de este grupo. Se dividen en dos perfiles principales:} \\
+\hline
+\textbf{Pacientes con patologías articulares} & Pacientes y enfermos con patologías articulares crónicas, principalmente personas diagnosticadas con Artritis Reumatoide o artrosis severa en las manos, a quienes accionar un inhalador les resulta doloroso o imposible. \\
+\hline
+\textbf{Población geriátrica} & Pacientes de edad avanzada (población geriátrica) con sarcopenia, es decir, personas de la tercera edad que, debido a la pérdida natural de masa y fuerza muscular, no pueden alcanzar la fuerza necesaria para liberar la dosis de su medicación respiratoria. Para ellos, el dispositivo representa una recuperación de su autonomía personal. \\
+\hline
+\end{tabular}
+\caption{Matriz de segmentación de usuarios finales.}
+\end{table}
+
+\vspace{0.2cm}
+
+% --- TABLA 2: CLIENTES (Con la personificación exigida por el profesor) ---
+\begin{table}[H]
+\centering\small
+\begin{tabular}{|p{2.5cm}|p{3.5cm}|p{7.6cm}|}
+\hline
+\rowcolor{ArthroNavy}
+\multicolumn{3}{|p{14.5cm}|}{\textbf{\color{white}CLIENTES:} \color{white}Al tratarse de un producto de bajo coste de fabricación, el abanico de clientes potenciales es amplio y abarca tanto el mercado minorista como el institucional:} \\
+\hline
+\rowcolor{ArthroGray!20}
+\textbf{Categoría} & \textbf{Personificación} & \textbf{Caracterización} \\
+\hline
+\textbf{Mercado minorista} & El propio paciente, hijos o cuidadores primarios. & El propio paciente o sus familiares directos (hijos o cuidadores), quienes adquieren el producto buscando mejorar la calidad de vida del usuario en su domicilio. \\
+\hline
+\textbf{Mercado institucional} & Directores de centro, enfermeros supervisores y auxiliares. & Residencias de ancianos y centros de día, que adquieren lotes del producto para facilitar la labor de sus enfermeros, auxiliares y cuidadores y fomentar la independencia de los residentes. \\
+\hline
+\textbf{Mercado institucional} & Médicos especialistas (Neumólogos / Reumatólogos) y gestores. & Hospitales y clínicas de rehabilitación, concretamente los departamentos de neumología y reumatología, que pueden proporcionar el adaptador junto con la primera prescripción del inhalador. \\
+\hline
+\end{tabular}
+\caption{Matriz de segmentación y personificación de clientes.}
+\end{table}
+
+\vspace{0.2cm}
+
+% --- TABLA 3: CANALES DE DISTRIBUCIÓN ---
+\begin{table}[H]
+\centering\small
+\begin{tabular}{|p{3.5cm}|p{10.5cm}|}
+\hline
+\rowcolor{ArthroNavy}
+\multicolumn{2}{|p{14.5cm}|}{\textbf{\color{white}CANALES DE DISTRIBUCIÓN:} \color{white}Para que el producto llegue de manera eficiente desde su fabricación hasta el cliente, se ha planteado una cadena de suministro basada en los puntos naturales de acceso a la medicación:} \\
+\hline
+\textbf{Canal farmacéutico} & El canal farmacéutico es el canal principal. El objetivo es que las farmacias comunitarias ofrezcan el adaptador en el mismo momento en que dispensan el inhalador al paciente. \\
+\hline
+\textbf{Establecimientos de ortopedia} & Tiendas físicas de ortopedia donde los pacientes con movilidad reducida ya acuden habitualmente a comprar otros productos de apoyo. \\
+\hline
+\textbf{Venta directa online} & Venta directa a través de la página web de \textit{ArthroDesign Solutions S.L.} y plataformas de comercio electrónico especializadas en parafarmacia, de manera que se pueda alcanzar un volumen de clientes nacional sin necesidad de grandes inversiones en infraestructura de distribución física. \\
+\hline
+\end{tabular}
+\caption{Matriz de canales de distribución y suministro.}
+\end{table}
+
+\section{ANÁLISIS DE LA COMPETENCIA}
 
 
-\subsection{USUARIOS FINALES}
-El producto está diseñado pensando exclusivamente en resolver las limitaciones físicas de este grupo. Se dividen en dos perfiles principales:
-\begin{itemize}
-    \item Pacientes y enfermos con patologías articulares crónicas, principalmente personas diagnosticadas con Artritis Reumatoide o artrosis severa en las manos, a quienes accionar un inhalador les resulta doloroso o imposible.
-    \item Pacientes de edad avanzada (población geriátrica) con sarcopenia, es decir, personas de la tercera edad que, debido a la pérdida natural de masa y fuerza muscular, no pueden alcanzar la fuerza necesaria para liberar la dosis de su medicación respiratoria. Para ellos, el dispositivo representa una recuperación de su autonomía personal.
-\end{itemize}
+\renewcommand{\arraystretch}{1.6}
+\begin{table}[H]
+\centering\small
+\begin{tabular}{|p{4.2cm}|p{9.8cm}|}
+\hline
+\rowcolor{ArthroNavy}
+\multicolumn{2}{|p{14.5cm}|}{\textbf{\color{white}CONTEXTO DE MERCADO:} \color{white}En el mercado actual de productos de apoyo respiratorio existen algunas alternativas diseñadas para facilitar el uso de los inhaladores MDI. En este contexto, nuestro principal competidor directo es el dispositivo \textbf{Halerease}. Si bien Halerease aborda el problema de la fuerza de accionamiento proporcionando una asistencia mecánica al usuario, el desarrollo de nuestro adaptador se basará en las siguientes directrices estratégicas para lograr una ventaja competitiva:} \\
+\hline
+\textbf{Estrategia de simplicidad mecánica} & A diferencia de otras soluciones del mercado que emplean mecanismos internos complejos o piezas móviles articuladas con resortes, nuestro enfoque primará la reducción extrema del número de componentes. El objetivo estratégico es idear un dispositivo puramente cinemático que optimice la futura viabilidad de fabricación a gran escala. \\
+\hline
+\textbf{Diferenciación biomecánica} & La estrategia de diseño no se limitará a facilitar el agarre, sino que buscará trasladar el esfuerzo desde las falanges hacia la palma de la mano o el antebrazo. Se priorizará conceptualizar un accionamiento por empuje. \\
+\hline
+\textbf{Estrategia de penetración por coste)} & Al condicionar el diseño desde esta fase temprana a principios de máxima simplicidad industrial, el objetivo es garantizar un coste de producción mínimo. Esto permitirá introducir el producto en los canales farmacéutico y ortopédico a un precio de venta significativamente inferior al de la competencia, eliminando por tanto las barreras económicas para el usuario final. \\
+\hline
+\end{tabular}
+\caption{Matriz de posicionamiento estratégico frente a la competencia.}
+\end{table}
 
-
-\subsection{CLIENTES}
-Al tratarse de un producto de bajo coste de fabricación, el abanico de clientes potenciales es amplio y abarca tanto el mercado minorista como el institucional:
-\begin{itemize}
-    \item El propio paciente o sus familiares directos (hijos o cuidadores), quienes adquieren el producto buscando mejorar la calidad de vida del usuario en su domicilio.
-    \item Residencias de ancianos y centros de día, que adquieren lotes del producto para facilitar la labor de sus enfermeros, auxiliares y cuidadores y fomentar la independencia de los residentes.
-    \item Hospitales y clínicas de rehabilitación, concretamente los departamentos de neumología y reumatología, que pueden proporcionar el adaptador junto con la primera prescripción del inhalador.
-        
-\end{itemize}
-
-
-\subsection{CANALES DE DISTRIBUCIÓN}
-Para que el producto llegue de manera eficiente desde su fabricación hasta el cliente, se ha planteado una cadena de suministro basada en los puntos naturales de acceso a la medicación:
-\begin{itemize}
-    \item El canal farmacéutico es el canal principal. El objetivo es que las farmacias comunitarias ofrezcan el adaptador en el mismo momento en que dispensan el inhalador al paciente.
-    \item Tiendas físicas de ortopedia donde los pacientes con movilidad reducida ya acuden habitualmente a comprar otros productos de apoyo.
-    \item Venta directa a través de la página web de \textit{ArthroDesign Solutions S.L.} y plataformas de comercio electrónico especializadas en parafarmacia, de manera que se pueda alcanzar un volumen de clientes nacional sin necesidad de grandes inversiones en infraestructura de distribución física.
-\end{itemize}
-
-
+\newpage
 \section{LEGISLACIÓN APLICABLE}
-Para asegurar la validez técnica y legal del producto, el desarrollo de este proyecto se ajusta al marco legislativo vigente, estructurado en tres niveles: 
 
 
+\renewcommand{\arraystretch}{1.6}
+\begin{table}[H]
+\centering\small
+\begin{tabular}{|p{4.2cm}|p{9.8cm}|}
+\hline
+\rowcolor{ArthroNavy}
+\multicolumn{2}{|p{14.5cm}|}{\textbf{\color{white}MARCO REGULATORIO GENERAL:} \color{white}Para asegurar la validez técnica y legal del producto, el desarrollo de este proyecto se ajusta al marco legislativo vigente, estructurado en tres niveles:} \\
+\hline
 
-\subsection{PRODUCTOS SANITARIOS}
-\begin{itemize}
-    \item \textbf{Reglamento (UE) 2017/745.} Es el marco legal europeo sobre productos sanitarios. Debido a su funcionamiento mecánico y no invasivo, este adaptador se clasifica como \textbf{producto sanitario de clase I}. El diseño debe respetar los requisitos de seguridad y funcionamiento establecidos en el Anexo I de este reglamento.
-    \item \textbf{Real Decreto 192/2023, de 21 de marzo, por el que se regulan los productos sanitarios.} Normativa española actual que regula los productos sanitarios y sustituye al anterior RD de 2009. Establece las garantías necesarias para la fabricación y distribución de dispositivos médicos en España.
-\end{itemize}
+\hline
+\textbf{Reglamento (UE) 2017/745} & Es el marco legal europeo sobre productos sanitarios. Debido a su funcionamiento mecánico y no invasivo, este adaptador se clasifica como \textbf{producto sanitario de clase I}. El diseño debe respetar los requisitos de seguridad y funcionamiento establecidos en el Anexo I de este reglamento. \\
+\hline
+\textbf{Real Decreto 192/2023, de 21 de marzo, por el que se regulan los productos sanitarios} & Normativa española actual que regula los productos sanitarios y sustituye al anterior RD de 2009. Establece las garantías necesarias para la fabricación y distribución de dispositivos médicos en España. \\
+\hline
+\end{tabular}
+\caption{Matriz de cumplimiento legislativo y marco normativo aplicable al dispositivo.}
+\end{table}
 
 
 
@@ -262,16 +414,31 @@ Para asegurar la validez técnica y legal del producto, el desarrollo de este pr
 
 
 \section{SOSTENIBILIDAD}
-El diseño será inherentemente sostenible debido a su simplicidad estructural. Al priorizar el uso de materiales reciclables para la fabricación de sus componentes, el usuario no necesitará herramientas para desmontarlo al final de su vida útil, de manera que se facilite su correcta gestión y pueda ser depositado directamente en el contenedor de reciclaje correspondiente.
-\newline
+
+
+\renewcommand{\arraystretch}{1.6}
+\begin{table}[H]
+\centering\small
+\begin{tabular}{|p{3.8cm}|p{10.2cm}|}
+\hline
+\rowcolor{ArthroNavy}
+\textbf{\color{white}Eje de ecodiseño} & \textbf{\color{white}Estrategia de sostenibilidad aplicada} \\
+\hline
+\textbf{Concepción del diseño} & El diseño será inherentemente sostenible debido a su simplicidad estructural. \\
+\hline
+\textbf{Gestión del fin de vida útil} & Al priorizar el uso de materiales reciclables para la fabricación de sus componentes, el usuario no necesitará herramientas para desmontarlo al final de su vida útil, de manera que se facilite su correcta gestión y pueda ser depositado directamente en el contenedor de reciclaje correspondiente. \\
+\hline
+\end{tabular}
+\caption{Matriz de impacto ambiental y estrategia de sostenibilidad del producto.}
+\end{table}
 
 
 
 % ======================================================
 % BIBLIOGRAFÍA Y NORMATIVA TÉCNICA (Al final del documento)
 % ======================================================
-\renewcommand{\refname}{8. BIBLIOGRAFÍA Y NORMATIVA TÉCNICA}
-\addcontentsline{toc}{section}{8. BIBLIOGRAFÍA Y NORMATIVA TÉCNICA}
+\renewcommand{\refname}{9. BIBLIOGRAFÍA Y NORMATIVA TÉCNICA}
+\addcontentsline{toc}{section}{9. BIBLIOGRAFÍA Y NORMATIVA TÉCNICA}
 
 \begin{thebibliography}{9}
 \bibitem{cedimcat} 
