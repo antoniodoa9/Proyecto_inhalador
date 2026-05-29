@@ -66,7 +66,7 @@
 
 % Información de Encabezado
 \fancyhead[L]{\small \textbf{\color{ArthroNavy}Adaptador ergonómico - PR-PIB-GIS26-09}}
-\fancyhead[R]{\small \textbf{\color{ArthroNavy}Anexo XIV: Impacto ambiental}}
+\fancyhead[R]{\small \textbf{\color{ArthroNavy}Anexo XIV: Estudio de impacto ambiental}}
 
 % Información de Pie de Página
 \fancyfoot[L]{\small \color{ArthroGray}ArthroDesign Solutions S.L.}
@@ -96,7 +96,9 @@
 
     {\color{ArthroGray}\Huge \textbf{ANEXO XIV}} \\
     \vspace{0.5cm}
-    {\color{ArthroNavy}\Huge \textbf{ESTUDIO DE IMPACTO AMBIENTAL}} \\
+    {\color{ArthroNavy}\Huge \textbf{ESTUDIO DE IMPACTO }} \\
+    \vspace{0.2cm}
+    {\color{ArthroNavy}\Huge \textbf{AMBIENTAL}} \\
     \vspace{0.6cm}
     {\color{ArthroTeal}\rule{12cm}{2pt}} \\
     \vspace{1cm}
@@ -178,14 +180,6 @@
 \newpage
 
 % ======================================================
-% PÁGINA: ÍNDICE DE FIGURAS
-% ======================================================
-\markboth{Índice de figuras}{Índice de figuras}
-\listoffigures
-\thispagestyle{fancy}
-\newpage
-
-% ======================================================
 % HOJA EN BLANCO CON MARCA DE AGUA
 % ======================================================
 \newpage
@@ -207,13 +201,190 @@
 % CUERPO DEL DOCUMENTO
 % ======================================================
 
-% AQUÍ SE REDACTARÁ EL CONTENIDO DEL ESTUDIO DE IMPACTO AMBIENTAL
+% --- MACRO PARA GRÁFICO CIRCULAR DE DISTRIBUCIÓN DE MATERIAL ---
+\newcommand{\quesitoMaterial}{%
+\begin{tikzpicture}[scale=0.75]
+    % Base (34g -> 57%) - Ángulo: 0 a 205.2
+    \fill[ArthroNavy] (0,0) -- (0:2) arc (0:205.2:2) -- cycle;
+    \node[text=white, font=\bfseries\small] at (102.6:1.2) {57\,\%};
+    
+    % Palanca (18g -> 30%) - Ángulo: 205.2 a 313.2
+    \fill[ArthroTeal] (0,0) -- (205.2:2) arc (205.2:313.2:2) -- cycle;
+    \node[text=white, font=\bfseries\small] at (259.2:1.3) {30\,\%};
+    
+    % Pivote (8g -> 13%) - Ángulo: 313.2 a 360
+    \fill[ArthroGray] (0,0) -- (313.2:2) arc (313.2:360:2) -- cycle;
+    \node[text=white, font=\bfseries\small] at (336.6:1.4) {13\,\%};
+\end{tikzpicture}%
+}
+
+\section{OBJETO Y ALCANCE DEL ESTUDIO}
+
+
+
+
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\linewidth}{|>{\columncolor{ArthroNavy}\color{white}\bfseries}m{4cm} | X|}
+        \hline
+        \multicolumn{2}{|c|}{\cellcolor{ArthroNavy}\textcolor{white}{\textbf{FICHA TÉCNICA MEDIOAMBIENTAL DEL PRODUCTO}}} \\ \hline
+        Material principal & Polipropileno Copolímero de grado médico (PP-C). \\ \hline
+        Tecnología de fabricación & Modelado por Deposición Fundida (FDM - impresión 3D). \\ \hline
+        Huella material total & 60 gramos netos por dispositivo terminado. \\ \hline
+        Consumo energético & 7 horas y 10 minutos de ciclo de máquina por unidad (fabricación). \\ \hline
+        Fin de vida útil & 100\,\% reciclable (termoplástico directo, sin insertos). \\ \hline
+    \end{tabularx}
+    \label{tab:alcance_estudio}
+\end{table}
+
+
+\section{ANÁLISIS DEL CICLO DE VIDA (ACV)}
+
+
+
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.6}
+    \renewcommand{\tabularxcolumn}[1]{m{#1}}
+    \begin{tabularx}{\linewidth}{|>{\centering\arraybackslash}m{3.5cm}|X|}
+        \hline
+        \rowcolor{ArthroNavy}
+        \textcolor{white}{\textbf{Fase del ACV}} & 
+        \textcolor{white}{\textbf{Descripción e impacto asociado}} \\ 
+        \hline
+        
+        \cellcolor{ArthroNavy}\textcolor{white}{\textbf{1. Materias primas}} & 
+        \cellcolor{ArthroTeal!5}
+        El impacto principal reside en la síntesis industrial del PP-C. Al ser un diseño monomaterial extremadamente ligero (60g), la huella de carbono extractiva se minimiza drásticamente. \\ 
+        \hline
+        
+        \cellcolor{ArthroNavy}\textcolor{white}{\textbf{2. Manufactura}} & 
+        Consumo eléctrico concentrado en la base caliente y extrusor durante la impresión. Residuo material confinado únicamente a los soportes de las piezas AD-MDI-101 y AD-MDI-103. \\ 
+        \hline
+        
+        \cellcolor{ArthroNavy}\textcolor{white}{\textbf{3. Fase de uso}} & 
+        \cellcolor{ArthroTeal!5}
+        \textbf{Impacto energético nulo}. El dispositivo es pasivo. El empleo de un relleno giroide al 100\,\% absorbe la fatiga mecánica y garantiza una vida útil prolongada que evita la obsolescencia. \\ 
+        \hline
+        
+        \cellcolor{ArthroNavy}\textcolor{white}{\textbf{4. Fin de vida útil}} & 
+        Al prescindir de tornillería metálica, electrónica o pegamentos, el conjunto puede triturarse directamente en plantas de tratamiento para su reciclaje mecánico. \\ 
+        \hline
+    \end{tabularx}
+    \caption{Fases del ACV.}
+    \label{tab:fases_acv}
+\end{table}
+
+\newpage
+
+\section{EVALUACIÓN DE MATERIALES Y FABRICACIÓN}
+
+
+
+
+
+\begin{table}[H]
+    \centering
+    \small
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.6}
+    \renewcommand{\tabularxcolumn}[1]{m{#1}}
+    \begin{tabularx}{\linewidth}{|
+        >{\raggedright\arraybackslash}m{3.0cm}|
+        X|
+        >{\centering\arraybackslash}m{3.6cm}|
+    }
+        \hline
+        \rowcolor{ArthroNavy}
+        \textcolor{white}{\textbf{Foco de evaluación}} & 
+        \textcolor{white}{\textbf{Justificación y datos de ecodiseño}} & 
+        \textcolor{white}{\textbf{Distribución material}} \\ 
+        \hline
+        
+        \cellcolor{ArthroNavy}\textcolor{white}{\textbf{Optimización topológica \newline (huella material)}} & 
+        \cellcolor{ArthroTeal!5}
+        El proceso FDM anula las mermas por mecanizado. Se ha conseguido una masa total de \textbf{60 gramos}: \newline
+        \textcolor{ArthroNavy}{\textbullet} \textbf{Base (57\,\%):} 34 g. \newline
+        \textcolor{ArthroTeal}{\textbullet} \textbf{Palanca (30\,\%):} 18 g. \newline
+        \textcolor{ArthroGray}{\textbullet} \textbf{Pivote (13\,\%):} 8 g. & 
+        \cellcolor{ArthroTeal!5}
+        \resizebox{3.2cm}{!}{\quesitoMaterial} \\ 
+        \hline
+        
+        \cellcolor{ArthroNavy}\textcolor{white}{\textbf{Toxicidad y \newline emisiones}} & 
+        \multicolumn{2}{>{\raggedright\arraybackslash}p{\dimexpr\linewidth-3.0cm-6\tabcolsep-4\arrayrulewidth\relax}|}{
+            El PP-C de grado médico no lixivia toxinas, BPA ni ftalatos. Las emisiones de compuestos volátiles (VOCs) durante su fundición son notablemente inferiores a polímeros como el ABS.
+        } \\ 
+        \hline
+        
+        \cellcolor{ArthroNavy}\textcolor{white}{\textbf{Sistemas de \newline ensamblaje}} & 
+        \multicolumn{2}{>{\raggedright\arraybackslash}p{\dimexpr\linewidth-3.0cm-6\tabcolsep-4\arrayrulewidth\relax}|}{
+            \cellcolor{ArthroTeal!5}
+            Se ha desarrollado un ensamblaje puramente \textbf{mecánico}. Al eliminar siliconas y resinas epoxi, se reduce la huella química y se garantiza el índice de reciclabilidad del termoplástico.
+        } \\ 
+        \hline
+    \end{tabularx}
+    \caption{Evaluación de materiales.}
+    \label{tab:evaluacion_material}
+\end{table}
+
+
+\section{GESTIÓN DE RESIDUOS Y MEDIDAS CORRECTORAS}
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.6}
+    \renewcommand{\tabularxcolumn}[1]{m{#1}}
+    \begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}m{4cm}|X|}
+        \hline
+        \rowcolor{ArthroNavy}
+        \textcolor{white}{\textbf{Vector ambiental}} & 
+        \textcolor{white}{\textbf{Medidas de mitigación implementadas}} \\ 
+        \hline
+        
+        \cellcolor{ArthroNavy}\textcolor{white}{\textbf{Clasificación de residuos}} & 
+        \cellcolor{ArthroTeal!5}
+        Inclusión obligatoria del \textbf{símbolo de reciclaje ``05'' (PP)} en la matriz de las piezas para asegurar la correcta clasificación en plantas de gestión de residuos. \\ 
+        \hline
+        
+        \cellcolor{ArthroNavy}\textcolor{white}{\textbf{Eficiencia energética}} & 
+        Uso normativo de impresoras de cámara cerrada para retener el calor. El objetivo es disminuir los picos de consumo de la cama caliente durante las 7 horas de trabajo. \\ 
+        \hline
+        
+        \cellcolor{ArthroNavy}\textcolor{white}{\textbf{Packaging y embalaje}} & 
+        \cellcolor{ArthroTeal!5}
+        Uso de embalaje secundario de cartón 100\,\% reciclado, prohibiendo explícitamente la distribución comercial mediante blísteres de plástico de un solo uso. \\ 
+        \hline
+    \end{tabularx}
+    \caption{Medidas ambientales.}
+    \label{tab:medidas_ambientales}
+\end{table}
+\newpage
+\section{CONCLUSIÓN}
+
+\begin{center}
+    \fcolorbox{ArthroTeal}{ArthroTeal!5}{
+        \begin{minipage}{0.9\textwidth}
+            \vspace{0.2cm}
+            \centering \textbf{\textcolor{ArthroNavy}{Veredicto de impacto ambiental}} \\
+            \vspace{0.2cm}
+            El diseño del adaptador ergonómico presenta un \textbf{impacto ambiental mínimo y asumible}. La consecución de un diseño monomaterial ligero (60 g de PP-C), sumado a la tecnología FDM de baja merma y un ensamblaje sin agentes químicos, certifican un producto sostenible, reciclable y plenamente alineado con los preceptos de la Economía Circular.
+            \vspace{0.2cm}
+        \end{minipage}
+    }
+\end{center}
 
 
 % ======================================================
 % BLOQUE DE FIRMAS
 % ======================================================
-\newpage
+\
 \vspace{1.5cm}
 
 \vspace{0.5cm}
