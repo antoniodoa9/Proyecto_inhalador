@@ -79,67 +79,77 @@
 \begin{document}
 
 % ======================================================
-% PÁGINA 1: PORTADA
+% PÁGINA 1: PORTADA TÉCNICA (BLOQUE SÓLIDO)
 % ======================================================
 \begin{titlepage}
-    \begin{tikzpicture}[remember picture,overlay]
-        \fill[ArthroNavy] (current page.north west) rectangle ([yshift=-4.5cm]current page.north east);
-        \fill[ArthroTeal] ([yshift=-4.5cm]current page.north west) rectangle ([yshift=-4.7cm]current page.north east);
-        \fill[ArthroNavy] (current page.south west) rectangle ([yshift=2.5cm]current page.south east);
-        \fill[ArthroTeal] ([yshift=2.5cm]current page.south west) rectangle ([yshift=2.7cm]current page.south east);
-    \end{tikzpicture}
+    
+    % --- LOGO CORPORATIVO (Alineado a la derecha) ---
+    \begin{flushright}
+        \vspace*{-2cm}
+        \includegraphics[width=7.5cm]{logo_definitivo.png}
+    \end{flushright}
 
-    \centering
-    \vspace*{-2cm}
-    \includegraphics[width=6.5cm]{logo_definitivo.png} \\
-    \vspace{2cm}
+    \vspace{-0.5cm}
 
-    {\color{ArthroGray}\Huge \textbf{ANEXO XIV}} \\
-    \vspace{0.5cm}
-    {\color{ArthroNavy}\Huge \textbf{ESTUDIO DE IMPACTO }} \\
-    \vspace{0.2cm}
-    {\color{ArthroNavy}\Huge \textbf{AMBIENTAL}} \\
-    \vspace{0.6cm}
-    {\color{ArthroTeal}\rule{12cm}{2pt}} \\
-    \vspace{1cm}
-    {\Large \textbf{TÍTULO DEL PROYECTO:}} \\
-    \vspace{0.3cm}
-    {\Huge \bfseries Diseño de un adaptador ergonómico universal para la optimización de la pulsación manual en inhaladores de dosis medida (MDI)} \\
-    \vspace{1.3cm}
-
-    % --- BLOQUE DE IDENTIFICACIÓN TÉCNICA ---
-    \begin{minipage}{0.8\textwidth}
-        \centering
-        \textbf{CÓDIGO DE IDENTIFICACIÓN:} \\
-        {\large \texttt{PR-PIB-GIS26-09}} \\[0.8cm]
+    \begin{flushleft}
+        % --- ETIQUETA DEL VOLUMEN ---
+        {\color{ArthroGray}\Large \textbf{DOCUMENTO Nº 3: ANEXOS}} \\[0.5cm]
         
-        \textbf{PROMOTOR Y EMPRESA DESARROLLADORA:} \\
-        {ArthroDesign Solutions S.L.}\\
-        {Calle Severo Ochoa, Nº 12, 29590 Málaga, España}\\        
-        {NIF:} {B12345678} \\
-         
-        \href{mailto:contacto@arhtrodesign.com}{contacto@arhtrodesign.com}
-    \end{minipage}
+        % --- BLOQUE SÓLIDO DE IDENTIFICACIÓN DEL ANEXO ---
+        \noindent\colorbox{ArthroNavy}{%
+            \parbox{\dimexpr\textwidth-2\fboxsep\relax}{%
+                \vspace{0.5cm}
+                \centering
+                \hspace{0.2cm}{\color{white}\fontsize{42pt}{48pt}\selectfont\textbf{ANEXO XIV}}
+                \vspace{0.5cm}
+            }%
+        } \\[0.8cm]
+        
+        % --- TÍTULO DEL ANEXO ---
+        \centering
+        {\color{ArthroTeal}\Huge\bfseries ESTUDIO DE IMPACTO} \\
+        \vspace{0.3cm}
+        {\color{ArthroTeal}\Huge\bfseries AMBIENTAL} \\[0.4cm]
+        {\color{ArthroGray}\rule{\textwidth}{1.5pt}} \\
+        
+        \vspace{0.6cm}
 
-    \vspace{1.0cm}
+        % --- INFORMACIÓN DEL PROYECTO MAESTRO ---
+        \centering
+        {\color{ArthroNavy}\small\textbf{TÍTULO DEL PROYECTO:}} \\[0.3cm]
+        {\huge\bfseries Diseño de un adaptador ergonómico universal para la optimización de la pulsación manual en inhaladores de dosis medida (MDI)} \\
+        
+        \vspace{1cm}
 
-   % --- BLOQUE DE PROYECTISTAS ---
-    \textbf{PROYECTISTAS (Equipo de ArthroDesign Solutions S.L.):} \\
-    \vspace{0.3cm}
-    \small
-    \renewcommand{\arraystretch}{1.3}
-    \begin{tabular}{l l}
-        \textbf{D. Sergio Carmona Muñoz} & Colegiado Nº 06424 (DNI: 26291930D) \\
-        \textbf{D. Juan Gabriel Navarro Valdivielso} & Colegiado Nº 06425 (DNI: 77666662D) \\
-        \textbf{D. Antonio Sánchez Doña} & Colegiado Nº 06423 (DNI: 79380534J) \\
-        \textbf{D. Iván de la Torre Segato} & Colegiado Nº 06421 (DNI: 79383630G) \\
-    \end{tabular}
+        % --- BLOQUE DE IDENTIFICACIÓN TÉCNICA ---
+                \centering
+                {\color{ArthroGray}\small\textbf{CÓDIGO DE IDENTIFICACIÓN:}} \\ {\large\texttt{PR-PIB-GIS26-09}} \\
+                \vspace{0.5cm}
+                {\color{ArthroGray}\small\textbf{PROMOTOR Y EMPRESA DESARROLLADORA:}} \\ {\large ArthroDesign Solutions S.L.} \\{Calle Severo Ochoa, Nº 12, 29590 Málaga, España}\\
+        {NIF: B12345678} \\
+        \href{mailto:contacto@arthrodesign.com}{contacto@arthrodesign.com} \\
+  
 
-    \vfill
+        \vspace{1cm}
 
-   % --- PIE DE PORTADA ---
-    {\color{white} ArthroDesign Solutions S.L. \quad | \quad \today}
-    \vspace{-1.75cm} 
+        % --- BLOQUE DE PROYECTISTAS AUTORES ---
+        {\color{ArthroNavy}\small\textbf{PROYECTISTAS (Equipo de ArthroDesign Solutions S.L.):}} \\[0.3cm]
+        \small
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{@{}l l}
+            \textbf{D. Sergio Carmona Muñoz} & Colegiado Nº 06424 (DNI: 26291930D) \\
+            \textbf{D. Juan Gabriel Navarro Valdivielso} & Colegiado Nº 06425 (DNI: 77666662D) \\
+            \textbf{D. Antonio Sánchez Doña} & Colegiado Nº 06423 (DNI: 79380534J) \\
+            \textbf{D. Iván de la Torre Segato} & Colegiado Nº 06421 (DNI: 79383630G) \\
+        \end{tabular}
+
+        \vfill
+        \vspace{0.6cm}
+
+        % --- PIE DE PORTADA ---
+        {\color{ArthroTeal}\rule{\linewidth}{1pt}} \\[0.3cm]
+        \small\color{ArthroGray}  ArthroDesign Solutions S.L. \quad | \quad \today
+    \end{flushleft}
 \end{titlepage}
 
 % AÑADE ESTA LÍNEA AQUÍ PARA QUE LA SIGUIENTE PÁGINA SEA LA 2:
@@ -179,23 +189,7 @@
 \thispagestyle{fancy}
 \newpage
 
-% ======================================================
-% HOJA EN BLANCO CON MARCA DE AGUA
-% ======================================================
-\newpage
-\pagestyle{fancy}
 
-\begin{tikzpicture}[remember picture, overlay]
-    \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
-\end{tikzpicture}
-
-% Empujamos el texto hacia la parte inferior del folio
-\vspace*{8.5cm} 
-\begin{center}
-    \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
-\end{center}
-\vfill
-\newpage
 
 % ======================================================
 % CUERPO DEL DOCUMENTO
@@ -220,31 +214,42 @@
 
 \section{OBJETO Y ALCANCE DEL ESTUDIO}
 
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}m{4.5cm} | X|}
+        \hline
+        \multicolumn{2}{|c|}{\cellcolor{ArthroNavy}\textcolor{white}{\textbf{FICHA TÉCNICA MEDIOAMBIENTAL DEL PRODUCTO}}} \\ \hline
+        \cellcolor{ArthroNavy}\textcolor{white}{\textbf{Objeto del estudio}} & Evaluación del impacto derivado del diseño, manufactura, uso y fin de vida útil del adaptador ergonómico MDI. \\ \hline
+        \cellcolor{ArthroNavy}\textcolor{white}{\textbf{Material principal}} & Polipropileno Copolímero de grado médico (PP-C). \\ \hline
+        \cellcolor{ArthroNavy}\textcolor{white}{\textbf{Tecnología de fabricación}} & Modelado por Deposición Fundida (FDM - impresión 3D). \\ \hline
+        \cellcolor{ArthroNavy}\textcolor{white}{\textbf{Huella material total}} & 60 gramos netos por dispositivo terminado. \\ \hline
+        \cellcolor{ArthroNavy}\textcolor{white}{\textbf{Consumo energético}} & 7 horas y 10 minutos de ciclo de máquina por unidad (fabricación). \\ \hline
+        \cellcolor{ArthroNavy}\textcolor{white}{\textbf{Fin de vida útil}} & 100\,\% reciclable (termoplástico directo, monomaterial). \\ \hline
+    \end{tabularx}
+    \caption{Definición del objeto y alcance del estudio.}
+    \label{tab:alcance_estudio}
+\end{table}
 
-
-
+\section{MARCO NORMATIVO Y REFERENCIAS}
 
 \begin{table}[H]
     \centering
     \small
     \renewcommand{\arraystretch}{1.5}
-    \begin{tabularx}{\linewidth}{|>{\columncolor{ArthroNavy}\color{white}\bfseries}m{4cm} | X|}
+    \begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}m{4.5cm} | X|}
         \hline
-        \multicolumn{2}{|c|}{\cellcolor{ArthroNavy}\textcolor{white}{\textbf{FICHA TÉCNICA MEDIOAMBIENTAL DEL PRODUCTO}}} \\ \hline
-        Material principal & Polipropileno Copolímero de grado médico (PP-C). \\ \hline
-        Tecnología de fabricación & Modelado por Deposición Fundida (FDM - impresión 3D). \\ \hline
-        Huella material total & 60 gramos netos por dispositivo terminado. \\ \hline
-        Consumo energético & 7 horas y 10 minutos de ciclo de máquina por unidad (fabricación). \\ \hline
-        Fin de vida útil & 100\,\% reciclable (termoplástico directo, sin insertos). \\ \hline
+        \multicolumn{2}{|c|}{\cellcolor{ArthroNavy}\textcolor{white}{\textbf{LEGISLACIÓN Y NORMATIVA DE REFERENCIA}}} \\ \hline
+        \cellcolor{ArthroNavy}\textcolor{white}{\textbf{Norma UNE-EN ISO 14040:2006}} & \cellcolor{ArthroTeal!5}Gestión ambiental. Análisis del ciclo de vida. Principios y marco de referencia. \\ \hline
+        \cellcolor{ArthroNavy}\textcolor{white}{\textbf{Directiva 2008/98/CE}} & Directiva marco sobre los residuos (jerarquía de residuos y reciclaje). \\ \hline
+        \cellcolor{ArthroNavy}\textcolor{white}{\textbf{Reglamento REACH \newline (CE 1907/2006)}} & \cellcolor{ArthroTeal!5}Registro, evaluación, autorización y restricción de sustancias químicas (garantía de no toxicidad del material). \\ \hline
     \end{tabularx}
-    \label{tab:alcance_estudio}
+    \caption{Normativas ambientales aplicadas al proyecto.}
+    \label{tab:normativa}
 \end{table}
-
-
+\newpage
 \section{ANÁLISIS DEL CICLO DE VIDA (ACV)}
-
-
-
 
 \begin{table}[H]
     \centering
@@ -276,17 +281,37 @@
         Al prescindir de tornillería metálica, electrónica o pegamentos, el conjunto puede triturarse directamente en plantas de tratamiento para su reciclaje mecánico. \\ 
         \hline
     \end{tabularx}
-    \caption{Fases del ACV.}
+    \caption{Fases del Análisis de Ciclo de Vida (ACV).}
     \label{tab:fases_acv}
 \end{table}
 
+
+
+\section{MATRIZ DE IMPACTOS AMBIENTALES}
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.6}
+    \renewcommand{\tabularxcolumn}[1]{m{#1}}
+    \begin{tabularx}{\linewidth}{|>{\bfseries}m{3.5cm}|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|}
+        \hline
+        \rowcolor{ArthroNavy}
+        \textcolor{white}{\textbf{Fase / Vector}} & \textcolor{white}{\textbf{Atmósfera}} & \textcolor{white}{\textbf{Agua}} & \textcolor{white}{\textbf{Residuos}} & \textcolor{white}{\textbf{Energía}} \\ \hline
+        1. Materia prima (PP-C) & Moderado (CO2) & Bajo & Bajo & Moderado \\ \hline
+        \rowcolor{ArthroTeal!5}
+        2. Impresión 3D FDM & Bajo (VOCs) & Nulo & Bajo (Soportes) & Moderado \\ \hline
+        3. Uso del dispositivo & Nulo & Bajo (Lavado) & Nulo & Nulo \\ \hline
+        \rowcolor{ArthroTeal!5}
+        4. Fin de vida útil & Bajo & Nulo & Moderado & Bajo \\ \hline
+        \rowcolor{ArthroNavy}
+        \textcolor{white}{\textbf{Impacto Global}} & \textcolor{white}{\textbf{BAJO}} & \textcolor{white}{\textbf{MUY BAJO}} & \textcolor{white}{\textbf{BAJO}} & \textcolor{white}{\textbf{MODERADO}} \\ \hline
+    \end{tabularx}
+    \caption{Matriz simplificada de identificación y cuantificación cualitativa de impactos.}
+    \label{tab:matriz_impactos}
+\end{table}
 \newpage
-
 \section{EVALUACIÓN DE MATERIALES Y FABRICACIÓN}
-
-
-
-
 
 \begin{table}[H]
     \centering
@@ -329,7 +354,7 @@
         } \\ 
         \hline
     \end{tabularx}
-    \caption{Evaluación de materiales.}
+    \caption{Evaluación de materiales y huella de fabricación.}
     \label{tab:evaluacion_material}
 \end{table}
 
@@ -341,7 +366,7 @@
     \small
     \renewcommand{\arraystretch}{1.6}
     \renewcommand{\tabularxcolumn}[1]{m{#1}}
-    \begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}m{4cm}|X|}
+    \begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}m{4.5cm}|X|}
         \hline
         \rowcolor{ArthroNavy}
         \textcolor{white}{\textbf{Vector ambiental}} & 
@@ -362,29 +387,36 @@
         Uso de embalaje secundario de cartón 100\,\% reciclado, prohibiendo explícitamente la distribución comercial mediante blísteres de plástico de un solo uso. \\ 
         \hline
     \end{tabularx}
-    \caption{Medidas ambientales.}
+    \caption{Medidas ambientales correctoras implementadas en el proyecto.}
     \label{tab:medidas_ambientales}
 \end{table}
+
 \newpage
 \section{CONCLUSIÓN}
 
-\begin{center}
-    \fcolorbox{ArthroTeal}{ArthroTeal!5}{
-        \begin{minipage}{0.9\textwidth}
-            \vspace{0.2cm}
-            \centering \textbf{\textcolor{ArthroNavy}{Veredicto de impacto ambiental}} \\
-            \vspace{0.2cm}
-            El diseño del adaptador ergonómico presenta un \textbf{impacto ambiental mínimo y asumible}. La consecución de un diseño monomaterial ligero (60 g de PP-C), sumado a la tecnología FDM de baja merma y un ensamblaje sin agentes químicos, certifican un producto sostenible, reciclable y plenamente alineado con los preceptos de la Economía Circular.
-            \vspace{0.2cm}
-        \end{minipage}
-    }
-\end{center}
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.6}
+    \renewcommand{\tabularxcolumn}[1]{m{#1}}
+    \begin{tabularx}{\linewidth}{|>{\centering\arraybackslash}X|}
+        \hline
+        \rowcolor{ArthroNavy}
+        \textcolor{white}{\Large\textbf{VEREDICTO DE IMPACTO AMBIENTAL}} \\ 
+        \hline
+        \cellcolor{ArthroTeal!5}
+        \vspace{0.2cm}
+        El diseño del adaptador ergonómico presenta un \textbf{impacto ambiental mínimo y asumible}. La consecución de un diseño monomaterial ligero (60 g de PP-C), sumado a la tecnología FDM de baja merma y un ensamblaje puramente mecánico sin agentes químicos, certifican un producto sostenible, reciclable y plenamente alineado con los preceptos de la Economía Circular.
+        \vspace{0.2cm} \\ 
+        \hline
+    \end{tabularx}
+    \caption{Conclusión general del estudio.}
+\end{table}
 
 
 % ======================================================
 % BLOQUE DE FIRMAS
 % ======================================================
-\
 \vspace{1.5cm}
 
 \vspace{0.5cm}

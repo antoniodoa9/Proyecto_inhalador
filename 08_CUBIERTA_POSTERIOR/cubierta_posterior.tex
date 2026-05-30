@@ -1,0 +1,79 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Paquetes de Estilo y Formato ---
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+% Invertimos los márgenes respecto a la portada (dejamos el espacio libre a la derecha)
+\geometry{top=3cm, bottom=3cm, left=3cm, right=6.5cm}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage[table, xcdraw]{xcolor}
+\usepackage{hyperref}
+
+% --- Definición de Colores Corporativos ArthroDesign ---
+\definecolor{ArthroNavy}{HTML}{0F172A}
+\definecolor{ArthroTeal}{HTML}{0D9488}
+\definecolor{ArthroGray}{HTML}{64748B}
+
+\begin{document}
+
+% ======================================================
+% CUBIERTA POSTERIOR PREMIUM (CONTRAPORTADA)
+% ======================================================
+\begin{titlepage}
+    
+    % --- Elementos Geométricos: Bloque Vertical Invertido (Lomo a la derecha) ---
+    \begin{tikzpicture}[remember picture,overlay]
+        % Banda ancha lateral derecha en azul marino oscuro
+        \fill[ArthroNavy] (current page.north east) rectangle ([xshift=-4.5cm]current page.south east);
+        % Fina línea de acento en color turquesa
+        \fill[ArthroTeal] ([xshift=-4.5cm]current page.north east) rectangle ([xshift=-4.65cm]current page.south east);
+        
+        % Texto corporativo rotado verticalmente en la banda derecha
+        \vspace{6cm}
+        \node[color=white, rotate=-90, anchor=west, font=\fontfamily{phv}\selectfont\large\bfseries] 
+            at ([xshift=-2.25cm, yshift=-1.5cm]current page.north east) 
+            {ARTHRODESIGN SOLUTIONS S.L. \quad | \quad PROYECTO TÉCNICO};
+    \end{tikzpicture}
+
+    % --- CONTENIDO DE LA CONTRAPORTADA ---
+    \begin{center}
+        
+        % Damos espacio superior para centrar el peso visual
+        \vspace*{9cm}
+        
+        % 1. Logo centrado en el espacio en blanco disponible
+        \includegraphics[width=9cm]{logo_definitivo.png}
+        
+        \vfill
+        
+        % 2. Bloque de información de contacto e identidad corporativa
+        {\color{ArthroNavy}\Large\textbf{ArthroDesign Solutions S.L.}} \\[0.3cm]
+        {\color{ArthroGray}\small
+        Calle Severo Ochoa, Nº 12 \\
+        29590 Málaga, España \\[0.2cm]
+        NIF: B12345678 \\[0.2cm]
+        \href{mailto:contacto@arthrodesign.com}{contacto@arthrodesign.com}
+        }
+        
+        \vspace{1cm}
+        
+        % --- CÓDIGO DE IDENTIFICACIÓN ---
+        {\color{ArthroTeal}\textbf{CÓDIGO DE IDENTIFICACIÓN:}} \\
+        {\color{ArthroNavy}\large\texttt{PR-PIB-GIS26-09}}
+        
+       \vspace{0.5cm}
+        
+        % 3. Aviso legal / Propiedad intelectual (Típico en proyectos de ingeniería)
+        {\color{ArthroTeal}\rule{6cm}{1.5pt}} \\[0.5cm]
+        \textcopyright\ 2026 ArthroDesign Solutions S.L. Todos los derechos reservados.}
+        
+        \vspace{1cm}
+        
+    \end{center}
+\end{titlepage}
+
+\end{document}

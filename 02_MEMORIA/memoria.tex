@@ -15,15 +15,26 @@
 \usepackage{enumitem}
 \usepackage[table, xcdraw]{xcolor}
 \usepackage{amsmath}
-\usepackage{tocloft}
+\usepackage[titles]{tocloft}
+\tocloftpagestyle{fancy}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{booktabs}
 
 % --- Ajuste del espacio en el índice para números de dos cifras ---
-\setlength{\cftsecnumwidth}{2.5em} % <--- AMPLÍA EL ESPACIO ENTRE NÚMERO Y TEXTO
+\setlength{\cftsecnumwidth}{2.5em}
+\setlength{\cftsubsecnumwidth}{3.5em}
 
 % --- Definición de Colores Corporativos ArthroDesign ---
 \definecolor{ArthroNavy}{HTML}{0F172A}
 \definecolor{ArthroTeal}{HTML}{0D9488}
 \definecolor{ArthroGray}{HTML}{64748B}
+
+% --- Configuración de Párrafo ---
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{1.5em}
 
 % --- Configuración de Enlaces ---
 \hypersetup{colorlinks=true, linkcolor=ArthroNavy, urlcolor=ArthroTeal}
@@ -36,21 +47,35 @@
   {}
   [{\color{ArthroTeal}\titlerule[1.5pt]}]
 
-% --- CONFIGURACIÓN DE ENCABEZADO Y PIE CORPORATIVO (Anexo I) ---
+\titleformat{\subsection}
+  {\color{ArthroNavy}\large\bfseries}
+  {\thesubsection.}
+  {0.5em}
+  {}
+  [{\color{ArthroTeal}\titlerule[1pt]}]
+
+\titleformat{\subsubsection}
+  {\color{ArthroNavy}\normalsize\bfseries}
+  {\thesubsubsection.}
+  {0.5em}
+  {}
+
+% --- Viñetas en color Turquesa ---
+\renewcommand{\labelitemi}{\color{ArthroTeal}\textbullet}
+\renewcommand{\labelitemii}{\color{ArthroTeal}\circ}
+
+% --- CONFIGURACIÓN DE ENCABEZADO Y PIE CORPORATIVO ---
 \pagestyle{fancy}
 \fancyhf{}
 
-% Línea superior de color turquesa (Grosor 2pt)
 \renewcommand{\headrule}{\hbox to\headwidth{\color{ArthroTeal}\leaders\hrule height 2pt\hfill}}
 
-% Información de Encabezado
 \fancyhead[L]{\small \textbf{\color{ArthroNavy}Adaptador ergonómico - PR-PIB-GIS26-09}}
 \fancyhead[R]{\small \textbf{\color{ArthroNavy}Documento Nº 2: Memoria}}
 
-% Información de Pie de Página (Formato Pág. X de Y incorporado)
 \fancyfoot[L]{\small \color{ArthroGray}ArthroDesign Solutions S.L.}
 \fancyfoot[C]{\small \color{ArthroGray}\today}
-\fancyfoot[R]{\small \textbf{\color{ArthroNavy}Pág. \thepage \ de \pageref{LastPage}}} 
+\fancyfoot[R]{\small \textbf{\color{ArthroNavy}Pág. \thepage \ de \pageref{LastPage}}}
 
 \setlength{\headheight}{15pt}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -58,28 +83,21 @@
 \begin{document}
 
 % ======================================================
-% PÁGINA 1: PORTADA GENERAL DE ANEXOS
+% PÁGINA 1: PORTADA
 % ======================================================
 \begin{titlepage}
-    % --- Elementos Geométricos de Identidad (Cabecera y Pie) ---
     \begin{tikzpicture}[remember picture,overlay]
-        % Franja superior
         \fill[ArthroNavy] (current page.north west) rectangle ([yshift=-4.5cm]current page.north east);
         \fill[ArthroTeal] ([yshift=-4.5cm]current page.north west) rectangle ([yshift=-4.7cm]current page.north east);
-        
-        % Franja inferior
         \fill[ArthroNavy] (current page.south west) rectangle ([yshift=2.5cm]current page.south east);
         \fill[ArthroTeal] ([yshift=2.5cm]current page.south west) rectangle ([yshift=2.7cm]current page.south east);
     \end{tikzpicture}
 
-    \centering % Todo centrado a partir de aquí
-
-    % --- LOGO (Sobre la franja azul) ---
+    \centering
     \vspace*{-2cm}
     \includegraphics[width=6.5cm]{logo_definitivo.png} \\
     \vspace{2cm}
 
-    % --- BLOQUE DE TÍTULO PRINCIPAL ---
     {\color{ArthroGray}\Huge \textbf{DOCUMENTO Nº 2}} \\
     \vspace{0.5cm}
     {\color{ArthroNavy}\Huge \textbf{MEMORIA}} \\
@@ -91,57 +109,48 @@
     {\Huge \bfseries Diseño de un adaptador ergonómico universal para la optimización de la pulsación manual en inhaladores de dosis medida (MDI)} \\
     \vspace{1.3cm}
 
-    % --- BLOQUE DE IDENTIFICACIÓN TÉCNICA ---
     \begin{minipage}{0.8\textwidth}
         \centering
         \textbf{CÓDIGO DE IDENTIFICACIÓN:} \\
         {\large \texttt{PR-PIB-GIS26-09}} \\[0.8cm]
-        
+
         \textbf{PROMOTOR Y EMPRESA DESARROLLADORA:} \\
         {ArthroDesign Solutions S.L.}\\
-        {Calle Severo Ochoa, Nº 12, 29590 Málaga, España}\\        
-        {NIF:} {B12345678} \\
-         
-        \href{mailto:contacto@arhtrodesign.com}{contacto@arhtrodesign.com}
+        {Calle Severo Ochoa, Nº 12, 29590 Málaga, España}\\
+        {NIF: B12345678} \\
+        \href{mailto:contacto@arthrodesign.com}{contacto@arthrodesign.com}
     \end{minipage}
 
     \vspace{1.0cm}
 
-    % --- BLOQUE DE PROYECTISTAS ---
     \textbf{PROYECTISTAS (Equipo de ArthroDesign Solutions S.L.):} \\
     \vspace{0.3cm}
     \small
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{l l}
-        \textbf{D. Sergio Carmona Muñoz} & Colegiado Nº 06424 (DNI: 26291930D) \\
+        \textbf{D. Sergio Carmona Muñoz}           & Colegiado Nº 06424 (DNI: 26291930D) \\
         \textbf{D. Juan Gabriel Navarro Valdivielso} & Colegiado Nº 06425 (DNI: 77666662D) \\
-        \textbf{D. Antonio Sánchez Doña} & Colegiado Nº 06423 (DNI: 79380534J) \\
-        \textbf{D. Iván de la Torre Segato} & Colegiado Nº 06421 (DNI: 79383630G) \\
+        \textbf{D. Antonio Sánchez Doña}            & Colegiado Nº 06423 (DNI: 79380534J) \\
+        \textbf{D. Iván de la Torre Segato}         & Colegiado Nº 06421 (DNI: 79383630G) \\
     \end{tabular}
 
     \vfill
 
-    % --- PIE DE PORTADA ---
     {\color{white} ArthroDesign Solutions S.L. \quad | \quad \today}
-    \vspace{-1.75cm} 
+    \vspace{-1.75cm}
 \end{titlepage}
 
-% AÑADE ESTA LÍNEA AQUÍ PARA QUE LA SIGUIENTE PÁGINA SEA LA 2:
 \setcounter{page}{2}
 
-
 % ======================================================
 % HOJA EN BLANCO CON MARCA DE AGUA
 % ======================================================
 \newpage
 \pagestyle{fancy}
-
 \begin{tikzpicture}[remember picture, overlay]
     \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
 \end{tikzpicture}
-
-% Empujamos el texto hacia la parte inferior del folio
-\vspace*{8.5cm} 
+\vspace*{8.5cm}
 \begin{center}
     \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
 \end{center}
@@ -149,84 +158,629 @@
 \newpage
 
 % ======================================================
-% PÁGINA: ÍNDICE AUTOMÁTICO (CON ENCABEZADO)
+% ÍNDICE AUTOMÁTICO
 % ======================================================
-\markboth{Índice}{Índice}
+
 \tableofcontents
-\thispagestyle{fancy}
+
 \newpage
 
 % ======================================================
-% HOJA EN BLANCO CON MARCA DE AGUA
+% ÍNDICE DE TABLAS
 % ======================================================
-\pagestyle{fancy}
 
-\begin{tikzpicture}[remember picture, overlay]
-    \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
-\end{tikzpicture}
+\listoftables
 
-% Empujamos el texto hacia la parte inferior del folio
-\vspace*{8.5cm} 
-\begin{center}
-    \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
-\end{center}
-\vfill
 \newpage
 
+% ======================================================
+% ÍNDICE DE FIGURAS
+% ======================================================
+
+\listoffigures
+
+\newpage
+
+
+
+% ======================================================
+% CUERPO DE LA MEMORIA
+% ======================================================
+
+% ------------------------------------------------------------------
 \section{OBJETO}
+% ------------------------------------------------------------------
+
+El presente Proyecto tiene por objeto el diseño completo de \textbf{ArthroPush}, un adaptador ergonómico mecánico de palanca destinado a facilitar la pulsación de inhaladores de dosis medida (MDI) por parte de pacientes con limitaciones en la fuerza o la motricidad fina de las manos. El dispositivo, fabricado íntegramente en polipropileno copolímero (PP-C) de grado médico, se compone de tres piezas desmontables que se acoplan sobre el inhalador sin modificar su funcionamiento farmacológico.
+
+La justificación técnica reside en el principio de ventaja mecánica de la palanca: \textit{ArthroPush} transfiere la fuerza aplicada con la palma de la mano al émbolo del cartucho MDI, reduciendo la fuerza de pulsación necesaria a valores compatibles con las capacidades de pacientes diagnosticados con artritis reumatoide, artrosis severa o sarcopenia.
+
+La documentación técnica completa del producto queda recogida en los siguientes documentos del expediente:
+
+\begin{itemize}
+    \item \textbf{Documento Nº 3 — Anexos:} metodología, especificaciones EDP, bocetos, diseño CAD, gestión de riesgos, estimación de costes y documentación de apoyo.
+    \item \textbf{Documento Nº 4 — Planos:} vistas, cotas y tolerancias de cada pieza y del conjunto ensamblado.
+    \item \textbf{Documento Nº 5 — Pliego de Condiciones:} condiciones técnicas, facultativas, económicas y legales.
+    \item \textbf{Documento Nº 6 — Mediciones:} dimensiones máximas de cada componente y del embalaje.
+    \item \textbf{Documento Nº 7 — Presupuesto:} cuadros de precios y presupuestos.
+\end{itemize}
 
 
+% ------------------------------------------------------------------
 \section{ALCANCE}
+% ------------------------------------------------------------------
+
+El alcance del presente Proyecto comprende el diseño conceptual, básico y de detalle del adaptador ergonómico \textit{ArthroPush}, desde la definición del problema hasta la generación de la documentación técnica completa necesaria para su fabricación y comercialización.
+
+En lo referente a las \textbf{condiciones técnicas de aplicación}:
+
+\begin{itemize}
+    \item El dispositivo es compatible con inhaladores MDI estándar de diámetro de cartucho $\emptyset\,22\,\text{mm} \pm 0{,}5\,\text{mm}$, tipología más extendida en el mercado farmacéutico europeo.
+    \item La envolvente máxima del conjunto ensamblado no supera $120 \times 50 \times 60\,\text{mm}$ y su masa total es inferior a $40\,\text{g}$, conforme al \textbf{Documento Nº 3, Anexo V - Especificaciones del Producto}.
+    \item El dispositivo es apto para uso doméstico y entorno clínico no estéril.
+    \item No requiere fuente de energía ni consumibles.
+\end{itemize}
+
+En lo referente al \textbf{perfil de usuario objetivo} (véase \textbf{Documento Nº 3, Anexo IV - Entrevistas y Encuestas}):
+
+\begin{itemize}
+    \item Pacientes con \textbf{artritis reumatoide o artrosis severa} en manos, con incapacidad o dolor intenso al ejercer la pinza dactilar.
+    \item Pacientes de la \textbf{tercera edad con sarcopenia} que han perdido la masa muscular necesaria para alcanzar el umbral de accionamiento del MDI.
+\end{itemize}
+
+Quedan \textbf{fuera del alcance} de este Proyecto: el diseño de electrónica embebida, el análisis clínico de eficacia terapéutica, los ensayos de biocompatibilidad en paciente real, y los procesos de fabricación por inyección en serie (el proyecto se circunscribe al prototipado mediante impresión 3D FDM).
 
 
+% ------------------------------------------------------------------
 \section{ANTECEDENTES}
+% ------------------------------------------------------------------
+
+\subsection{Contexto epidemiológico y clínico}
+
+La artritis reumatoide y la artrosis son las enfermedades articulares más prevalentes en Europa, con una incidencia conjunta superior al 15\,\% de la población adulta española según el registro EPISER de la Sociedad Española de Reumatología [1]. La sarcopenia, asociada al envejecimiento, afecta adicionalmente a más del 10\,\% de la población mayor de 65 años [2]. Estos grupos presentan una capacidad de pellizco y pinza frecuentemente inferior a $8\,\text{N}$, muy por debajo de los $15{-}20\,\text{N}$ que requiere la pulsación estándar de un inhalador MDI.
+
+En paralelo, las patologías respiratorias crónicas —asma y EPOC— que precisan medicación inhalada afectan a más de 4 millones de personas en España [3]. La intersección de ambos grupos (limitación articular y tratamiento respiratorio por MDI) constituye un colectivo significativo sin solución funcional de calidad en el mercado nacional.
+
+\subsection{Deficiencia del producto actual y oportunidad de diseño}
+
+El inhalador MDI convencional fue diseñado sin adaptación específica para usuarios con limitaciones motrices. La acción de pulsación exige una pinza entre pulgar e índice que resulta mecánicamente dolorosa o físicamente imposible para los perfiles identificados.
+
+La entrevista cualitativa a Doña Carmen Ruiz, paciente de 68 años con artritis reumatoide y asma (recogida en el \textbf{Documento Nº 3, Anexo IV - Entrevistas y Encuestas}), confirma que la imposibilidad de accionar el inhalador genera tanto una administración incorrecta de la dosis como un impacto emocional severo por pérdida de autonomía. La paciente describe recurrir a superficies de apoyo o a la ayuda de terceros como estrategias habituales de uso.
+
+Los resultados de la encuesta cuantitativa de mercado (\textbf{Documento Nº 3, Anexo IV - Entrevistas y Encuestas}) confirman esta realidad de forma estadística:
+
+\begin{itemize}
+    \item El \textbf{80\,\%} de los encuestados experimenta dificultades para accionar el inhalador al menos semanalmente.
+    \item El \textbf{65\,\%} prioriza la reducción del esfuerzo como característica más importante de cualquier accesorio.
+    \item El \textbf{62\,\%} acepta un incremento de tamaño medio (cabe en bolso) para ganar comodidad.
+    \item El \textbf{84\,\%} se sitúa en una disposición a pagar de entre 10--20€.
+\end{itemize}
+
+\subsection{Análisis del mercado competidor}
+
+El análisis de la oferta existente, desarrollado en el \textbf{Documento Nº 3, Anexo II - Definición estratégica}, identifica únicamente un competidor directo relevante: \textbf{HalerEase\textsuperscript{\textregistered}}, cuyas limitaciones principales son:
+
+\begin{itemize}
+    \item Precio de venta al público entre \textbf{22–28\,€}, que supera el umbral de aceptabilidad del 84\,\% de los usuarios encuestados.
+    \item \textbf{Distribución escasa} y sin presencia consolidada en la red de farmacias españolas.
+    \item \textbf{Compatibilidad reducida} con determinados modelos de MDI.
+\end{itemize}
+
+Esta brecha competitiva valida la oportunidad de desarrollo de \textit{ArthroPush} con un PVP objetivo de 13,95€ aproximadamente un 40\,\% más económico que el único competidor identificado.
 
 
+% ------------------------------------------------------------------
 \section{NORMAS Y REFERENCIAS}
+% ------------------------------------------------------------------
+
+\subsection{Disposiciones legales y normas aplicadas}
+
+Las siguientes normativas son de aplicación obligatoria al diseño, fabricación y comercialización del adaptador \textit{ArthroPush}. Su cumplimiento queda acreditado mediante la evaluación de directivas (\textbf{Documento Nº 3, Anexo VIII}), la Declaración UE de Conformidad (\textbf{Documento Nº 3, Anexo IX}) y las condiciones establecidas en el \textbf{Documento Nº 5 — Pliego de Condiciones}.
+
+\subsubsection{Normativa comunitaria (UE)}
+
+\begin{itemize}
+    \item \textbf{Reglamento (UE) 2017/745 (MDR):} Sobre los productos sanitarios. El adaptador se clasifica como Producto Sanitario de \textbf{Clase I} (autocertificación del fabricante), al tratarse de un dispositivo de apoyo mecánico no invasivo sin acción farmacológica.
+    \item \textbf{Reglamento (UE) 2023/988:} Seguridad general de productos de consumo.
+    \item \textbf{Reglamento (CE) nº 1907/2006 (REACH):} El PP-C seleccionado está libre de sustancias de muy alta preocupación (SVHC), incluido el bisfenol A (BPA).
+\end{itemize}
+
+\subsubsection{Normativa nacional (España)}
+
+\begin{itemize}
+    \item \textbf{Real Decreto 192/2023:} Por el que se regulan los productos sanitarios en España, en transposición del MDR 2017/745.
+    \item \textbf{Ley 21/1992, de 16 de julio, de Industria:} En particular su Artículo 9, relativo a la seguridad industrial, sobre el que se fundamenta la declaración técnica de los proyectistas (véase Sección 11 del presente documento).
+\end{itemize}
 
 
+\subsection{Programas de cálculo}
+
+Los programas de software empleados en el desarrollo técnico del Proyecto son:
+
+\begin{itemize}
+    \item \textbf{Autodesk Fusion 360 (versión educativa):} Modelado CAD 3D de las tres piezas y generación del ensamblaje. Base del \textbf{Documento Nº 4 — Planos} y del proceso de fabricación descrito en el \textbf{Documento Nº 3, Anexo XIII - Impresión 3D}.
+    \item \textbf{Ultimaker Cura (slicing FDM):} Generación del archivo de impresión, configuración de parámetros de capa, relleno giroide al 100\,\% y soportes para las piezas AD-MDI-101 y AD-MDI-103.
+    \item \textbf{Gantt Project:} Elaboración del cronograma de fases del proyecto, recogido en el \textbf{Documento Nº 3, Anexo III - Planificación y cronograma}.
+    \item \textbf{Microsoft Excel:} Elaboración de presupuestos, véase el \textbf{Documento Nº 7 -- Presupuesto}.
+\end{itemize}
+
+\subsection{Plan de gestión de la calidad}
+
+El presente Proyecto ha sido redactado conforme a los criterios formales de la \textbf{Norma UNE 157001:2014}. Los documentos que lo integran siguen la estructura, nomenclatura y formato corporativo definidos en la identidad visual de ArthroDesign Solutions S.L. Se ha mantenido un sistema de control de versiones mediante Git.
+
+\subsection{Bibliografía}
+
+\begin{enumerate}[label={[\arabic*]}]
+    \item Sociedad Española de Reumatología. \textit{Estudio EPISER 2016: Prevalencia de enfermedades reumáticas en la población adulta española}. SER, 2018.
+    \item Organización Mundial de la Salud. \textit{Envejecimiento y salud. Fact Sheet}. OMS, octubre 2025. \url{https://www.who.int/es/news-room/fact-sheets/detail/ageing-and-health}.
+    \item GINA. \textit{Global Initiative for Asthma: Global Strategy for Asthma Management and Prevention}. GINA, 2023.
+    \item Fundació Institut Català de Farmacologia (CEDIMCAT). \textit{Guia d'ús d'inhaladors}. CEDIMCAT, 2023.
+    \item UNE 157001:2014: Criterios generales para la elaboración formal de los documentos que constituyen un proyecto técnico.
+    \item UNE-EN ISO 14971:2020: Dispositivos médicos — Aplicación de la gestión de riesgos. Metodología y resultados en el Documento Nº 3, Anexo X - Gestión de riesgos.
+    \item UNE-EN ISO 21856:2023: Productos de apoyo para personas con discapacidad — Requisitos generales y métodos de ensayo (caída libre 1{,}20 m; fatiga 250 N × 2.000 ciclos).
+    \item UNE-EN ISO 10993-1: Evaluación biológica de productos sanitarios. El PP-C de grado médico cumple los requisitos de biocompatibilidad establecidos.
+    \item UNE-EN ISO 14006:2020: Sistemas de gestión ambiental — Directrices para la incorporación del ecodiseño. Estudio de impacto ambiental en el 
+    \item ISO 11469:2016: Plásticos — Identificación y marcado genérico de artículos de plástico. Todas las piezas con masa superior a $10\,\text{g}$ incorporan el código \texttt{>PP-C<}.
+
+\end{enumerate}
+
+\subsection{Otras referencias}
+
+\begin{itemize}
+    \item Fichas técnicas del material: \textbf{Polipropileno Copolímero (PP-C) de grado médico} — Sabic\textsuperscript{\textregistered} PP grades (Regulatory Support Package, RSP).
+    \item Base de datos de patentes EPO/OEPM: análisis de libertad de operación (FTO) frente a la patente HalerEase\textsuperscript{\textregistered}, recogido en la \textbf{Sección 4.3 del Documento Nº 5 — Pliego de Condiciones}.
+\end{itemize}
+
+\newpage
+% ------------------------------------------------------------------
 \section{DEFINICIONES Y ABREVIATURAS}
+% ------------------------------------------------------------------
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\linewidth}{|>{\bfseries\color{ArthroNavy}}m{2.8cm}|X|}
+        \hline
+        \rowcolor{ArthroNavy}
+        \multicolumn{1}{|c|}{\color{white}\textbf{Abreviatura}} & \multicolumn{1}{c|}{\color{white}\textbf{Definición}} \\ \hline
+        MDI & \textit{Metered Dose Inhaler} — Inhalador de dosis medida, dispositivo farmacéutico de accionamiento manual mediante presión sobre un cartucho presurizado. \\ \hline
+        PP-C & Polipropileno Copolímero de grado médico. Material termoplástico reciclable, libre de BPA, empleado en los tres componentes del adaptador. \\ \hline
+         BPA & Bisfenol A. Sustancia restringida de la que el PP-C seleccionado está completamente libre. \\ \hline
+        FDM & \textit{Fused Deposition Modeling} — Modelado por deposición fundida. Tecnología de impresión 3D empleada para el prototipado del adaptador. \\ \hline
+        EDP & Especificaciones de Diseño del Producto. Los 16 bloques EDP (ARD-EDP-01 a 16) se detallan en el Documento Nº 3, Anexo V. \\ \hline
+        MDR & \textit{Medical Device Regulation} — Reglamento (UE) 2017/745 sobre productos sanitarios. \\ \hline
+        PEM & Presupuesto de Ejecución Material. Coste directo de fabricación sin gastos generales ni beneficio industrial. \\ \hline
+        PEC & Presupuesto de Ejecución por Contrata. Incluye gastos generales (10\,\%), beneficio industrial (20\,\%) e IVA (21\,\%). \\ \hline
+        PA & Presupuesto para la Administración  \\ \hline
+        PVP & Precio de Venta al Público. Precio final al consumidor en canal de distribución. \\ \hline
+        CAD & \textit{Computer-Aided Design} — Diseño asistido por computadora. Herramienta empleada: Autodesk Fusion 360. \\ \hline
+        ACV & Análisis del Ciclo de Vida. Metodología de evaluación medioambiental. Documento Nº 3, Anexo XIV. \\ \hline
+        FTO & \textit{Freedom to Operate} — Libertad de operación. Análisis de conflictos de propiedad industrial. \\ \hline
+        SVHC & Sustancias de Muy Alta Preocupación según el Reglamento REACH. El PP-C seleccionado está libre de estas sustancias. \\ \hline
+       
+        ASD / SCM / JGN / ITS & Iniciales de los cuatro proyectistas: Antonio Sánchez Doña, Sergio Carmona Muñoz, Juan Gabriel Navarro Valdivielso, Iván de la Torre Segato. \\ \hline
+    \end{tabularx}
+    \caption{Definiciones y abreviaturas empleadas en el presente Proyecto.}
+    \label{tab:definiciones}
+\end{table}
 
 
+% ------------------------------------------------------------------
 \section{REQUISITOS DE DISEÑO}
+% ------------------------------------------------------------------
+
+Los requisitos de diseño del adaptador han sido establecidos a partir de las necesidades detectadas en las fases de investigación cualitativa y cuantitativa. La totalidad de los \textbf{16 bloques EDP} (ARD-EDP-01 a ARD-EDP-16) se desarrolla íntegramente en el \textbf{Documento Nº 3, Anexo V}. A continuación se sintetizan los requisitos fundamentales clasificados por tipología.
+
+\subsection{Requisitos funcionales}
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.6}
+    \renewcommand{\tabularxcolumn}[1]{m{#1}}
+    \begin{tabularx}{\linewidth}{|>{\centering\arraybackslash}m{2.2cm}|>{\bfseries\color{ArthroNavy}\raggedright\arraybackslash}m{3.8cm}|X|}
+        \hline
+        \rowcolor{ArthroNavy}
+        \color{white}\textbf{EDP} & \multicolumn{1}{c|}{\color{white}\textbf{Requisito}} & \multicolumn{1}{c|}{\color{white}\textbf{Especificación}} \\ \hline
+        \rowcolor{ArthroTeal!5}
+        ARD-EDP-13 & Ergonomía y biomecánica & La palanca debe permitir el accionamiento mediante empuje palmar, sustituyendo la pinza dactilar. Fuerza de pulsación resultante $\leq 8\,\text{N}$ con fuerza de entrada $\leq 15\,\text{N}$. \\ \hline
+        ARD-EDP-01 & Compatibilidad MDI & Orificio de inserción compatible con cartuchos $\emptyset\,22\,\text{mm} \pm 0{,}5\,\text{mm}$ sin modificación del inhalador. \\ \hline
+        \rowcolor{ArthroTeal!5}
+        ARD-EDP-03 & Mantenimiento nulo & El adaptador no requiere calibración ni mantenimiento periódico. Limpieza con paño húmedo y jabón neutro. \\ \hline
+        ARD-EDP-04 & Montaje sin herramientas & Ensamblaje y desmontaje manual del conjunto en menos de 30 segundos, sin necesidad de motricidad fina. \\ \hline
+        \rowcolor{ArthroTeal!5}
+        ARD-EDP-07 & Resistencia al transporte & Superar prueba de caída libre desde $1{,}20\,\text{m}$ sin fractura ni deformación permanente (UNE-EN ISO 21856:2023). \\ \hline
+        ARD-EDP-14 & Vida útil & Resistir un mínimo de 2.000 ciclos de pulsación a $250\,\text{N}$ sin fallo estructural (UNE-EN ISO 21856:2023). \\ \hline
+    \end{tabularx}
+    \caption{Requisitos funcionales principales del adaptador ArthroPush (síntesis de los 16 bloques EDP del Documento Nº 3, Anexo V).}
+    \label{tab:req_funcionales}
+\end{table}
+
+\subsection{Requisitos no funcionales}
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.6}
+    \renewcommand{\tabularxcolumn}[1]{m{#1}}
+    \begin{tabularx}{\linewidth}{|>{\centering\arraybackslash}m{2.2cm}|>{\bfseries\color{ArthroNavy}\raggedright\arraybackslash}m{3.8cm}|X|}
+        \hline
+        \rowcolor{ArthroNavy}
+        \color{white}\textbf{EDP} & \multicolumn{1}{c|}{\color{white}\textbf{Requisito}} & \multicolumn{1}{c|}{\color{white}\textbf{Especificación}} \\ \hline
+        \rowcolor{ArthroTeal!5}
+        ARD-EDP-12 & Normativa y legislación & PS Clase I según MDR 2017/745. PP-C libre de SVHC (REACH). Código \texttt{>PP-C<} según ISO 11469 en piezas $> 10\,\text{g}$. \\ \hline
+        ARD-EDP-01 & Dimensiones y masa & Envolvente $\leq 120 \times 50 \times 60\,\text{mm}$. Masa total $\leq 40\,\text{g}$. \\ \hline
+        \rowcolor{ArthroTeal!5}
+        ARD-EDP-05 & Coste objetivo & Presupuesto para la administración (PA) $\leq $ 10€/ud. PVP al público $\leq $ 20\,€/\text{ud}. \\ \hline
+        ARD-EDP-11 & Material & PP-C de grado médico, libre de BPA, sin componentes metálicos ni adhesivos. Material único reciclable (código 5 PP). \\ \hline
+        \rowcolor{ArthroTeal!5}
+        ARD-EDP-15 & Plazos & Entrega de documentación técnica completa antes del 04/06/2026 (campus virtual UMA, 20:00 h). \\ \hline
+        ARD-EDP-10 & Embalaje & Embalaje individual de cartón reciclado $120 \times 80 \times 45\,\text{mm}$, con etiqueta exterior de $100 \times 70\,\text{mm}$ (Documento Nº 3, Anexo XII - Etiqueta e instrucciones). \\ \hline
+    \end{tabularx}
+    \caption{Requisitos no funcionales principales del adaptador ArthroPush.}
+    \label{tab:req_nofuncionales}
+\end{table}
 
 
+% ------------------------------------------------------------------
 \section{ANÁLISIS DE SOLUCIONES}
+% ------------------------------------------------------------------
 
+\subsection{Alternativas propuestas: proceso de diseño conceptual}
 
+El proceso de generación de alternativas se desarrolló en la \textbf{Fase de Diseño Conceptual}, produciendo un total de \textbf{20 bocetos originales} elaborados de forma independiente por cada uno de los cuatro proyectistas (5 bocetos por proyectista, recogidos íntegramente en el \textbf{Documento Nº 3, Anexo VI}).
+
+Los 20 conceptos representan dos grandes familias de soluciones:
+
+\begin{itemize}
+    \item \textbf{Familia A — Palanca con cuerpo angular (proyectistas ASD e ITS):} Cuerpo de geometría prismática que abraza el MDI lateralmente. La palanca actúa en el plano sagital, accionada por la palma de la mano, con eje de articulación lateral fijo.
+    \item \textbf{Familia B — Palanca con cuerpo cilíndrico (proyectistas SCM y JGN):} Cuerpo cilíndrico que envuelve el cartucho con ajuste por tapón inferior. La palanca superior se articula mediante un punto de anclaje en la parte superior del inhalador.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{ANEXOS/boceto_antonio_1.jpg}
+    \caption{Concepto ganador: Boceto preliminar Nº 1 del proyectista D. Antonio Sánchez Doña (ASD-1). Muestra la palanca de accionamiento palmar, el cuerpo envolvente, el eje de articulación lateral y la salida hacia la boquilla. Seleccionado mediante Matriz de Pugh (Documento Nº 3, Anexo VI - Bocetos).}
+    \label{fig:boceto_seleccionado}
+\end{figure}
+
+\newpage
+\subsection{Método de selección: Matriz de Pugh}
+
+La evaluación sistemática de los 20 conceptos se realizó mediante una \textbf{Matriz de Selección de Conceptos (Matriz de Pugh)} con 7 criterios técnicos y funcionales (A–G), utilizando el boceto Nº 2 (ASD) como referencia DATUM. Los criterios evaluados fueron:
+
+\begin{itemize}
+    \item \textbf{A:} Ergonomía de accionamiento (sustitución de la pinza por empuje palmar).
+    \item \textbf{B:} Facilidad de montaje/desmontaje sin herramientas.
+    \item \textbf{C:} Confort y seguridad de agarre.
+    \item \textbf{D:} Viabilidad geométrica de fabricación (sin contrasalidas excesivas).
+    \item \textbf{E:} Facilidad de limpieza (sin recovecos interiores).
+    \item \textbf{F:} Uso autónomo a una sola mano.
+    \item \textbf{G:} Estética e identidad visual diferenciada.
+\end{itemize}
+
+El resultado de la evaluación, detallado en la tabla de selección del \textbf{Documento Nº 3, Anexo VI}, designa como concepto ganador el \textbf{Boceto Nº 1 del proyectista D. Antonio Sánchez Doña (ASD-1)}, con \textbf{3 valoraciones positivas} (criterios A, C y F) y \textbf{ninguna negativa} frente al DATUM.
+
+\subsection{Justificación de la solución adoptada}
+
+El concepto ASD-1 fue seleccionado porque integra en un único diseño las tres premisas técnicas fundamentales del proyecto:
+
+\begin{enumerate}
+    \item \textbf{Ventaja mecánica:} la geometría de la palanca genera un brazo de momento suficiente para multiplicar la fuerza aplicada con la palma, reduciendo el esfuerzo de pulsación a valores compatibles con la capacidad motriz de los usuarios objetivo.
+    \item \textbf{Ensamblaje intuitivo sin herramientas:} la articulación por eje permite el montaje y desmontaje en menos de 30 segundos, sin necesidad de motricidad fina.
+    \item \textbf{Viabilidad de fabricación FDM:} la geometría no presenta contrasalidas críticas y puede imprimirse con soportes mínimos, optimizando tiempo y coste de producción.
+\end{enumerate}
+
+Frente a los conceptos de la \textbf{Familia B} (SCM y JGN), la solución adoptada presenta ventajas claras en simplicidad geométrica y facilidad de limpieza, al carecer de cavidades internas de difícil acceso. Frente al competidor \textbf{HalerEase\textsuperscript{\textregistered}}, \textit{ArthroPush} se diferencia por su diseño abierto, desacoplable y adaptable a distintos tipos de inhaladores, su material monomaterial reciclable y su precio competitivo.
+
+\newpage
+% ------------------------------------------------------------------
 \section{RESULTADOS FINALES}
+% ------------------------------------------------------------------
+
+Esta sección describe la solución final adoptada para el adaptador \textbf{ArthroPush} (PR-PIB-GIS26-09). Los planos definitivos de cada pieza y del conjunto ensamblado se recogen en el \textbf{Documento Nº 4 — Planos}.
+
+\subsection{Principio de funcionamiento}
+
+\textit{ArthroPush} opera como una \textbf{palanca de segundo género}: el punto de apoyo (eje de articulación del pivote) se sitúa entre la resistencia (el émbolo del cartucho MDI) y la potencia (la fuerza aplicada por la palma sobre la palanca). Esta configuración permite que una fuerza reducida aplicada sobre el extremo de la palanca produzca una fuerza de pulsación suficiente sobre el cartucho, haciendo el dispositivo accesible para todos los perfiles de usuario identificados.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.80\textwidth]{ANEXOS/CAD_Ensamblaje.png}
+    \caption{Ensamblaje completo del adaptador ArthroPush (CAD, Autodesk Fusion 360). Se aprecia la Base (inferior, código AD-MDI-101), el Pivote de articulación central (AD-MDI-102) y la Palanca superior de accionamiento palmar (AD-MDI-103), con el cartucho MDI alojado en el interior del conjunto.}
+    \label{fig:cad_ensamblaje}
+\end{figure}
+
+\subsection{Descripción de los componentes}
+
+El conjunto \textit{ArthroPush} está compuesto por \textbf{tres piezas desmontables}, todas en PP-C de grado médico. Sus dimensiones máximas quedan definidas en el \textbf{Documento Nº 6 — Mediciones} (Sección 1 — Conjunto funcional).
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.7}
+    \begin{tabularx}{\linewidth}{|>{\bfseries\centering\color{ArthroNavy}\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{1.8cm}|X|>{\centering\arraybackslash}m{3.2cm}|}
+        \hline
+        \rowcolor{ArthroNavy}
+        \color{white}\textbf{Código} & \color{white}\textbf{Pieza} & \color{white}\textbf{Función principal} & \color{white}\textbf{Dim. máx. L×A×H (mm)} \\ \hline
+        \rowcolor{ArthroTeal!5}
+        AD-MDI-101 & Base & Aloja y estabiliza el inhalador. Incorpora el orificio $\emptyset\,22\,\text{mm}$ de inserción del cartucho y deja libre la boquilla de salida. & 33,54 × 32 × 34,71 \\ \hline
+        AD-MDI-102 & Pivote & Pieza de articulación central. Abraza el cuerpo del inhalador y proporciona el eje de giro para la palanca. & 34,8 × 32 × 37,18 \\ \hline
+        \rowcolor{ArthroTeal!5}
+        AD-MDI-103 & Palanca & Superficie de contacto con la palma de la mano. Zona texturizada antideslizante. Transmite la fuerza al actuador del cartucho mediante efecto palanca. & 68,13 × 32 × 72,92 \\ \hline
+    \end{tabularx}
+    \caption{Componentes del conjunto ArthroPush con sus funciones y dimensiones máximas (Documento Nº 6 — Mediciones, Sección 1).}
+    \label{tab:componentes}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.30\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ANEXOS/CAD_Base.png}
+        \caption{Base (AD-MDI-101)} 
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.30\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{CAD_Pivote.png}
+        \caption{Pivote (AD-MDI-102)}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.30\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{CAD_Palanca.png}
+        \caption{Palanca (AD-MDI-103)}
+    \end{minipage}
+    
+
+\end{figure}
+
+\subsection{Material de fabricación}
+
+El material único empleado en los tres componentes es el \textbf{Polipropileno Copolímero (PP-C) de grado médico}, seleccionado por cumplir simultáneamente los siguientes requisitos técnicos y normativos (véase \textbf{Documento Nº 5 — Pliego de Condiciones}, Sección 2.2):
+
+\begin{itemize}
+    \item \textbf{Biocompatibilidad:} libre de BPA y de SVHC según REACH. Apto para contacto con mucosas según ISO 10993-1.
+    \item \textbf{Resistencia mecánica:} módulo de elasticidad suficiente para superar los ensayos de fatiga de 2.000 ciclos a 250 N sin fluencia plástica.
+    \item \textbf{Procesabilidad FDM:} temperatura de fusión compatible con impresoras de cámara cerrada. Warping controlable con placa caliente.
+    \item \textbf{Reciclabilidad:} termoplástico monomaterial, código de identificación \texttt{>PP-C<} (ISO 11469), reciclable en corriente PP (código 5). Análisis medioambiental en el \textbf{Documento Nº 3, Anexo XIV - Estudio de impacto ambiental}.
+    \item \textbf{Economía:} coste de material por conjunto de 0,85€ (Base + Pivote + Palanca), contribuyendo a un PEM total de 3,48€ (véase \textbf{Documento Nº 7 - Presupuesto}).
+\end{itemize}
+
+\subsection{Proceso de fabricación}
+
+El proceso de fabricación elegido para la fase de lanzamiento inicial es la \textbf{impresión 3D por deposición fundida (FDM)}, detallado en el \textbf{Documento Nº 3, Anexo XIII}. Los parámetros clave son:
+
+\begin{itemize}
+    \item Espesor de capa: $0{,}15\,\text{mm}$. Relleno: $100\,\%$ (patrón giroide para máxima resistencia a fatiga).
+    \item Tiempo total por conjunto: $7\,\text{h}\,10\,\text{min}$ (Base: 4h 15min + Pivote: 45min + Palanca: 2h 10min).
+    \item Masa total de PP-C por conjunto: $60\,\text{g}$ (Base 34 g + Pivote 8 g + Palanca 18 g).
+    \item Soportes necesarios en AD-MDI-101 (Base) y AD-MDI-103 (Palanca). La pieza AD-MDI-102 (Pivote) no requiere soportes.
+\end{itemize}
+
+Las condiciones técnicas exigidas al fabricante en cuanto a maquinaria, materiales y ensayos de calidad se recogen en las \textbf{Secciones 2.1 y 2.7 del Documento Nº 5 — Pliego de Condiciones}.
+
+\subsection{Ensamblaje y modo de uso}
+
+El montaje del dispositivo no requiere herramientas. Se realiza en cuatro pasos (manual de usuario completo en el \textbf{Documento Nº 3, Anexo XII}):
+
+\begin{enumerate}
+    \item Introducir el inhalador en la \textbf{Base} (AD-MDI-101), asegurando que la boquilla queda libre por el orificio frontal.
+    \item Acoplar el \textbf{Pivote} (AD-MDI-102) abrazando el cuerpo del inhalador y encajándolo sobre la Base.
+    \item Montar la \textbf{Palanca} (AD-MDI-103) alineando sus apoyos con el eje del Pivote.
+    \item Verificar la estabilidad del conjunto y la libertad de movimiento de la palanca antes del uso.
+\end{enumerate}
+
+Para accionar el inhalador, el usuario sujeta el conjunto de forma estable, coloca la boquilla según la pauta del medicamento, y presiona la palanca con la palma de la mano. El desmontaje es el proceso inverso.
+
+\subsection{Etiquetado y embalaje}
+
+La etiqueta exterior ($100 \times 70 \times 0{,}20\,\text{mm}$) incorpora el nombre del producto, el código de referencia, el material, advertencias de uso, código de barras e información ambiental. El embalaje individual ($120 \times 80 \times 45\,\text{mm}$) es de cartón 100\,\% reciclado, sin blísters de plástico de un solo uso. El manual de instrucciones se presenta en formato A5 doblado ($210 \times 148 \times 1\,\text{mm}$). El diseño completo se recoge en el \textbf{Documento Nº 3, Anexo XII - Etiqueta e instrucciones}. Las dimensiones del embalaje quedan definidas en el \textbf{Documento Nº 6 — Mediciones}, Sección 2.
+
+\subsection{Marcado CE y declaración de conformidad}
+
+Conforme a la evaluación de directivas del \textbf{Documento Nº 3, Anexo VIII}, el único marco normativo aplicable es el \textbf{Reglamento (UE) 2017/745 (MDR)}, y la clasificación del adaptador es \textbf{Producto Sanitario de Clase I}, lo que permite la autocertificación por el fabricante sin intervención de organismo notificado.
+
+La \textbf{Declaración UE de Conformidad}, firmada por D. Antonio Sánchez Doña como Director General de ArthroDesign Solutions S.L., figura en el \textbf{Documento Nº 3, Anexo IX} y acredita el cumplimiento de los Requisitos Generales de Seguridad y Funcionamiento del Anexo I del MDR 2017/745.
+
+\subsection{Plan de explotación y comercialización}
+
+El modelo de negocio proyectado para \textit{ArthroPush} se estructura en tres canales de distribución (desarrollado en el \textbf{Documento Nº 3, Anexo II — Definición Estratégica}):
+
+\begin{itemize}
+    \item \textbf{Canal farmacéutico:} distribución a través de la red de farmacias comunitarias, aprovechando la prescripción de neumólogos y reumatólogos como factor de tracción.
+    \item \textbf{Canal ortopédico y de productos de apoyo:} tiendas especializadas y hospitales con servicio de ortoprótesis.
+    \item \textbf{Canal digital (e-commerce):} venta directa a través de plataformas de salud y marketplaces de productos médicos.
+\end{itemize}
+
+El precio de venta al distribuidor se fija en \textbf{8,50€}/ud, con un PVP al público de\textbf{13,95€}/ud, posicionándose un 40\,\% por debajo del competidor HalerEase\textsuperscript{\textregistered}. Con un lote inicial de 1.500 unidades/mes, el beneficio neto proyectado es de \textbf{6.270\,€/mes}, según el análisis del \textbf{Documento Nº 3, Anexo XI — Estimación de Costes}.
+
+\subsection{Estudio económico resumido}
+
+Los costes completos del proyecto, calculados conforme a la metodología de precios unitarios, básicos y descompuestos, se recogen en el \textbf{Documento Nº 7 — Presupuesto}. A continuación se presenta el resumen por nivel presupuestario:
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.8}
+    \begin{tabularx}{0.90\linewidth}{|X|>{\centering\arraybackslash}m{4cm}|}
+        \hline
+        \rowcolor{ArthroNavy}
+        \multicolumn{1}{|c|}{\color{white}\textbf{Nivel presupuestario}} & \color{white}\textbf{Importe (€/ud)} \\ \hline
+        Capítulo 1 — Materiales y fabricación (Base + Pivote + Palanca) & 3,11 \\ \hline
+        Capítulo 2 — Documentación y embalaje (etiqueta + manual + caja) & 0,37 \\ \hline
+        \rowcolor{ArthroTeal!10}
+        \textbf{PEM — Presupuesto de Ejecución Material} & \textbf{3,48} \\ \hline
+        + Gastos Generales (10\,\%) + Beneficio Industrial (20\,\%) + Base imponible (PEM + GG + BI) + IVA (21\,\%) & — \\ \hline
+        \rowcolor{ArthroTeal!15}
+        \textbf{PEC — Presupuesto de Ejecución por Contrata} & \textbf{5,48} \\ \hline
+        + Gastos de ingeniería (500\,€) y Dirección técnica (200\,€) prorrateados sobre 300 ud + IVA & — \\ \hline
+        \rowcolor{ArthroTeal!20}
+        \textbf{PA — Presupuesto para la Administración} & \textbf{8,31} \\ \hline
+        + Margen distribuidor + margen comercial & — \\ \hline
+        \rowcolor{ArthroNavy!12}
+        \textbf{PVP — Precio de Venta al Público} & \textbf{13,95} \\ \hline
+    \end{tabularx}
+    \caption{Resumen del presupuesto del adaptador ArthroPush por unidad completa. Detalle completo de precios descompuestos en el Documento Nº 7 — Presupuesto.}
+    \label{tab:presupuesto_resumen}
+\end{table}
+
+El riesgo económico del proyecto ha sido cuantificado mediante la metodología ISO 14971 (\textbf{Documento Nº 3, Anexo X -- Gestión de riesgos}). El riesgo general inicial $R_{\text{general}} = 0{,}194$ (nivel Alto) ha sido reducido a $R_{\text{general}} = 0{,}099$ (nivel Moderado) tras la implantación del plan de contingencia, que incluye una reserva de 5 días adicionales y 230\,€.
 
 
+% ------------------------------------------------------------------
 \section{PLANIFICACIÓN}
+% ------------------------------------------------------------------
+
+El desarrollo del Proyecto se ha organizado en \textbf{5 fases secuenciales} con retroalimentación iterativa, tal y como se recoge en el \textbf{Documento Nº 3, Anexo I} (Desarrollo del Producto) y en el cronograma detallado del \textbf{Documento Nº 3, Anexo III} (Planificación y Cronograma).
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.6}
+    \renewcommand{\tabularxcolumn}[1]{m{#1}}
+    \begin{tabularx}{\linewidth}{|>{\centering\arraybackslash}m{0.5cm}|>{\bfseries\color{ArthroNavy}\raggedright\arraybackslash}m{4cm}|X|>{\centering\arraybackslash}m{2.6cm}|}
+        \hline
+        \rowcolor{ArthroNavy}
+        \color{white}\textbf{F.} & \multicolumn{1}{c|}{\color{white}\textbf{Fase}} & \multicolumn{1}{c|}{\color{white}\textbf{Tareas principales}} & \color{white}\textbf{Fin estimado} \\ \hline
+        \rowcolor{ArthroTeal!5}
+        1 & Plan estratégico y estudio de necesidades & Entrevistas y encuestas a usuarios, análisis de competidores, definición estratégica de la empresa (Anexos II y IV). & 09/05/2026 \\ \hline
+        2 & Definición de especificaciones & Elaboración de los 16 bloques EDP (ARD-EDP-01 a 16) validados con los datos de usuario (Anexo V). & 21/05/2026 \\ \hline
+        \rowcolor{ArthroTeal!5}
+        3 & Proceso de creación & \textbf{Conceptual:} 20 bocetos + Matriz de Pugh (Anexo VI). \newline \textbf{Básico:} síntesis y evaluación de propuestas. \newline \textbf{Detalle:} modelado CAD (Fusion 360), planos técnicos (Anexo VII + Doc. Nº 4). & 26/05/2026 \\ \hline
+        4 & Validación y documentación técnica & Gestión de riesgos (Anexo X), estimación de costes (Anexo XI), Pliego (Doc. Nº 5), Mediciones (Doc. Nº 6), Presupuesto (Doc. Nº 7), Anexos VIII, IX, XII, XIII y XIV. & 31/05/2026 \\ \hline
+        \rowcolor{ArthroTeal!5}
+        5 & Redacción de la Memoria & Integración de todos los documentos. Redacción del presente Documento Nº 2. & \textbf{04/06/2026} \\ \hline
+    \end{tabularx}
+    \caption{Fases del proyecto con tareas principales y plazos estimados (detalle completo en el Documento Nº 3, Anexo III).}
+    \label{tab:planificacion}
+\end{table}
+
+El cronograma en formato Diagrama de Gantt, con las dependencias entre tareas y la asignación de carga por proyectista, se recoge íntegramente en el \textbf{Documento Nº 3, Anexo III - Planificación y cronograma}. A continuación se reproduce una vista resumida:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{ANEXOS/gantt2.jpeg}
+    \caption{Diagrama de Gantt del proyecto — Parte 1 (Fases 1, 2 y 3: del plan estratégico al diseño de detalle). Cronograma completo con asignación de recursos en el Documento Nº 3, Anexo III.}
+    \label{fig:gantt1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{ANEXOS/gantt1.jpeg}
+    \caption{Diagrama de Gantt del proyecto — Parte 2 (Fases 4 y 5: documentación técnica y redacción de la Memoria). Cronograma completo en el Documento Nº 3, Anexo III.}
+    \label{fig:gantt2}
+\end{figure}
+
+La \textbf{fecha límite de entrega} de la documentación completa es el \textbf{04 de junio de 2026 a las 20:00 h}, a través del campus virtual de la Universidad de Málaga, conforme a la \textbf{Sección 5.1 del Documento Nº 5 — Pliego de Condiciones}.
 
 
+% ------------------------------------------------------------------
 \section{ORDEN DE PRIORIDAD ENTRE LOS DOCUMENTOS}
- 
- 
+% ------------------------------------------------------------------
 
- 
- 
+Conforme a la \textbf{Norma UNE 157001:2014} y a la \textbf{Sección 3.4 del Documento Nº 5 — Pliego de Condiciones}, en caso de discrepancia o contradicción entre los distintos documentos que componen el presente Proyecto, prevalecerán en el siguiente orden de prioridad:
+
+\begin{enumerate}
+    \item \textbf{Documento Nº 4 — Planos:} definen de forma inequívoca la geometría, cotas, tolerancias y acabados de cada pieza. Prima sobre cualquier otra descripción textual o numérica de los demás documentos.
+    \item \textbf{Documento Nº 5 — Pliego de Condiciones:} establece las condiciones técnicas, facultativas, económicas y legales de obligado cumplimiento para el fabricante.
+    \item \textbf{Documento Nº 7 — Presupuesto:} recoge los precios básicos, unitarios y descompuestos de referencia para la contratación de la fabricación.
+    \item \textbf{Documento Nº 2 — Memoria} (el presente documento): tiene carácter informativo y explicativo. Asume la función de \textbf{nexo de unión} entre todos los documentos del expediente técnico, pero no es vinculante en caso de conflicto con los documentos de rango superior.
+\end{enumerate}
+
+Cualquier modificación del diseño que afecte a los Planos o al Pliego requerirá, conforme a la \textbf{Sección 3.5 del Pliego de Condiciones}, la \textbf{firma expresa de la Dirección Técnica} antes de su implementación.
 
 
+% ------------------------------------------------------------------
+\section{CONCLUSIONES}
+% ------------------------------------------------------------------
 
+\subsection{Cumplimiento de los objetivos}
+
+El presente Proyecto ha permitido desarrollar, desde su fundamento clínico hasta la documentación técnica completa, el adaptador ergonómico \textit{ArthroPush}. Los objetivos planteados en la Sección 1 han sido alcanzados en su totalidad:
+
+\begin{itemize}
+    \item Se ha diseñado un dispositivo que reduce la fuerza de pulsación necesaria a valores compatibles con las capacidades de los usuarios objetivo, mediante el principio de palanca de segundo género.
+    \item El adaptador es compatible con la totalidad de los inhaladores MDI estándar de $\emptyset\,22\,\text{mm}$.
+    \item El coste de fabricación unitario (3,48€ PEM; 8,31€ PA) permite un PVP de 13,95€, cumpliendo el requisito de accesibilidad económica detectado en la encuesta de mercado.
+    \item El diseño monomaterial en PP-C de grado médico asegura biocompatibilidad, reciclabilidad y cumplimiento del Reglamento REACH, sin BPA ni compuestos restringidos.
+    \item El riesgo general del proyecto ha sido reducido de nivel Alto ($R = 0{,}194$) a nivel Moderado ($R = 0{,}099$) mediante el plan de contingencia documentado en el \textbf{Documento Nº 3, Anexo X}.
+\end{itemize}
+
+\subsection{Cumplimiento normativo}
+
+El adaptador \textit{ArthroPush} ha sido diseñado en conformidad con el \textbf{Reglamento (UE) 2017/745 (MDR)} y el \textbf{Real Decreto 192/2023}, clasificándose como Producto Sanitario de \textbf{Clase I} de autocertificación. La Declaración UE de Conformidad figura en el \textbf{Documento Nº 3, Anexo IX}. Se han aplicado las normas armonizadas \textbf{ISO 14971:2020} (gestión de riesgos), \textbf{ISO 21856:2023} (ensayos de productos de apoyo), \textbf{ISO 10993-1} (biocompatibilidad), \textbf{ISO 14006:2020} (ecodiseño) e \textbf{ISO 11469} (marcado de material), según consta en el \textbf{Documento Nº 5 — Pliego de Condiciones}.
+
+\newpage
+\subsection{Declaración técnica de los proyectistas}
+
+En cumplimiento del \textbf{Artículo 9 de la Ley 21/1992, de 16 de julio, de Industria} (Revisión vigente de 24 de diciembre de 2014, Seguridad industrial), y en calidad de proyectistas titulados responsables del presente documento, los abajo firmantes \textbf{declaran} que el adaptador ergonómico \textit{ArthroPush} (PR-PIB-GIS26-09), diseñado por ArthroDesign Solutions S.L.:
+
+\begin{itemize}
+    \item Cumple con los Requisitos Generales de Seguridad y Funcionamiento del Anexo I del Reglamento (UE) 2017/745 (MDR), aplicables a los Productos Sanitarios de Clase I.
+    \item No representa riesgo para la salud o seguridad de las personas en las condiciones normales de uso previstas, de acuerdo con los resultados del análisis de riesgos ISO 14971.
+    \item Ha sido desarrollado conforme a las normas técnicas de referencia citadas en la Sección 4 de la presente Memoria y bajo los criterios formales de la Norma UNE 157001:2014.
+\end{itemize}
+
+\vspace{1.5cm}
+
+\noindent\begin{minipage}{\textwidth}
+    \begin{flushright}
+        En Málaga, a \today
+    \end{flushright}
+    \vspace{1.5cm}
+
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Sergio Carmona Muñoz} \\
+        Colegiado Nº 06424 \\
+        DNI: 26291930D
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Juan Gabriel Navarro Valdivielso} \\
+        Colegiado Nº 06425 \\
+        DNI: 77666662D
+    \end{minipage}
+
+    \vspace{1.5cm}
+
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Antonio Sánchez Doña} \\
+        Colegiado Nº 06423 \\
+        DNI: 79380534J
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \rule{6cm}{0.6pt} \\
+        \textbf{Fdo. D. Iván de la Torre Segato} \\
+        Colegiado Nº 06421 \\
+        DNI: 79383630G
+    \end{minipage}
+\end{minipage}
 
 % ======================================================
-% HOJA EN BLANCO CON MARCA DE AGUA
+% HOJA EN BLANCO FINAL
 % ======================================================
 \newpage
 \pagestyle{fancy}
-
 \begin{tikzpicture}[remember picture, overlay]
     \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
 \end{tikzpicture}
-
-% Empujamos el texto hacia la parte inferior del folio
-\vspace*{8.5cm} 
+\vspace*{8.5cm}
 \begin{center}
     \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
 \end{center}
 \vfill
-
-
 
 \end{document}

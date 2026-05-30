@@ -15,7 +15,7 @@
 \usepackage{enumitem}
 \usepackage[table, xcdraw]{xcolor}
 \usepackage{amsmath}
-\usepackage{tocloft}
+\usepackage[titles]{tocloft}
 \usepackage{float}
 \usepackage{multirow}
 
@@ -155,22 +155,7 @@
 \thispagestyle{fancy}
 \newpage
 
-% ======================================================
-% HOJA EN BLANCO 2 (COMPLETAMENTE LIMPIA SIN ENCABEZADOS)
-% ======================================================
-\newpage
-\pagestyle{empty} 
 
-\begin{tikzpicture}[remember picture, overlay]
-    \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
-\end{tikzpicture}
-
-\vspace*{8.5cm} 
-\begin{center}
-    \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
-\end{center}
-\vfill
-\newpage
 
 % ======================================================
 % DESARROLLO DEL PLIEGO DE CONDICIONES
@@ -284,7 +269,7 @@ El presente documento establece los requisitos y especificaciones generales para
 \subsection{Cambios en el diseño}
 \begin{itemize}
     \item Cualquier propuesta de modificación sobre la palanca o la base planteada por el contratista deberá justificarse formalmente por escrito.
-    \item Las alteraciones del diseño requerirán la firma de conformidad expresa de la dirección técnica antes de aplicarse en la planta.
+    \item Las alteraciones del diseño requerirán la firma de conformidad expresa de la Dirección Técnica antes de aplicarse en la planta.
     \item Las modificaciones aceptadas deberán quedar reflejadas al milímetro en los planos finales de obra terminada para el archivo histórico.
 \end{itemize}
 
@@ -403,4 +388,19 @@ El presente documento establece los requisitos y especificaciones generales para
     \end{minipage}
 \end{minipage}
 
+% ======================================================
+% HOJA EN BLANCO 1 (CORTESÍA DE PORTADA)
+% ======================================================
+\newpage
+\pagestyle{fancy}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.1] at (current page.center) {\includegraphics[width=12cm]{logo_definitivo.png}};
+\end{tikzpicture}
+
+\vspace*{8.5cm} 
+\begin{center}
+    \textit{Esta hoja ha sido dejada deliberadamente en blanco.}
+\end{center}
+\vfill
 \end{document}
